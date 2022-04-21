@@ -3,26 +3,24 @@
 #include <stdlib.h>
 
 #ifndef QUTERNION
+#define QUTERNION
 
-typedef struct
+typedef struct _quaternion_t
 {
     double a;
     double i;
     double j;
     double k;
-} d_quaternion;
+} quaternion_t;
 
-#define QUTERNION
+void Quaternion_Ctor (quaternion_t * quaterion, double a, double i, double j, double k);
+
+quaternion_t* Quaternion_Add (const quaternion_t* a, const quaternion_t* b);
+
+quaternion_t* Quaternion_Sub (const quaternion_t* a, const quaternion_t* b);
+
+quaternion_t* Quaternion_Mul (const quaternion_t* a, const quaternion_t* b);
+
+void Quaternion_Print(const quaternion_t* quadr_for_print);
 
 #endif
-
-d_quaternion quaternion_criate (double a, double i, double j, double k);
-
-d_quaternion quaternion_add (d_quaternion a, d_quaternion b);
-
-d_quaternion quaternion_sub (d_quaternion a, d_quaternion b);
-
-d_quaternion quaternion_mul (d_quaternion a, d_quaternion b);
-
-
-void quaternion_print(d_quaternion quadr_for_print);
