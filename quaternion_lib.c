@@ -1,52 +1,129 @@
-
 #include "quaternion_lib.h"
 
-void Quaternion_Ctor (quaternion_t* const quaternion, double a, double i, double j, double k)
-{
-    quaternion->a = a;
-    quaternion->i = i;
-    quaternion->j = j;
-    quaternion->k = k;
-}
+//----------------------------QUATERNION-FUNCTIONS---------------------------------------
 
-quaternion_t* Quaternion_Add (const quaternion_t* a, const quaternion_t* b)
+quaternion Quaternion_Add (quaternion a, quaternion b)
 {
-    quaternion_t* result = (quaternion_t*) calloc (sizeof(quaternion_t), 1);
-    
-    result->a = a->a + b->a;
-    result->i = a->i + b->i;
-    result->j = a->j + b->j;
-    result->k = a->k + b->k;
+    quaternion result = {0};
+
+    result.a = a.a + b.a;
+    result.i = a.i + b.i;
+    result.j = a.j + b.j;
+    result.k = a.k + b.k;
 
     return result;
 }
 
-quaternion_t* Quaternion_Sub(const quaternion_t* a, const quaternion_t* b)
+quaternion Quaternion_Sub (quaternion a, quaternion b)
 {
-    quaternion_t* result = (quaternion_t*) calloc (sizeof(quaternion_t), 1);
+    quaternion result = {0};
     
-    result->a = a->a - b->a;
-    result->i = a->i - b->i;
-    result->j = a->j - b->j;
-    result->k = a->k - b->k;
+    result.a = a.a - b.a;
+    result.i = a.i - b.i;
+    result.j = a.j - b.j;
+    result.k = a.k - b.k;
 
     return result;
 }
 
-quaternion_t* Quaternion_Mul(const quaternion_t* a, const quaternion_t* b)
-{
-    quaternion_t* result = (quaternion_t*) calloc (sizeof(quaternion_t), 1);
-    
-    result->a = a->a * b->a + a->i * b->i + a->j * b->j + a->k * b->k;
-    result->i = a->a * b->i + a->i * b->a + a->j * b->k - a->k * b->j;
-    result->j = a->a * b->j + a->j * b->a + a->k * b->i - a->i * b->k;
-    result->k = a->a * b->k + a->k * b->a + a->i * b->j - a->j * b->i;
+quaternion Quaternion_Mul (quaternion a, quaternion b)
+{ 
+    quaternion result = {0};
+
+    result.a = a.a * b.a - a.i * b.i - a.j * b.j - a.k * b.k;
+    result.i = a.a * b.i + a.i * b.a + a.j * b.k - a.k * b.j;
+    result.j = a.a * b.j - a.i * b.k + a.j * b.a + a.k * b.i;
+    result.k = a.a * b.k + a.i * b.j - a.j * b.i + a.k * b.a;
 
     return result;
 }
 
-void Quaternion_Rrint(const quaternion_t* a)
+void Quaternion_Print (quaternion a)
 {
-    printf("q = %lf + %lf*i  + %lf*j  + %lf*k\n", a->a, a->i, a->j, a->k);
+    printf("q = %lf + %lf*i  + %lf*j  + %lf*k\n", a.a, a.i, a.j, a.k);
 }
 
+void Quaternion_Conjugate (quaternion* a)
+{
+    a->i = -a->i;
+    a->j = -a->j;
+    a->k = -a->k;
+}
+
+quaternion Quaternion_Inverse (quaternion a)
+{
+    Quaternion_Conjugate(&a);
+    double norm = Quaternion_Norm(&a);
+    a.a /= norm;
+    a.i /= norm;
+    a.j /= norm;
+    a.k /= norm;
+    return a;
+}
+
+double Quaternion_Norm (const quaternion* a)
+{
+    return a->a * a->a + a->i * a->i + a->j * a->j + a->k * a->k;
+}
+//---------------------------------------------------------------------------------------
+//------------------------------VECTOR-FUNCTIONS-----------------------------------------
+void Vector_Print (vector vec)
+{
+    printf("x = %lf, y = %lf, z = %lf\n", vec.x, vec.y, vec.z);
+}
+
+double Vector_Scalar_Mul (vector* a, vector* b)
+{
+    double result = a->x * b->x + a->y * b->y + a->z * b->z;
+    return result;
+}
+
+vector Vector_Vector_Mul (vector* a, vector* b)
+{
+    vector result = {0};
+    result.x = a->y * b->z - a->z * b->y;
+    result.y = -(a->x * b->z - a->z * b->x);
+    result.z = a->x * b->y - a->y * b->x;
+    return result;
+}
+
+vector Vector_Number_Mul (vector* a, double num)
+{
+    vector result = {a->x * num, a->y * num, a->z * num};
+    return result;
+}
+
+vector Vector_Multi_Sum (vector* a, vector* b, vector* c)
+{
+    vector result = {a->x + b->x + c->x, a->y + b->y + c->y, a->z + b->z + c->z};
+    return result;
+}
+
+
+vector Rotate (vector vec, double phi, double psi, double theta)
+{
+    vector result = {0};    
+    vector first_direction = {0, 0, 1};
+    vector second_direction = {cos(phi), sin(phi), 0};
+    vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+
+    quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first_direction.y, sin(phi / 2) * first_direction.z};
+    quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * second_direction.y, sin(psi / 2) * second_direction.z};
+    quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) * third_direction.y, sin(theta / 2) * third_direction.z};
+
+    quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
+               rotate = Quaternion_Mul (rotate, first_rotate);
+    
+    result = RotateQuat (rotate, vec);
+    return result;
+}
+
+
+vector RotateQuat (quaternion rotate, vector in)
+{
+    quaternion in_quaternion = {0, in.x, in.y, in.z};
+    quaternion result = Quaternion_Mul (rotate, in_quaternion);
+               result = Quaternion_Mul (result, Quaternion_Inverse(rotate));
+    vector out = {result.i, result.j, result.k};
+    return out;
+}

@@ -2,7 +2,8 @@
 
 int main()
 {
-    quaternion_t a;
-    Quaternion_Ctor(&a, 1, 2, 3, 4);
+    vector vec = {1, 0, 0};
+    vector res = Rotate(vec, DEG(90), DEG(90), DEG(90));
+    Vector_Print (res);
     return 0;
 }
