@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccij5Grj.s 			page 1
+ARM GAS  /tmp/ccrEXg4b.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
   19:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
   20:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****        (+) Possibility to disable or enable Analog Noise Filter
   21:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****        (+) Use of a configured Digital Noise Filter
-ARM GAS  /tmp/ccij5Grj.s 			page 2
+ARM GAS  /tmp/ccrEXg4b.s 			page 2
 
 
   22:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****        (+) Disable or enable wakeup from Stop mode(s)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
   76:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** /** @defgroup I2CEx_Exported_Functions_Group1 Filter Mode Functions
   77:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****   * @brief    Filter Mode Functions
   78:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****   *
-ARM GAS  /tmp/ccij5Grj.s 			page 3
+ARM GAS  /tmp/ccrEXg4b.s 			page 3
 
 
   79:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** @verbatim
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
   65 0018 FFF7FEFF 		bl	assert_failed
   66              	.LVL3:
   67              	.L2:
-ARM GAS  /tmp/ccij5Grj.s 			page 4
+ARM GAS  /tmp/ccrEXg4b.s 			page 4
 
 
  101:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****   assert_param(IS_I2C_ANALOG_FILTER(AnalogFilter));
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  108              		.loc 1 114 25 discriminator 2 view .LVU21
  109 004e 0B68     		ldr	r3, [r1]
  110 0050 0F4F     		ldr	r7, .L8+12
-ARM GAS  /tmp/ccij5Grj.s 			page 5
+ARM GAS  /tmp/ccrEXg4b.s 			page 5
 
 
  111 0052 3B40     		ands	r3, r7
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  101:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
  147              		.loc 1 101 3 discriminator 2 view .LVU36
  148 0072 6521     		movs	r1, #101
-ARM GAS  /tmp/ccij5Grj.s 			page 6
+ARM GAS  /tmp/ccrEXg4b.s 			page 6
 
 
  149 0074 0548     		ldr	r0, .L8+8
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  193              		.cfi_offset 7, -8
  194              		.cfi_offset 14, -4
  195 0002 0400     		movs	r4, r0
-ARM GAS  /tmp/ccij5Grj.s 			page 7
+ARM GAS  /tmp/ccrEXg4b.s 			page 7
 
 
  196 0004 0D00     		movs	r5, r1
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  154:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****     hi2c->State = HAL_I2C_STATE_BUSY;
  239              		.loc 1 154 5 discriminator 2 view .LVU55
  240              		.loc 1 154 17 is_stmt 0 discriminator 2 view .LVU56
-ARM GAS  /tmp/ccij5Grj.s 			page 8
+ARM GAS  /tmp/ccrEXg4b.s 			page 8
 
 
  241 0036 4126     		movs	r6, #65
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  276              		.loc 1 173 17 is_stmt 0 discriminator 2 view .LVU70
  277 005a 2023     		movs	r3, #32
  278 005c A355     		strb	r3, [r4, r6]
-ARM GAS  /tmp/ccij5Grj.s 			page 9
+ARM GAS  /tmp/ccrEXg4b.s 			page 9
 
 
  174:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  320              		.section	.text.HAL_I2CEx_EnableWakeUp,"ax",%progbits
  321              		.align	1
  322              		.global	HAL_I2CEx_EnableWakeUp
-ARM GAS  /tmp/ccij5Grj.s 			page 10
+ARM GAS  /tmp/ccrEXg4b.s 			page 10
 
 
  323              		.syntax unified
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  349 000c D521     		movs	r1, #213
  350 000e 1548     		ldr	r0, .L24+4
  351              	.LVL21:
-ARM GAS  /tmp/ccij5Grj.s 			page 11
+ARM GAS  /tmp/ccrEXg4b.s 			page 11
 
 
  352              		.loc 1 213 3 discriminator 1 view .LVU85
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  227:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
  228:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****     __HAL_I2C_ENABLE(hi2c);
  393              		.loc 1 228 5 is_stmt 1 discriminator 2 view .LVU99
-ARM GAS  /tmp/ccij5Grj.s 			page 12
+ARM GAS  /tmp/ccrEXg4b.s 			page 12
 
 
  394 0044 2568     		ldr	r5, [r4]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  434              		.align	1
  435              		.global	HAL_I2CEx_DisableWakeUp
  436              		.syntax unified
-ARM GAS  /tmp/ccij5Grj.s 			page 13
+ARM GAS  /tmp/ccrEXg4b.s 			page 13
 
 
  437              		.code	16
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  476              		.loc 1 257 5 is_stmt 1 view .LVU119
  477              		.loc 1 257 5 view .LVU120
  478 001c 2033     		adds	r3, r3, #32
-ARM GAS  /tmp/ccij5Grj.s 			page 14
+ARM GAS  /tmp/ccrEXg4b.s 			page 14
 
 
  479 001e E35C     		ldrb	r3, [r4, r3]
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  518              		.loc 1 272 5 discriminator 2 view .LVU134
  273:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
  274:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****     return HAL_OK;
-ARM GAS  /tmp/ccij5Grj.s 			page 15
+ARM GAS  /tmp/ccrEXg4b.s 			page 15
 
 
  519              		.loc 1 274 5 discriminator 2 view .LVU135
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  292:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****  ===============================================================================
  293:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****     [..] This section provides functions allowing to:
  294:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****       (+) Configure Fast Mode Plus
-ARM GAS  /tmp/ccij5Grj.s 			page 16
+ARM GAS  /tmp/ccrEXg4b.s 			page 16
 
 
  295:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** 
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  588              		.loc 1 316 3 discriminator 4 view .LVU146
  589 0024 F023     		movs	r3, #240
  590 0026 1B03     		lsls	r3, r3, #12
-ARM GAS  /tmp/ccij5Grj.s 			page 17
+ARM GAS  /tmp/ccrEXg4b.s 			page 17
 
 
  591 0028 1842     		tst	r0, r3
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  323:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c **** }
  639              		.loc 1 323 1 view .LVU159
  640 0064 02B0     		add	sp, sp, #8
-ARM GAS  /tmp/ccij5Grj.s 			page 18
+ARM GAS  /tmp/ccrEXg4b.s 			page 18
 
 
  641              		@ sp needed
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  340:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****   /* Check the parameter */
  341:Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c ****   assert_param(IS_I2C_FASTMODEPLUS(ConfigFastModePlus));
  681              		.loc 1 341 3 is_stmt 1 view .LVU162
-ARM GAS  /tmp/ccij5Grj.s 			page 19
+ARM GAS  /tmp/ccrEXg4b.s 			page 19
 
 
  682 0006 184B     		ldr	r3, .L41
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  733 0050 1943     		orrs	r1, r3
  734 0052 9161     		str	r1, [r2, #24]
  735              		.loc 1 344 3 view .LVU173
-ARM GAS  /tmp/ccij5Grj.s 			page 20
+ARM GAS  /tmp/ccrEXg4b.s 			page 20
 
 
  736 0054 9269     		ldr	r2, [r2, #24]
@@ -1185,30 +1185,30 @@ ARM GAS  /tmp/ccij5Grj.s 			page 1
  774              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
  775              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
  776              		.file 8 "Core/Inc/stm32f0xx_hal_conf.h"
-ARM GAS  /tmp/ccij5Grj.s 			page 21
+ARM GAS  /tmp/ccrEXg4b.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_hal_i2c_ex.c
-     /tmp/ccij5Grj.s:18     .rodata.HAL_I2CEx_ConfigAnalogFilter.str1.4:0000000000000000 $d
-     /tmp/ccij5Grj.s:23     .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000000 $t
-     /tmp/ccij5Grj.s:29     .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000000 HAL_I2CEx_ConfigAnalogFilter
-     /tmp/ccij5Grj.s:164    .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000084 $d
-     /tmp/ccij5Grj.s:172    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000000 $t
-     /tmp/ccij5Grj.s:178    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000000 HAL_I2CEx_ConfigDigitalFilter
-     /tmp/ccij5Grj.s:313    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000078 $d
-     /tmp/ccij5Grj.s:321    .text.HAL_I2CEx_EnableWakeUp:0000000000000000 $t
-     /tmp/ccij5Grj.s:327    .text.HAL_I2CEx_EnableWakeUp:0000000000000000 HAL_I2CEx_EnableWakeUp
-     /tmp/ccij5Grj.s:428    .text.HAL_I2CEx_EnableWakeUp:0000000000000060 $d
-     /tmp/ccij5Grj.s:434    .text.HAL_I2CEx_DisableWakeUp:0000000000000000 $t
-     /tmp/ccij5Grj.s:440    .text.HAL_I2CEx_DisableWakeUp:0000000000000000 HAL_I2CEx_DisableWakeUp
-     /tmp/ccij5Grj.s:540    .text.HAL_I2CEx_DisableWakeUp:0000000000000060 $d
-     /tmp/ccij5Grj.s:547    .text.HAL_I2CEx_EnableFastModePlus:0000000000000000 $t
-     /tmp/ccij5Grj.s:553    .text.HAL_I2CEx_EnableFastModePlus:0000000000000000 HAL_I2CEx_EnableFastModePlus
-     /tmp/ccij5Grj.s:646    .text.HAL_I2CEx_EnableFastModePlus:0000000000000068 $d
-     /tmp/ccij5Grj.s:658    .text.HAL_I2CEx_DisableFastModePlus:0000000000000000 $t
-     /tmp/ccij5Grj.s:664    .text.HAL_I2CEx_DisableFastModePlus:0000000000000000 HAL_I2CEx_DisableFastModePlus
-     /tmp/ccij5Grj.s:757    .text.HAL_I2CEx_DisableFastModePlus:0000000000000068 $d
+     /tmp/ccrEXg4b.s:18     .rodata.HAL_I2CEx_ConfigAnalogFilter.str1.4:0000000000000000 $d
+     /tmp/ccrEXg4b.s:23     .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000000 $t
+     /tmp/ccrEXg4b.s:29     .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000000 HAL_I2CEx_ConfigAnalogFilter
+     /tmp/ccrEXg4b.s:164    .text.HAL_I2CEx_ConfigAnalogFilter:0000000000000084 $d
+     /tmp/ccrEXg4b.s:172    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000000 $t
+     /tmp/ccrEXg4b.s:178    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000000 HAL_I2CEx_ConfigDigitalFilter
+     /tmp/ccrEXg4b.s:313    .text.HAL_I2CEx_ConfigDigitalFilter:0000000000000078 $d
+     /tmp/ccrEXg4b.s:321    .text.HAL_I2CEx_EnableWakeUp:0000000000000000 $t
+     /tmp/ccrEXg4b.s:327    .text.HAL_I2CEx_EnableWakeUp:0000000000000000 HAL_I2CEx_EnableWakeUp
+     /tmp/ccrEXg4b.s:428    .text.HAL_I2CEx_EnableWakeUp:0000000000000060 $d
+     /tmp/ccrEXg4b.s:434    .text.HAL_I2CEx_DisableWakeUp:0000000000000000 $t
+     /tmp/ccrEXg4b.s:440    .text.HAL_I2CEx_DisableWakeUp:0000000000000000 HAL_I2CEx_DisableWakeUp
+     /tmp/ccrEXg4b.s:540    .text.HAL_I2CEx_DisableWakeUp:0000000000000060 $d
+     /tmp/ccrEXg4b.s:547    .text.HAL_I2CEx_EnableFastModePlus:0000000000000000 $t
+     /tmp/ccrEXg4b.s:553    .text.HAL_I2CEx_EnableFastModePlus:0000000000000000 HAL_I2CEx_EnableFastModePlus
+     /tmp/ccrEXg4b.s:646    .text.HAL_I2CEx_EnableFastModePlus:0000000000000068 $d
+     /tmp/ccrEXg4b.s:658    .text.HAL_I2CEx_DisableFastModePlus:0000000000000000 $t
+     /tmp/ccrEXg4b.s:664    .text.HAL_I2CEx_DisableFastModePlus:0000000000000000 HAL_I2CEx_DisableFastModePlus
+     /tmp/ccrEXg4b.s:757    .text.HAL_I2CEx_DisableFastModePlus:0000000000000068 $d
 
 UNDEFINED SYMBOLS
 assert_failed

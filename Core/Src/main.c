@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "../../Drivers/Giro/Inc/giro_driver.h"
+#include "giro_driver.h"
 
 #include "stm32f0xx_ll_rcc.h"
 #include "stm32f0xx_ll_system.h"

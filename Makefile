@@ -35,9 +35,11 @@ BUILD_DIR = build
 # source
 ######################################
 # C sources
+
+OTHER_DRIVERS += Drivers/Giro/Src/giro_driver.c 
+
 C_SOURCES =  \
 Core/Src/main.c \
-Drivers/Giro/Src/giro_driver.c \
 Core/Src/stm32f0xx_it.c \
 Core/Src/stm32f0xx_hal_msp.c \
 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c \
@@ -56,6 +58,8 @@ Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c \
 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c \
 Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c \
 Core/Src/system_stm32f0xx.c
+
+C_SOURCES += $(OTHER_DRIVERS)
 
 # ASM sources
 ASM_SOURCES =  \
@@ -113,11 +117,11 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--IDrivers/STM32F0xx_HAL_Driver/Inc \
 -IDrivers/STM32F0xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F0xx/Include \
 -IDrivers/CMSIS/Include
 
+C_INCLUDES += $(addprefix -I, $(wildcard Drivers/*/Inc))
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
@@ -180,6 +184,8 @@ $(BUILD_DIR):
 flash: $(BUILD_DIR)/$(TARGET).bin
 	st-flash write $(BUILD_DIR)/$(TARGET).bin 0x08000000
 	
+expo: 
+	export PATH=$PATH:/usr/share/gcc-arm-none-eabi-10.3-2021.10/bin
 
 #######################################
 # clean up
