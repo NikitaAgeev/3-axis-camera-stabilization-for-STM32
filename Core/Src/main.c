@@ -24,6 +24,8 @@
 #include "servo.h"
 #include "squeaker.h"
 #include "stdlib.h"
+#include "quaternion_lib.h"
+#include "giro_driver.h"
 
 #include "stm32f0xx_ll_rcc.h"
 #include "stm32f0xx_ll_system.h"
@@ -72,6 +74,8 @@ static void MX_TIM2_Init(void);
 /* USER CODE BEGIN 0 */
 int8_t button_status = 0;
 
+const uint64_t sis_tik_frik = 1000;
+
 uint64_t button_delay_counter = 0;
 
 uint16_t number = 0;
@@ -107,7 +111,6 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -116,6 +119,10 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
+  //LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_9);
+  giro_config(hi2c1);
+  //LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_9);
 
   htim1.Instance->CCR4 = 0;
   htim2.Instance->CCR1 = 10;
@@ -187,7 +194,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
-  LL_InitTick(48000000, 100);
+  LL_InitTick(48000000, sis_tik_frik);
   LL_SYSTICK_EnableIT();
 }
 
@@ -384,6 +391,9 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI2_3_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
 
+  LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOC);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_8, LL_GPIO_MODE_OUTPUT);
+  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_9, LL_GPIO_MODE_OUTPUT);
 }
 
 /* USER CODE BEGIN 4 */

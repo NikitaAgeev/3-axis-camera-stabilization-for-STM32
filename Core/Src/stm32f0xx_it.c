@@ -25,6 +25,8 @@
 #include "servo.h"
 #include "squeaker.h"
 #include "stdlib.h"
+#include "quaternion_lib.h"
+#include "giro_driver.h"
 
 #include "stm32f0xx_ll_rcc.h"
 #include "stm32f0xx_ll_system.h"
@@ -34,6 +36,8 @@
 #include "stm32f0xx_ll_utils.h"
 #include "stm32f0xx_ll_cortex.h"
 
+extern I2C_HandleTypeDef hi2c1;
+
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
 
@@ -42,6 +46,16 @@ extern int8_t button_status ;
 extern uint64_t button_delay_counter ;
 
 extern uint16_t number ;
+
+extern const uint64_t sis_tik_frik;
+
+vector front = {1, 0, 0};
+vector right = {0, 1, 0};
+
+u_int8_t mode = 1;
+
+#define LOCK_MODE 1
+#define UNLOCK_MODE 1 << 1
 
 #define BUTTON_DELAY 1
 
@@ -152,6 +166,12 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
+  
+  double phi = 0;
+  double psi = 0;
+  double teta = 0;
+  double dtime = 1/sis_tik_frik;
+  
   /* USER CODE BEGIN SysTick_IRQn 0 */
 	if((button_status & BUTTON_PUSH) && (button_delay_counter < BUTTON_DELAY))
     {
@@ -163,8 +183,14 @@ void SysTick_Handler(void)
 		{
 			if(!(button_status & BUTTON_PUSHED))
 			{
-				squeaker_set_frik(&htim1, 4, 900);
-				set_3_servo(&htim2, 0, 0, 0);
+        if(mode == LOCK_MODE)
+        {
+          mode = UNLOCK_MODE;
+        }
+        else
+        {
+          mode = LOCK_MODE;
+        }
 				button_status = button_status | BUTTON_PUSHED;
 			}
 		}
@@ -172,16 +198,46 @@ void SysTick_Handler(void)
 		{
 			if(!(button_status & BUTTON_UNPUSHED))
 			{
-				set_3_servo(&htim2, 3.14, 3.14, 3.14);
-				off_squeaker(&htim1, 4);
+				//здесь пока тоже пусто)
 				button_status = button_status & (~(BUTTON_PUSH | BUTTON_PUSHED));
 				button_status = button_status | BUTTON_UNPUSHED;
 			}
 		}
 	}
+
+  if(mode == LOCK_MODE)
+  {
+    giro_read_angls(hi2c1, &psi, &teta, &phi);
+
+    psi *= dtime;
+    teta *= dtime;  
+    phi *= dtime;
+
+    front = Rotate(front, phi, psi, teta);
+    right = Rotate(right, phi, psi, teta);
+
+    double servo_rick = atan(front.y / front.x);
+    double servo_tang = asin(front.z);
+
+    vector f_proec = {front.x, front.y, 0};
+    vector r_proec = {right.x, right.y, 0};
+
+    double rf_proec = Vector_Scalar_Mul(&f_proec, &r_proec);
+    double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
+
+    vector nr_proec = {r_proec.x - f_proec.x*rf_proec/f_len, r_proec.y - f_proec.y*rf_proec/f_len, r_proec.z - f_proec.z*rf_proec/f_len};
+
+    double nr_len = Vector_Scalar_Mul(&nr_proec, &nr_proec);
+
+    double servo_kren = acos(nr_len);
+
+    set_3_servo(&htim2, servo_rick + 3.14/2, servo_tang + 3.14/2, servo_kren + 3.14/2);
+  }
+  
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
+
 
   /* USER CODE END SysTick_IRQn 1 */
 }

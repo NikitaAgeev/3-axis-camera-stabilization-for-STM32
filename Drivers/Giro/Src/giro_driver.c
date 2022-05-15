@@ -54,7 +54,7 @@ int giro_read_angls(I2C_HandleTypeDef hi2, double* angle_x, double* angle_y, dou
       int16_t Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data[3]);
       int16_t Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data[5]);
       ////////
-      *angle_x = Gyro_X_RAW/131.0;
-      *angle_y = Gyro_Y_RAW/131.0;
-      *angle_z = Gyro_Z_RAW/131.0;
+      *angle_x = Gyro_X_RAW*(250*3.1415/(63*180));
+      *angle_y = Gyro_Y_RAW*(250*3.1415/(63*180));
+      *angle_z = Gyro_Z_RAW*(250*3.1415/(63*180));
 }

@@ -38,7 +38,9 @@ BUILD_DIR = build
 
 OTHER_DRIVERS += Drivers/Giro/Src/giro_driver.c \
 				 Drivers/Servo/Src/servo.c\
-				 Drivers/Squeaker/Src/squeaker.c
+				 Drivers/Squeaker/Src/squeaker.c \
+				 Drivers/quaternion_lib/Src/quaternion_lib.c \
+
 
 LL_SOURS = $(wildcard Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_*.c)
 

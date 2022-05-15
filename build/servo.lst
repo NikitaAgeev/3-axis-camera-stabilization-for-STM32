@@ -1,0 +1,426 @@
+ARM GAS  /tmp/ccuGlPsc.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"servo.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	__aeabi_ddiv
+  18              		.global	__aeabi_dmul
+  19              		.global	__aeabi_dadd
+  20              		.global	__aeabi_d2uiz
+  21              		.section	.text.set_servo,"ax",%progbits
+  22              		.align	1
+  23              		.global	set_servo
+  24              		.syntax unified
+  25              		.code	16
+  26              		.thumb_func
+  28              	set_servo:
+  29              	.LVL0:
+  30              	.LFB40:
+  31              		.file 1 "Drivers/Servo/Src/servo.c"
+   1:Drivers/Servo/Src/servo.c **** #include "main.h"
+   2:Drivers/Servo/Src/servo.c **** #include "servo.h"
+   3:Drivers/Servo/Src/servo.c **** #include "stdlib.h"
+   4:Drivers/Servo/Src/servo.c **** 
+   5:Drivers/Servo/Src/servo.c **** #define MAX_COUNTER 20000-1
+   6:Drivers/Servo/Src/servo.c **** #define PRESKAIL 48
+   7:Drivers/Servo/Src/servo.c **** #define MIN_SIZE 500
+   8:Drivers/Servo/Src/servo.c **** #define MAX_SIZE 2250
+   9:Drivers/Servo/Src/servo.c **** 
+  10:Drivers/Servo/Src/servo.c **** int set_servo(TIM_HandleTypeDef* tim, uint8_t chanal, double angle)
+  11:Drivers/Servo/Src/servo.c **** {
+  32              		.loc 1 11 1 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		.loc 1 11 1 is_stmt 0 view .LVU1
+  37 0000 D0B5     		push	{r4, r6, r7, lr}
+  38              	.LCFI0:
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 4, -16
+  41              		.cfi_offset 6, -12
+  42              		.cfi_offset 7, -8
+  43              		.cfi_offset 14, -4
+  44 0002 0400     		movs	r4, r0
+  45 0004 1600     		movs	r6, r2
+  46 0006 1F00     		movs	r7, r3
+  12:Drivers/Servo/Src/servo.c ****     switch (chanal)
+ARM GAS  /tmp/ccuGlPsc.s 			page 2
+
+
+  47              		.loc 1 12 5 is_stmt 1 view .LVU2
+  48 0008 0329     		cmp	r1, #3
+  49 000a 40D0     		beq	.L2
+  50 000c 16D8     		bhi	.L3
+  51 000e 0129     		cmp	r1, #1
+  52 0010 29D0     		beq	.L4
+  53 0012 0229     		cmp	r1, #2
+  54 0014 39D1     		bne	.L6
+  13:Drivers/Servo/Src/servo.c ****     {
+  14:Drivers/Servo/Src/servo.c ****     case 1:
+  15:Drivers/Servo/Src/servo.c ****         tim->Instance->CCR1 = MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle/3.1415);
+  16:Drivers/Servo/Src/servo.c ****         break;
+  17:Drivers/Servo/Src/servo.c ****     case 2:
+  18:Drivers/Servo/Src/servo.c ****         tim->Instance->CCR2 = MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle/3.1415);
+  55              		.loc 1 18 9 view .LVU3
+  56              		.loc 1 18 70 is_stmt 0 view .LVU4
+  57 0016 274A     		ldr	r2, .L8
+  58              	.LVL1:
+  59              		.loc 1 18 70 view .LVU5
+  60 0018 274B     		ldr	r3, .L8+4
+  61 001a 3000     		movs	r0, r6
+  62              	.LVL2:
+  63              		.loc 1 18 70 view .LVU6
+  64 001c 3900     		movs	r1, r7
+  65              	.LVL3:
+  66              		.loc 1 18 70 view .LVU7
+  67 001e FFF7FEFF 		bl	__aeabi_ddiv
+  68              	.LVL4:
+  69              		.loc 1 18 63 view .LVU8
+  70 0022 0022     		movs	r2, #0
+  71 0024 254B     		ldr	r3, .L8+8
+  72 0026 FFF7FEFF 		bl	__aeabi_dmul
+  73              	.LVL5:
+  74              		.loc 1 18 40 view .LVU9
+  75 002a 0022     		movs	r2, #0
+  76 002c 244B     		ldr	r3, .L8+12
+  77 002e FFF7FEFF 		bl	__aeabi_dadd
+  78              	.LVL6:
+  79              		.loc 1 18 12 view .LVU10
+  80 0032 2468     		ldr	r4, [r4]
+  81              	.LVL7:
+  82              		.loc 1 18 29 view .LVU11
+  83 0034 FFF7FEFF 		bl	__aeabi_d2uiz
+  84              	.LVL8:
+  85 0038 A063     		str	r0, [r4, #56]
+  19:Drivers/Servo/Src/servo.c ****         break;
+  86              		.loc 1 19 9 is_stmt 1 view .LVU12
+  87 003a 26E0     		b	.L6
+  88              	.LVL9:
+  89              	.L3:
+  12:Drivers/Servo/Src/servo.c ****     switch (chanal)
+  90              		.loc 1 12 5 is_stmt 0 view .LVU13
+  91 003c 0429     		cmp	r1, #4
+  92 003e 24D1     		bne	.L6
+  20:Drivers/Servo/Src/servo.c ****     case 3:
+  21:Drivers/Servo/Src/servo.c ****         tim->Instance->CCR3 = MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle/3.1415);
+  22:Drivers/Servo/Src/servo.c ****         break;
+ARM GAS  /tmp/ccuGlPsc.s 			page 3
+
+
+  23:Drivers/Servo/Src/servo.c ****     case 4:
+  24:Drivers/Servo/Src/servo.c ****         tim->Instance->CCR4 = MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle/3.1415);
+  93              		.loc 1 24 9 is_stmt 1 view .LVU14
+  94              		.loc 1 24 70 is_stmt 0 view .LVU15
+  95 0040 1C4A     		ldr	r2, .L8
+  96              	.LVL10:
+  97              		.loc 1 24 70 view .LVU16
+  98 0042 1D4B     		ldr	r3, .L8+4
+  99 0044 3000     		movs	r0, r6
+ 100              	.LVL11:
+ 101              		.loc 1 24 70 view .LVU17
+ 102 0046 3900     		movs	r1, r7
+ 103              	.LVL12:
+ 104              		.loc 1 24 70 view .LVU18
+ 105 0048 FFF7FEFF 		bl	__aeabi_ddiv
+ 106              	.LVL13:
+ 107              		.loc 1 24 63 view .LVU19
+ 108 004c 0022     		movs	r2, #0
+ 109 004e 1B4B     		ldr	r3, .L8+8
+ 110 0050 FFF7FEFF 		bl	__aeabi_dmul
+ 111              	.LVL14:
+ 112              		.loc 1 24 40 view .LVU20
+ 113 0054 0022     		movs	r2, #0
+ 114 0056 1A4B     		ldr	r3, .L8+12
+ 115 0058 FFF7FEFF 		bl	__aeabi_dadd
+ 116              	.LVL15:
+ 117              		.loc 1 24 12 view .LVU21
+ 118 005c 2468     		ldr	r4, [r4]
+ 119              	.LVL16:
+ 120              		.loc 1 24 29 view .LVU22
+ 121 005e FFF7FEFF 		bl	__aeabi_d2uiz
+ 122              	.LVL17:
+ 123 0062 2064     		str	r0, [r4, #64]
+  25:Drivers/Servo/Src/servo.c ****         break;
+ 124              		.loc 1 25 9 is_stmt 1 view .LVU23
+ 125 0064 11E0     		b	.L6
+ 126              	.LVL18:
+ 127              	.L4:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 128              		.loc 1 15 9 view .LVU24
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 129              		.loc 1 15 70 is_stmt 0 view .LVU25
+ 130 0066 134A     		ldr	r2, .L8
+ 131              	.LVL19:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 132              		.loc 1 15 70 view .LVU26
+ 133 0068 134B     		ldr	r3, .L8+4
+ 134 006a 3000     		movs	r0, r6
+ 135              	.LVL20:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 136              		.loc 1 15 70 view .LVU27
+ 137 006c 3900     		movs	r1, r7
+ 138              	.LVL21:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 139              		.loc 1 15 70 view .LVU28
+ 140 006e FFF7FEFF 		bl	__aeabi_ddiv
+ 141              	.LVL22:
+ARM GAS  /tmp/ccuGlPsc.s 			page 4
+
+
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 142              		.loc 1 15 63 view .LVU29
+ 143 0072 0022     		movs	r2, #0
+ 144 0074 114B     		ldr	r3, .L8+8
+ 145 0076 FFF7FEFF 		bl	__aeabi_dmul
+ 146              	.LVL23:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 147              		.loc 1 15 40 view .LVU30
+ 148 007a 0022     		movs	r2, #0
+ 149 007c 104B     		ldr	r3, .L8+12
+ 150 007e FFF7FEFF 		bl	__aeabi_dadd
+ 151              	.LVL24:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 152              		.loc 1 15 12 view .LVU31
+ 153 0082 2468     		ldr	r4, [r4]
+ 154              	.LVL25:
+  15:Drivers/Servo/Src/servo.c ****         break;
+ 155              		.loc 1 15 29 view .LVU32
+ 156 0084 FFF7FEFF 		bl	__aeabi_d2uiz
+ 157              	.LVL26:
+ 158 0088 6063     		str	r0, [r4, #52]
+  16:Drivers/Servo/Src/servo.c ****     case 2:
+ 159              		.loc 1 16 9 is_stmt 1 view .LVU33
+ 160              	.L6:
+  26:Drivers/Servo/Src/servo.c ****     default:
+  27:Drivers/Servo/Src/servo.c ****         break;
+  28:Drivers/Servo/Src/servo.c ****     }
+  29:Drivers/Servo/Src/servo.c ****     return 0;
+ 161              		.loc 1 29 5 view .LVU34
+  30:Drivers/Servo/Src/servo.c **** }
+ 162              		.loc 1 30 1 is_stmt 0 view .LVU35
+ 163 008a 0020     		movs	r0, #0
+ 164              		@ sp needed
+ 165 008c D0BD     		pop	{r4, r6, r7, pc}
+ 166              	.LVL27:
+ 167              	.L2:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 168              		.loc 1 21 9 is_stmt 1 view .LVU36
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 169              		.loc 1 21 70 is_stmt 0 view .LVU37
+ 170 008e 094A     		ldr	r2, .L8
+ 171              	.LVL28:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 172              		.loc 1 21 70 view .LVU38
+ 173 0090 094B     		ldr	r3, .L8+4
+ 174 0092 3000     		movs	r0, r6
+ 175              	.LVL29:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 176              		.loc 1 21 70 view .LVU39
+ 177 0094 3900     		movs	r1, r7
+ 178              	.LVL30:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 179              		.loc 1 21 70 view .LVU40
+ 180 0096 FFF7FEFF 		bl	__aeabi_ddiv
+ 181              	.LVL31:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 182              		.loc 1 21 63 view .LVU41
+ARM GAS  /tmp/ccuGlPsc.s 			page 5
+
+
+ 183 009a 0022     		movs	r2, #0
+ 184 009c 074B     		ldr	r3, .L8+8
+ 185 009e FFF7FEFF 		bl	__aeabi_dmul
+ 186              	.LVL32:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 187              		.loc 1 21 40 view .LVU42
+ 188 00a2 0022     		movs	r2, #0
+ 189 00a4 064B     		ldr	r3, .L8+12
+ 190 00a6 FFF7FEFF 		bl	__aeabi_dadd
+ 191              	.LVL33:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 192              		.loc 1 21 12 view .LVU43
+ 193 00aa 2468     		ldr	r4, [r4]
+ 194              	.LVL34:
+  21:Drivers/Servo/Src/servo.c ****         break;
+ 195              		.loc 1 21 29 view .LVU44
+ 196 00ac FFF7FEFF 		bl	__aeabi_d2uiz
+ 197              	.LVL35:
+ 198 00b0 E063     		str	r0, [r4, #60]
+  22:Drivers/Servo/Src/servo.c ****     case 4:
+ 199              		.loc 1 22 9 is_stmt 1 view .LVU45
+ 200 00b2 EAE7     		b	.L6
+ 201              	.L9:
+ 202              		.align	2
+ 203              	.L8:
+ 204 00b4 6F1283C0 		.word	-1065151889
+ 205 00b8 CA210940 		.word	1074340298
+ 206 00bc 00589B40 		.word	1083922432
+ 207 00c0 00407F40 		.word	1082081280
+ 208              		.cfi_endproc
+ 209              	.LFE40:
+ 211              		.section	.text.set_3_servo,"ax",%progbits
+ 212              		.align	1
+ 213              		.global	set_3_servo
+ 214              		.syntax unified
+ 215              		.code	16
+ 216              		.thumb_func
+ 218              	set_3_servo:
+ 219              	.LVL36:
+ 220              	.LFB41:
+  31:Drivers/Servo/Src/servo.c **** 
+  32:Drivers/Servo/Src/servo.c **** int set_3_servo(TIM_HandleTypeDef* tim, double angle_1, double angle_2, double angle_3)
+  33:Drivers/Servo/Src/servo.c **** {
+ 221              		.loc 1 33 1 view -0
+ 222              		.cfi_startproc
+ 223              		@ args = 16, pretend = 0, frame = 0
+ 224              		@ frame_needed = 0, uses_anonymous_args = 0
+ 225              		.loc 1 33 1 is_stmt 0 view .LVU47
+ 226 0000 70B5     		push	{r4, r5, r6, lr}
+ 227              	.LCFI1:
+ 228              		.cfi_def_cfa_offset 16
+ 229              		.cfi_offset 4, -16
+ 230              		.cfi_offset 5, -12
+ 231              		.cfi_offset 6, -8
+ 232              		.cfi_offset 14, -4
+ 233 0002 0400     		movs	r4, r0
+ 234 0004 1000     		movs	r0, r2
+ARM GAS  /tmp/ccuGlPsc.s 			page 6
+
+
+ 235              	.LVL37:
+ 236              		.loc 1 33 1 view .LVU48
+ 237 0006 1900     		movs	r1, r3
+  34:Drivers/Servo/Src/servo.c ****     tim->Instance->CCR1 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_1/3.1415));
+ 238              		.loc 1 34 5 is_stmt 1 view .LVU49
+ 239              		.loc 1 34 69 is_stmt 0 view .LVU50
+ 240 0008 1A4A     		ldr	r2, .L11
+ 241              	.LVL38:
+ 242              		.loc 1 34 69 view .LVU51
+ 243 000a 1B4B     		ldr	r3, .L11+4
+ 244 000c FFF7FEFF 		bl	__aeabi_ddiv
+ 245              	.LVL39:
+ 246              		.loc 1 34 60 view .LVU52
+ 247 0010 0022     		movs	r2, #0
+ 248 0012 1A4B     		ldr	r3, .L11+8
+ 249 0014 FFF7FEFF 		bl	__aeabi_dmul
+ 250              	.LVL40:
+ 251              		.loc 1 34 37 view .LVU53
+ 252 0018 0022     		movs	r2, #0
+ 253 001a 194B     		ldr	r3, .L11+12
+ 254 001c FFF7FEFF 		bl	__aeabi_dadd
+ 255              	.LVL41:
+ 256              		.loc 1 34 8 view .LVU54
+ 257 0020 2568     		ldr	r5, [r4]
+ 258              		.loc 1 34 25 view .LVU55
+ 259 0022 FFF7FEFF 		bl	__aeabi_d2uiz
+ 260              	.LVL42:
+ 261 0026 6863     		str	r0, [r5, #52]
+  35:Drivers/Servo/Src/servo.c ****     tim->Instance->CCR2 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_2/3.1415));
+ 262              		.loc 1 35 5 is_stmt 1 view .LVU56
+ 263              		.loc 1 35 69 is_stmt 0 view .LVU57
+ 264 0028 124A     		ldr	r2, .L11
+ 265 002a 134B     		ldr	r3, .L11+4
+ 266 002c 0498     		ldr	r0, [sp, #16]
+ 267 002e 0599     		ldr	r1, [sp, #20]
+ 268 0030 FFF7FEFF 		bl	__aeabi_ddiv
+ 269              	.LVL43:
+ 270              		.loc 1 35 60 view .LVU58
+ 271 0034 0022     		movs	r2, #0
+ 272 0036 114B     		ldr	r3, .L11+8
+ 273 0038 FFF7FEFF 		bl	__aeabi_dmul
+ 274              	.LVL44:
+ 275              		.loc 1 35 37 view .LVU59
+ 276 003c 0022     		movs	r2, #0
+ 277 003e 104B     		ldr	r3, .L11+12
+ 278 0040 FFF7FEFF 		bl	__aeabi_dadd
+ 279              	.LVL45:
+ 280              		.loc 1 35 8 view .LVU60
+ 281 0044 2568     		ldr	r5, [r4]
+ 282              		.loc 1 35 25 view .LVU61
+ 283 0046 FFF7FEFF 		bl	__aeabi_d2uiz
+ 284              	.LVL46:
+ 285 004a A863     		str	r0, [r5, #56]
+  36:Drivers/Servo/Src/servo.c ****     tim->Instance->CCR3 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_3/3.1415));
+ 286              		.loc 1 36 5 is_stmt 1 view .LVU62
+ 287              		.loc 1 36 69 is_stmt 0 view .LVU63
+ 288 004c 094A     		ldr	r2, .L11
+ARM GAS  /tmp/ccuGlPsc.s 			page 7
+
+
+ 289 004e 0A4B     		ldr	r3, .L11+4
+ 290 0050 0698     		ldr	r0, [sp, #24]
+ 291 0052 0799     		ldr	r1, [sp, #28]
+ 292 0054 FFF7FEFF 		bl	__aeabi_ddiv
+ 293              	.LVL47:
+ 294              		.loc 1 36 60 view .LVU64
+ 295 0058 0022     		movs	r2, #0
+ 296 005a 084B     		ldr	r3, .L11+8
+ 297 005c FFF7FEFF 		bl	__aeabi_dmul
+ 298              	.LVL48:
+ 299              		.loc 1 36 37 view .LVU65
+ 300 0060 0022     		movs	r2, #0
+ 301 0062 074B     		ldr	r3, .L11+12
+ 302 0064 FFF7FEFF 		bl	__aeabi_dadd
+ 303              	.LVL49:
+ 304              		.loc 1 36 8 view .LVU66
+ 305 0068 2468     		ldr	r4, [r4]
+ 306              	.LVL50:
+ 307              		.loc 1 36 25 view .LVU67
+ 308 006a FFF7FEFF 		bl	__aeabi_d2uiz
+ 309              	.LVL51:
+ 310 006e E063     		str	r0, [r4, #60]
+  37:Drivers/Servo/Src/servo.c ****     return 0;
+ 311              		.loc 1 37 5 is_stmt 1 view .LVU68
+  38:Drivers/Servo/Src/servo.c **** }...
+ 312              		.loc 1 38 1 is_stmt 0 view .LVU69
+ 313 0070 0020     		movs	r0, #0
+ 314              		@ sp needed
+ 315 0072 70BD     		pop	{r4, r5, r6, pc}
+ 316              	.L12:
+ 317              		.align	2
+ 318              	.L11:
+ 319 0074 6F1283C0 		.word	-1065151889
+ 320 0078 CA210940 		.word	1074340298
+ 321 007c 00589B40 		.word	1083922432
+ 322 0080 00407F40 		.word	1082081280
+ 323              		.cfi_endproc
+ 324              	.LFE41:
+ 326              		.text
+ 327              	.Letext0:
+ 328              		.file 2 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
+ 329              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
+ 330              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
+ 331              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 332              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
+ 333              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h"
+ARM GAS  /tmp/ccuGlPsc.s 			page 8
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 servo.c
+     /tmp/ccuGlPsc.s:22     .text.set_servo:0000000000000000 $t
+     /tmp/ccuGlPsc.s:28     .text.set_servo:0000000000000000 set_servo
+     /tmp/ccuGlPsc.s:204    .text.set_servo:00000000000000b4 $d
+     /tmp/ccuGlPsc.s:212    .text.set_3_servo:0000000000000000 $t
+     /tmp/ccuGlPsc.s:218    .text.set_3_servo:0000000000000000 set_3_servo
+     /tmp/ccuGlPsc.s:319    .text.set_3_servo:0000000000000074 $d
+
+UNDEFINED SYMBOLS
+__aeabi_ddiv
+__aeabi_dmul
+__aeabi_dadd
+__aeabi_d2uiz

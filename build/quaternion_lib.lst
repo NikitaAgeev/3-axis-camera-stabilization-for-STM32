@@ -1,0 +1,2171 @@
+ARM GAS  /tmp/ccc0MzYR.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"quaternion_lib.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.global	__aeabi_dadd
+  18              		.section	.text.Quaternion_Add,"ax",%progbits
+  19              		.align	1
+  20              		.global	Quaternion_Add
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	Quaternion_Add:
+  26              	.LVL0:
+  27              	.LFB3:
+  28              		.file 1 "Drivers/quaternion_lib/Src/quaternion_lib.c"
+   1:Drivers/quaternion_lib/Src/quaternion_lib.c **** #include "quaternion_lib.h"
+   2:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+   3:Drivers/quaternion_lib/Src/quaternion_lib.c **** //----------------------------QUATERNION-FUNCTIONS---------------------------------------
+   4:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+   5:Drivers/quaternion_lib/Src/quaternion_lib.c **** quaternion Quaternion_Add (quaternion a, quaternion b)
+   6:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+  29              		.loc 1 6 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 64, pretend = 8, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		.loc 1 6 1 is_stmt 0 view .LVU1
+  34 0000 82B0     		sub	sp, sp, #8
+  35              	.LCFI0:
+  36              		.cfi_def_cfa_offset 8
+  37 0002 10B5     		push	{r4, lr}
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 4, -16
+  41              		.cfi_offset 14, -12
+  42 0004 82B0     		sub	sp, sp, #8
+  43              	.LCFI2:
+  44              		.cfi_def_cfa_offset 24
+  45 0006 0400     		movs	r4, r0
+  46 0008 0492     		str	r2, [sp, #16]
+  47 000a 0593     		str	r3, [sp, #20]
+   7:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = {0};
+  48              		.loc 1 7 5 is_stmt 1 view .LVU2
+  49              		.loc 1 7 16 is_stmt 0 view .LVU3
+  50 000c 2022     		movs	r2, #32
+  51 000e 0021     		movs	r1, #0
+ARM GAS  /tmp/ccc0MzYR.s 			page 2
+
+
+  52 0010 FFF7FEFF 		bl	memset
+  53              	.LVL1:
+   8:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+   9:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.a = a.a + b.a;
+  54              		.loc 1 9 5 is_stmt 1 view .LVU4
+  55              		.loc 1 9 20 is_stmt 0 view .LVU5
+  56 0014 0C9A     		ldr	r2, [sp, #48]
+  57 0016 0D9B     		ldr	r3, [sp, #52]
+  58 0018 0498     		ldr	r0, [sp, #16]
+  59 001a 0599     		ldr	r1, [sp, #20]
+  60 001c FFF7FEFF 		bl	__aeabi_dadd
+  61              	.LVL2:
+  62              		.loc 1 9 14 view .LVU6
+  63 0020 2060     		str	r0, [r4]
+  64 0022 6160     		str	r1, [r4, #4]
+  10:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.i = a.i + b.i;
+  65              		.loc 1 10 5 is_stmt 1 view .LVU7
+  66              		.loc 1 10 23 is_stmt 0 view .LVU8
+  67 0024 0E9A     		ldr	r2, [sp, #56]
+  68 0026 0F9B     		ldr	r3, [sp, #60]
+  69 0028 0092     		str	r2, [sp]
+  70 002a 0193     		str	r3, [sp, #4]
+  71              		.loc 1 10 20 view .LVU9
+  72 002c 0698     		ldr	r0, [sp, #24]
+  73 002e 0799     		ldr	r1, [sp, #28]
+  74 0030 FFF7FEFF 		bl	__aeabi_dadd
+  75              	.LVL3:
+  76              		.loc 1 10 14 view .LVU10
+  77 0034 A060     		str	r0, [r4, #8]
+  78 0036 E160     		str	r1, [r4, #12]
+  11:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.j = a.j + b.j;
+  79              		.loc 1 11 5 is_stmt 1 view .LVU11
+  80              		.loc 1 11 23 is_stmt 0 view .LVU12
+  81 0038 109A     		ldr	r2, [sp, #64]
+  82 003a 119B     		ldr	r3, [sp, #68]
+  83 003c 0092     		str	r2, [sp]
+  84 003e 0193     		str	r3, [sp, #4]
+  85              		.loc 1 11 20 view .LVU13
+  86 0040 0898     		ldr	r0, [sp, #32]
+  87 0042 0999     		ldr	r1, [sp, #36]
+  88 0044 FFF7FEFF 		bl	__aeabi_dadd
+  89              	.LVL4:
+  90              		.loc 1 11 14 view .LVU14
+  91 0048 2061     		str	r0, [r4, #16]
+  92 004a 6161     		str	r1, [r4, #20]
+  12:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.k = a.k + b.k;
+  93              		.loc 1 12 5 is_stmt 1 view .LVU15
+  94              		.loc 1 12 23 is_stmt 0 view .LVU16
+  95 004c 129A     		ldr	r2, [sp, #72]
+  96 004e 139B     		ldr	r3, [sp, #76]
+  97              		.loc 1 12 20 view .LVU17
+  98 0050 0A98     		ldr	r0, [sp, #40]
+  99 0052 0B99     		ldr	r1, [sp, #44]
+ 100 0054 FFF7FEFF 		bl	__aeabi_dadd
+ 101              	.LVL5:
+ 102              		.loc 1 12 14 view .LVU18
+ 103 0058 A061     		str	r0, [r4, #24]
+ARM GAS  /tmp/ccc0MzYR.s 			page 3
+
+
+ 104 005a E161     		str	r1, [r4, #28]
+  13:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  14:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 105              		.loc 1 14 5 is_stmt 1 view .LVU19
+  15:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 106              		.loc 1 15 1 is_stmt 0 view .LVU20
+ 107 005c 2000     		movs	r0, r4
+ 108 005e 02B0     		add	sp, sp, #8
+ 109              		@ sp needed
+ 110              	.LVL6:
+ 111              		.loc 1 15 1 view .LVU21
+ 112 0060 10BC     		pop	{r4}
+ 113 0062 08BC     		pop	{r3}
+ 114 0064 02B0     		add	sp, sp, #8
+ 115 0066 1847     		bx	r3
+ 116              		.cfi_endproc
+ 117              	.LFE3:
+ 119              		.global	__aeabi_dsub
+ 120              		.section	.text.Quaternion_Sub,"ax",%progbits
+ 121              		.align	1
+ 122              		.global	Quaternion_Sub
+ 123              		.syntax unified
+ 124              		.code	16
+ 125              		.thumb_func
+ 127              	Quaternion_Sub:
+ 128              	.LVL7:
+ 129              	.LFB4:
+  16:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  17:Drivers/quaternion_lib/Src/quaternion_lib.c **** quaternion Quaternion_Sub (quaternion a, quaternion b)
+  18:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 130              		.loc 1 18 1 is_stmt 1 view -0
+ 131              		.cfi_startproc
+ 132              		@ args = 64, pretend = 8, frame = 8
+ 133              		@ frame_needed = 0, uses_anonymous_args = 0
+ 134              		.loc 1 18 1 is_stmt 0 view .LVU23
+ 135 0000 82B0     		sub	sp, sp, #8
+ 136              	.LCFI3:
+ 137              		.cfi_def_cfa_offset 8
+ 138 0002 10B5     		push	{r4, lr}
+ 139              	.LCFI4:
+ 140              		.cfi_def_cfa_offset 16
+ 141              		.cfi_offset 4, -16
+ 142              		.cfi_offset 14, -12
+ 143 0004 82B0     		sub	sp, sp, #8
+ 144              	.LCFI5:
+ 145              		.cfi_def_cfa_offset 24
+ 146 0006 0400     		movs	r4, r0
+ 147 0008 0492     		str	r2, [sp, #16]
+ 148 000a 0593     		str	r3, [sp, #20]
+  19:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = {0};
+ 149              		.loc 1 19 5 is_stmt 1 view .LVU24
+ 150              		.loc 1 19 16 is_stmt 0 view .LVU25
+ 151 000c 2022     		movs	r2, #32
+ 152 000e 0021     		movs	r1, #0
+ 153 0010 FFF7FEFF 		bl	memset
+ 154              	.LVL8:
+  20:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
+ARM GAS  /tmp/ccc0MzYR.s 			page 4
+
+
+  21:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.a = a.a - b.a;
+ 155              		.loc 1 21 5 is_stmt 1 view .LVU26
+ 156              		.loc 1 21 20 is_stmt 0 view .LVU27
+ 157 0014 0C9A     		ldr	r2, [sp, #48]
+ 158 0016 0D9B     		ldr	r3, [sp, #52]
+ 159 0018 0498     		ldr	r0, [sp, #16]
+ 160 001a 0599     		ldr	r1, [sp, #20]
+ 161 001c FFF7FEFF 		bl	__aeabi_dsub
+ 162              	.LVL9:
+ 163              		.loc 1 21 14 view .LVU28
+ 164 0020 2060     		str	r0, [r4]
+ 165 0022 6160     		str	r1, [r4, #4]
+  22:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.i = a.i - b.i;
+ 166              		.loc 1 22 5 is_stmt 1 view .LVU29
+ 167              		.loc 1 22 23 is_stmt 0 view .LVU30
+ 168 0024 0E9A     		ldr	r2, [sp, #56]
+ 169 0026 0F9B     		ldr	r3, [sp, #60]
+ 170 0028 0092     		str	r2, [sp]
+ 171 002a 0193     		str	r3, [sp, #4]
+ 172              		.loc 1 22 20 view .LVU31
+ 173 002c 0698     		ldr	r0, [sp, #24]
+ 174 002e 0799     		ldr	r1, [sp, #28]
+ 175 0030 FFF7FEFF 		bl	__aeabi_dsub
+ 176              	.LVL10:
+ 177              		.loc 1 22 14 view .LVU32
+ 178 0034 A060     		str	r0, [r4, #8]
+ 179 0036 E160     		str	r1, [r4, #12]
+  23:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.j = a.j - b.j;
+ 180              		.loc 1 23 5 is_stmt 1 view .LVU33
+ 181              		.loc 1 23 23 is_stmt 0 view .LVU34
+ 182 0038 109A     		ldr	r2, [sp, #64]
+ 183 003a 119B     		ldr	r3, [sp, #68]
+ 184 003c 0092     		str	r2, [sp]
+ 185 003e 0193     		str	r3, [sp, #4]
+ 186              		.loc 1 23 20 view .LVU35
+ 187 0040 0898     		ldr	r0, [sp, #32]
+ 188 0042 0999     		ldr	r1, [sp, #36]
+ 189 0044 FFF7FEFF 		bl	__aeabi_dsub
+ 190              	.LVL11:
+ 191              		.loc 1 23 14 view .LVU36
+ 192 0048 2061     		str	r0, [r4, #16]
+ 193 004a 6161     		str	r1, [r4, #20]
+  24:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.k = a.k - b.k;
+ 194              		.loc 1 24 5 is_stmt 1 view .LVU37
+ 195              		.loc 1 24 23 is_stmt 0 view .LVU38
+ 196 004c 129A     		ldr	r2, [sp, #72]
+ 197 004e 139B     		ldr	r3, [sp, #76]
+ 198              		.loc 1 24 20 view .LVU39
+ 199 0050 0A98     		ldr	r0, [sp, #40]
+ 200 0052 0B99     		ldr	r1, [sp, #44]
+ 201 0054 FFF7FEFF 		bl	__aeabi_dsub
+ 202              	.LVL12:
+ 203              		.loc 1 24 14 view .LVU40
+ 204 0058 A061     		str	r0, [r4, #24]
+ 205 005a E161     		str	r1, [r4, #28]
+  25:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  26:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ARM GAS  /tmp/ccc0MzYR.s 			page 5
+
+
+ 206              		.loc 1 26 5 is_stmt 1 view .LVU41
+  27:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 207              		.loc 1 27 1 is_stmt 0 view .LVU42
+ 208 005c 2000     		movs	r0, r4
+ 209 005e 02B0     		add	sp, sp, #8
+ 210              		@ sp needed
+ 211              	.LVL13:
+ 212              		.loc 1 27 1 view .LVU43
+ 213 0060 10BC     		pop	{r4}
+ 214 0062 08BC     		pop	{r3}
+ 215 0064 02B0     		add	sp, sp, #8
+ 216 0066 1847     		bx	r3
+ 217              		.cfi_endproc
+ 218              	.LFE4:
+ 220              		.global	__aeabi_dmul
+ 221              		.section	.text.Quaternion_Mul,"ax",%progbits
+ 222              		.align	1
+ 223              		.global	Quaternion_Mul
+ 224              		.syntax unified
+ 225              		.code	16
+ 226              		.thumb_func
+ 228              	Quaternion_Mul:
+ 229              	.LVL14:
+ 230              	.LFB5:
+  28:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  29:Drivers/quaternion_lib/Src/quaternion_lib.c **** quaternion Quaternion_Mul (quaternion a, quaternion b)
+  30:Drivers/quaternion_lib/Src/quaternion_lib.c **** { 
+ 231              		.loc 1 30 1 is_stmt 1 view -0
+ 232              		.cfi_startproc
+ 233              		@ args = 64, pretend = 8, frame = 56
+ 234              		@ frame_needed = 0, uses_anonymous_args = 0
+ 235              		.loc 1 30 1 is_stmt 0 view .LVU45
+ 236 0000 82B0     		sub	sp, sp, #8
+ 237              	.LCFI6:
+ 238              		.cfi_def_cfa_offset 8
+ 239 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+ 240              	.LCFI7:
+ 241              		.cfi_def_cfa_offset 28
+ 242              		.cfi_offset 4, -28
+ 243              		.cfi_offset 5, -24
+ 244              		.cfi_offset 6, -20
+ 245              		.cfi_offset 7, -16
+ 246              		.cfi_offset 14, -12
+ 247 0004 C646     		mov	lr, r8
+ 248 0006 00B5     		push	{lr}
+ 249              	.LCFI8:
+ 250              		.cfi_def_cfa_offset 32
+ 251              		.cfi_offset 8, -32
+ 252 0008 8EB0     		sub	sp, sp, #56
+ 253              	.LCFI9:
+ 254              		.cfi_def_cfa_offset 88
+ 255 000a 8046     		mov	r8, r0
+ 256 000c 1492     		str	r2, [sp, #80]
+ 257 000e 1593     		str	r3, [sp, #84]
+  31:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = {0};
+ 258              		.loc 1 31 5 is_stmt 1 view .LVU46
+ 259              		.loc 1 31 16 is_stmt 0 view .LVU47
+ARM GAS  /tmp/ccc0MzYR.s 			page 6
+
+
+ 260 0010 2022     		movs	r2, #32
+ 261 0012 0021     		movs	r1, #0
+ 262 0014 FFF7FEFF 		bl	memset
+ 263              	.LVL15:
+  32:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  33:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.a = a.a * b.a - a.i * b.i - a.j * b.j - a.k * b.k;
+ 264              		.loc 1 33 5 is_stmt 1 view .LVU48
+ 265              		.loc 1 33 17 is_stmt 0 view .LVU49
+ 266 0018 1498     		ldr	r0, [sp, #80]
+ 267 001a 1599     		ldr	r1, [sp, #84]
+ 268              		.loc 1 33 23 view .LVU50
+ 269 001c 1C9B     		ldr	r3, [sp, #112]
+ 270 001e 1D9C     		ldr	r4, [sp, #116]
+ 271              		.loc 1 33 20 view .LVU51
+ 272 0020 0293     		str	r3, [sp, #8]
+ 273 0022 0394     		str	r4, [sp, #12]
+ 274 0024 1A00     		movs	r2, r3
+ 275 0026 2300     		movs	r3, r4
+ 276 0028 0090     		str	r0, [sp]
+ 277 002a 0191     		str	r1, [sp, #4]
+ 278 002c FFF7FEFF 		bl	__aeabi_dmul
+ 279              	.LVL16:
+ 280 0030 0400     		movs	r4, r0
+ 281 0032 0D00     		movs	r5, r1
+ 282              		.loc 1 33 29 view .LVU52
+ 283 0034 169E     		ldr	r6, [sp, #88]
+ 284 0036 179F     		ldr	r7, [sp, #92]
+ 285              		.loc 1 33 35 view .LVU53
+ 286 0038 1E9A     		ldr	r2, [sp, #120]
+ 287 003a 1F9B     		ldr	r3, [sp, #124]
+ 288              		.loc 1 33 32 view .LVU54
+ 289 003c 0692     		str	r2, [sp, #24]
+ 290 003e 0793     		str	r3, [sp, #28]
+ 291 0040 0496     		str	r6, [sp, #16]
+ 292 0042 0597     		str	r7, [sp, #20]
+ 293 0044 3000     		movs	r0, r6
+ 294 0046 3900     		movs	r1, r7
+ 295 0048 FFF7FEFF 		bl	__aeabi_dmul
+ 296              	.LVL17:
+ 297 004c 0200     		movs	r2, r0
+ 298 004e 0B00     		movs	r3, r1
+ 299              		.loc 1 33 26 view .LVU55
+ 300 0050 2000     		movs	r0, r4
+ 301 0052 2900     		movs	r1, r5
+ 302 0054 FFF7FEFF 		bl	__aeabi_dsub
+ 303              	.LVL18:
+ 304 0058 0400     		movs	r4, r0
+ 305 005a 0D00     		movs	r5, r1
+ 306              		.loc 1 33 41 view .LVU56
+ 307 005c 1899     		ldr	r1, [sp, #96]
+ 308 005e 199A     		ldr	r2, [sp, #100]
+ 309 0060 0800     		movs	r0, r1
+ 310 0062 1100     		movs	r1, r2
+ 311              		.loc 1 33 47 view .LVU57
+ 312 0064 209E     		ldr	r6, [sp, #128]
+ 313 0066 219F     		ldr	r7, [sp, #132]
+ 314              		.loc 1 33 44 view .LVU58
+ARM GAS  /tmp/ccc0MzYR.s 			page 7
+
+
+ 315 0068 0A96     		str	r6, [sp, #40]
+ 316 006a 0B97     		str	r7, [sp, #44]
+ 317 006c 3200     		movs	r2, r6
+ 318 006e 3B00     		movs	r3, r7
+ 319 0070 0890     		str	r0, [sp, #32]
+ 320 0072 0991     		str	r1, [sp, #36]
+ 321 0074 FFF7FEFF 		bl	__aeabi_dmul
+ 322              	.LVL19:
+ 323 0078 0200     		movs	r2, r0
+ 324 007a 0B00     		movs	r3, r1
+ 325              		.loc 1 33 38 view .LVU59
+ 326 007c 2000     		movs	r0, r4
+ 327 007e 2900     		movs	r1, r5
+ 328 0080 FFF7FEFF 		bl	__aeabi_dsub
+ 329              	.LVL20:
+ 330 0084 0400     		movs	r4, r0
+ 331 0086 0D00     		movs	r5, r1
+ 332              		.loc 1 33 53 view .LVU60
+ 333 0088 1A99     		ldr	r1, [sp, #104]
+ 334 008a 1B9A     		ldr	r2, [sp, #108]
+ 335 008c 0800     		movs	r0, r1
+ 336 008e 1100     		movs	r1, r2
+ 337              		.loc 1 33 59 view .LVU61
+ 338 0090 229E     		ldr	r6, [sp, #136]
+ 339 0092 239F     		ldr	r7, [sp, #140]
+ 340              		.loc 1 33 56 view .LVU62
+ 341 0094 3200     		movs	r2, r6
+ 342 0096 3B00     		movs	r3, r7
+ 343 0098 0C90     		str	r0, [sp, #48]
+ 344 009a 0D91     		str	r1, [sp, #52]
+ 345 009c FFF7FEFF 		bl	__aeabi_dmul
+ 346              	.LVL21:
+ 347 00a0 0200     		movs	r2, r0
+ 348 00a2 0B00     		movs	r3, r1
+ 349              		.loc 1 33 50 view .LVU63
+ 350 00a4 2000     		movs	r0, r4
+ 351 00a6 2900     		movs	r1, r5
+ 352 00a8 FFF7FEFF 		bl	__aeabi_dsub
+ 353              	.LVL22:
+ 354              		.loc 1 33 14 view .LVU64
+ 355 00ac 4446     		mov	r4, r8
+ 356 00ae 2060     		str	r0, [r4]
+ 357 00b0 6160     		str	r1, [r4, #4]
+  34:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.i = a.a * b.i + a.i * b.a + a.j * b.k - a.k * b.j;
+ 358              		.loc 1 34 5 is_stmt 1 view .LVU65
+ 359              		.loc 1 34 20 is_stmt 0 view .LVU66
+ 360 00b2 069A     		ldr	r2, [sp, #24]
+ 361 00b4 079B     		ldr	r3, [sp, #28]
+ 362 00b6 0098     		ldr	r0, [sp]
+ 363 00b8 0199     		ldr	r1, [sp, #4]
+ 364 00ba FFF7FEFF 		bl	__aeabi_dmul
+ 365              	.LVL23:
+ 366 00be 0400     		movs	r4, r0
+ 367 00c0 0D00     		movs	r5, r1
+ 368              		.loc 1 34 32 view .LVU67
+ 369 00c2 049A     		ldr	r2, [sp, #16]
+ 370 00c4 059B     		ldr	r3, [sp, #20]
+ARM GAS  /tmp/ccc0MzYR.s 			page 8
+
+
+ 371 00c6 0298     		ldr	r0, [sp, #8]
+ 372 00c8 0399     		ldr	r1, [sp, #12]
+ 373 00ca FFF7FEFF 		bl	__aeabi_dmul
+ 374              	.LVL24:
+ 375 00ce 0200     		movs	r2, r0
+ 376 00d0 0B00     		movs	r3, r1
+ 377              		.loc 1 34 26 view .LVU68
+ 378 00d2 2000     		movs	r0, r4
+ 379 00d4 2900     		movs	r1, r5
+ 380 00d6 FFF7FEFF 		bl	__aeabi_dadd
+ 381              	.LVL25:
+ 382 00da 0400     		movs	r4, r0
+ 383 00dc 0D00     		movs	r5, r1
+ 384              		.loc 1 34 44 view .LVU69
+ 385 00de 3200     		movs	r2, r6
+ 386 00e0 3B00     		movs	r3, r7
+ 387 00e2 0898     		ldr	r0, [sp, #32]
+ 388 00e4 0999     		ldr	r1, [sp, #36]
+ 389 00e6 FFF7FEFF 		bl	__aeabi_dmul
+ 390              	.LVL26:
+ 391 00ea 0200     		movs	r2, r0
+ 392 00ec 0B00     		movs	r3, r1
+ 393              		.loc 1 34 38 view .LVU70
+ 394 00ee 2000     		movs	r0, r4
+ 395 00f0 2900     		movs	r1, r5
+ 396 00f2 FFF7FEFF 		bl	__aeabi_dadd
+ 397              	.LVL27:
+ 398 00f6 0400     		movs	r4, r0
+ 399 00f8 0D00     		movs	r5, r1
+ 400              		.loc 1 34 56 view .LVU71
+ 401 00fa 0C9A     		ldr	r2, [sp, #48]
+ 402 00fc 0D9B     		ldr	r3, [sp, #52]
+ 403 00fe 0A98     		ldr	r0, [sp, #40]
+ 404 0100 0B99     		ldr	r1, [sp, #44]
+ 405 0102 FFF7FEFF 		bl	__aeabi_dmul
+ 406              	.LVL28:
+ 407 0106 0200     		movs	r2, r0
+ 408 0108 0B00     		movs	r3, r1
+ 409              		.loc 1 34 50 view .LVU72
+ 410 010a 2000     		movs	r0, r4
+ 411 010c 2900     		movs	r1, r5
+ 412 010e FFF7FEFF 		bl	__aeabi_dsub
+ 413              	.LVL29:
+ 414              		.loc 1 34 14 view .LVU73
+ 415 0112 4446     		mov	r4, r8
+ 416 0114 A060     		str	r0, [r4, #8]
+ 417 0116 E160     		str	r1, [r4, #12]
+  35:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.j = a.a * b.j - a.i * b.k + a.j * b.a + a.k * b.i;
+ 418              		.loc 1 35 5 is_stmt 1 view .LVU74
+ 419              		.loc 1 35 20 is_stmt 0 view .LVU75
+ 420 0118 0A9A     		ldr	r2, [sp, #40]
+ 421 011a 0B9B     		ldr	r3, [sp, #44]
+ 422 011c 0098     		ldr	r0, [sp]
+ 423 011e 0199     		ldr	r1, [sp, #4]
+ 424 0120 FFF7FEFF 		bl	__aeabi_dmul
+ 425              	.LVL30:
+ 426 0124 0400     		movs	r4, r0
+ARM GAS  /tmp/ccc0MzYR.s 			page 9
+
+
+ 427 0126 0D00     		movs	r5, r1
+ 428              		.loc 1 35 32 view .LVU76
+ 429 0128 3200     		movs	r2, r6
+ 430 012a 3B00     		movs	r3, r7
+ 431 012c 0498     		ldr	r0, [sp, #16]
+ 432 012e 0599     		ldr	r1, [sp, #20]
+ 433 0130 FFF7FEFF 		bl	__aeabi_dmul
+ 434              	.LVL31:
+ 435 0134 0200     		movs	r2, r0
+ 436 0136 0B00     		movs	r3, r1
+ 437              		.loc 1 35 26 view .LVU77
+ 438 0138 2000     		movs	r0, r4
+ 439 013a 2900     		movs	r1, r5
+ 440 013c FFF7FEFF 		bl	__aeabi_dsub
+ 441              	.LVL32:
+ 442 0140 0400     		movs	r4, r0
+ 443 0142 0D00     		movs	r5, r1
+ 444              		.loc 1 35 44 view .LVU78
+ 445 0144 089A     		ldr	r2, [sp, #32]
+ 446 0146 099B     		ldr	r3, [sp, #36]
+ 447 0148 0298     		ldr	r0, [sp, #8]
+ 448 014a 0399     		ldr	r1, [sp, #12]
+ 449 014c FFF7FEFF 		bl	__aeabi_dmul
+ 450              	.LVL33:
+ 451 0150 0200     		movs	r2, r0
+ 452 0152 0B00     		movs	r3, r1
+ 453              		.loc 1 35 38 view .LVU79
+ 454 0154 2000     		movs	r0, r4
+ 455 0156 2900     		movs	r1, r5
+ 456 0158 FFF7FEFF 		bl	__aeabi_dadd
+ 457              	.LVL34:
+ 458 015c 0400     		movs	r4, r0
+ 459 015e 0D00     		movs	r5, r1
+ 460              		.loc 1 35 56 view .LVU80
+ 461 0160 0C9A     		ldr	r2, [sp, #48]
+ 462 0162 0D9B     		ldr	r3, [sp, #52]
+ 463 0164 0698     		ldr	r0, [sp, #24]
+ 464 0166 0799     		ldr	r1, [sp, #28]
+ 465 0168 FFF7FEFF 		bl	__aeabi_dmul
+ 466              	.LVL35:
+ 467 016c 0200     		movs	r2, r0
+ 468 016e 0B00     		movs	r3, r1
+ 469              		.loc 1 35 50 view .LVU81
+ 470 0170 2000     		movs	r0, r4
+ 471 0172 2900     		movs	r1, r5
+ 472 0174 FFF7FEFF 		bl	__aeabi_dadd
+ 473              	.LVL36:
+ 474              		.loc 1 35 14 view .LVU82
+ 475 0178 4446     		mov	r4, r8
+ 476 017a 2061     		str	r0, [r4, #16]
+ 477 017c 6161     		str	r1, [r4, #20]
+  36:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.k = a.a * b.k + a.i * b.j - a.j * b.i + a.k * b.a;
+ 478              		.loc 1 36 5 is_stmt 1 view .LVU83
+ 479              		.loc 1 36 20 is_stmt 0 view .LVU84
+ 480 017e 3200     		movs	r2, r6
+ 481 0180 3B00     		movs	r3, r7
+ 482 0182 0098     		ldr	r0, [sp]
+ARM GAS  /tmp/ccc0MzYR.s 			page 10
+
+
+ 483 0184 0199     		ldr	r1, [sp, #4]
+ 484 0186 FFF7FEFF 		bl	__aeabi_dmul
+ 485              	.LVL37:
+ 486 018a 0400     		movs	r4, r0
+ 487 018c 0D00     		movs	r5, r1
+ 488              		.loc 1 36 32 view .LVU85
+ 489 018e 0A9A     		ldr	r2, [sp, #40]
+ 490 0190 0B9B     		ldr	r3, [sp, #44]
+ 491 0192 0498     		ldr	r0, [sp, #16]
+ 492 0194 0599     		ldr	r1, [sp, #20]
+ 493 0196 FFF7FEFF 		bl	__aeabi_dmul
+ 494              	.LVL38:
+ 495 019a 0200     		movs	r2, r0
+ 496 019c 0B00     		movs	r3, r1
+ 497              		.loc 1 36 26 view .LVU86
+ 498 019e 2000     		movs	r0, r4
+ 499 01a0 2900     		movs	r1, r5
+ 500 01a2 FFF7FEFF 		bl	__aeabi_dadd
+ 501              	.LVL39:
+ 502 01a6 0400     		movs	r4, r0
+ 503 01a8 0D00     		movs	r5, r1
+ 504              		.loc 1 36 44 view .LVU87
+ 505 01aa 089A     		ldr	r2, [sp, #32]
+ 506 01ac 099B     		ldr	r3, [sp, #36]
+ 507 01ae 0698     		ldr	r0, [sp, #24]
+ 508 01b0 0799     		ldr	r1, [sp, #28]
+ 509 01b2 FFF7FEFF 		bl	__aeabi_dmul
+ 510              	.LVL40:
+ 511 01b6 0200     		movs	r2, r0
+ 512 01b8 0B00     		movs	r3, r1
+ 513              		.loc 1 36 38 view .LVU88
+ 514 01ba 2000     		movs	r0, r4
+ 515 01bc 2900     		movs	r1, r5
+ 516 01be FFF7FEFF 		bl	__aeabi_dsub
+ 517              	.LVL41:
+ 518 01c2 0400     		movs	r4, r0
+ 519 01c4 0D00     		movs	r5, r1
+ 520              		.loc 1 36 56 view .LVU89
+ 521 01c6 0C9A     		ldr	r2, [sp, #48]
+ 522 01c8 0D9B     		ldr	r3, [sp, #52]
+ 523 01ca 0298     		ldr	r0, [sp, #8]
+ 524 01cc 0399     		ldr	r1, [sp, #12]
+ 525 01ce FFF7FEFF 		bl	__aeabi_dmul
+ 526              	.LVL42:
+ 527 01d2 0200     		movs	r2, r0
+ 528 01d4 0B00     		movs	r3, r1
+ 529              		.loc 1 36 50 view .LVU90
+ 530 01d6 2000     		movs	r0, r4
+ 531 01d8 2900     		movs	r1, r5
+ 532 01da FFF7FEFF 		bl	__aeabi_dadd
+ 533              	.LVL43:
+ 534              		.loc 1 36 14 view .LVU91
+ 535 01de 4346     		mov	r3, r8
+ 536 01e0 9861     		str	r0, [r3, #24]
+ 537 01e2 D961     		str	r1, [r3, #28]
+  37:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  38:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ARM GAS  /tmp/ccc0MzYR.s 			page 11
+
+
+ 538              		.loc 1 38 5 is_stmt 1 view .LVU92
+  39:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 539              		.loc 1 39 1 is_stmt 0 view .LVU93
+ 540 01e4 4046     		mov	r0, r8
+ 541 01e6 0EB0     		add	sp, sp, #56
+ 542              		@ sp needed
+ 543              	.LVL44:
+ 544              		.loc 1 39 1 view .LVU94
+ 545 01e8 80BC     		pop	{r7}
+ 546 01ea B846     		mov	r8, r7
+ 547 01ec F0BC     		pop	{r4, r5, r6, r7}
+ 548 01ee 08BC     		pop	{r3}
+ 549 01f0 02B0     		add	sp, sp, #8
+ 550 01f2 1847     		bx	r3
+ 551              		.cfi_endproc
+ 552              	.LFE5:
+ 554              		.section	.rodata.Quaternion_Print.str1.4,"aMS",%progbits,1
+ 555              		.align	2
+ 556              	.LC0:
+ 557 0000 71203D20 		.ascii	"q = %lf + %lf*i  + %lf*j  + %lf*k\012\000"
+ 557      256C6620 
+ 557      2B20256C 
+ 557      662A6920 
+ 557      202B2025 
+ 558              		.section	.text.Quaternion_Print,"ax",%progbits
+ 559              		.align	1
+ 560              		.global	Quaternion_Print
+ 561              		.syntax unified
+ 562              		.code	16
+ 563              		.thumb_func
+ 565              	Quaternion_Print:
+ 566              	.LFB6:
+  40:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  41:Drivers/quaternion_lib/Src/quaternion_lib.c **** void Quaternion_Print (quaternion a)
+  42:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 567              		.loc 1 42 1 is_stmt 1 view -0
+ 568              		.cfi_startproc
+ 569              		@ args = 32, pretend = 16, frame = 0
+ 570              		@ frame_needed = 0, uses_anonymous_args = 0
+ 571 0000 84B0     		sub	sp, sp, #16
+ 572              	.LCFI10:
+ 573              		.cfi_def_cfa_offset 16
+ 574 0002 00B5     		push	{lr}
+ 575              	.LCFI11:
+ 576              		.cfi_def_cfa_offset 20
+ 577              		.cfi_offset 14, -20
+ 578 0004 87B0     		sub	sp, sp, #28
+ 579              	.LCFI12:
+ 580              		.cfi_def_cfa_offset 48
+ 581 0006 0890     		str	r0, [sp, #32]
+ 582 0008 0991     		str	r1, [sp, #36]
+ 583 000a 0A92     		str	r2, [sp, #40]
+ 584 000c 0B93     		str	r3, [sp, #44]
+  43:Drivers/quaternion_lib/Src/quaternion_lib.c ****     printf("q = %lf + %lf*i  + %lf*j  + %lf*k\n", a.a, a.i, a.j, a.k);
+ 585              		.loc 1 43 5 view .LVU96
+ 586 000e 0E9A     		ldr	r2, [sp, #56]
+ 587 0010 0F9B     		ldr	r3, [sp, #60]
+ARM GAS  /tmp/ccc0MzYR.s 			page 12
+
+
+ 588 0012 0492     		str	r2, [sp, #16]
+ 589 0014 0593     		str	r3, [sp, #20]
+ 590 0016 0C9A     		ldr	r2, [sp, #48]
+ 591 0018 0D9B     		ldr	r3, [sp, #52]
+ 592 001a 0292     		str	r2, [sp, #8]
+ 593 001c 0393     		str	r3, [sp, #12]
+ 594 001e 0A9A     		ldr	r2, [sp, #40]
+ 595 0020 0B9B     		ldr	r3, [sp, #44]
+ 596 0022 0092     		str	r2, [sp]
+ 597 0024 0193     		str	r3, [sp, #4]
+ 598 0026 089A     		ldr	r2, [sp, #32]
+ 599 0028 099B     		ldr	r3, [sp, #36]
+ 600 002a 0348     		ldr	r0, .L5
+ 601 002c FFF7FEFF 		bl	printf
+ 602              	.LVL45:
+  44:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 603              		.loc 1 44 1 is_stmt 0 view .LVU97
+ 604 0030 07B0     		add	sp, sp, #28
+ 605              		@ sp needed
+ 606 0032 08BC     		pop	{r3}
+ 607 0034 04B0     		add	sp, sp, #16
+ 608 0036 1847     		bx	r3
+ 609              	.L6:
+ 610              		.align	2
+ 611              	.L5:
+ 612 0038 00000000 		.word	.LC0
+ 613              		.cfi_endproc
+ 614              	.LFE6:
+ 616              		.section	.text.Quaternion_Conjugate,"ax",%progbits
+ 617              		.align	1
+ 618              		.global	Quaternion_Conjugate
+ 619              		.syntax unified
+ 620              		.code	16
+ 621              		.thumb_func
+ 623              	Quaternion_Conjugate:
+ 624              	.LVL46:
+ 625              	.LFB7:
+  45:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  46:Drivers/quaternion_lib/Src/quaternion_lib.c **** void Quaternion_Conjugate (quaternion* a)
+  47:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 626              		.loc 1 47 1 is_stmt 1 view -0
+ 627              		.cfi_startproc
+ 628              		@ args = 0, pretend = 0, frame = 0
+ 629              		@ frame_needed = 0, uses_anonymous_args = 0
+ 630              		.loc 1 47 1 is_stmt 0 view .LVU99
+ 631 0000 10B5     		push	{r4, lr}
+ 632              	.LCFI13:
+ 633              		.cfi_def_cfa_offset 8
+ 634              		.cfi_offset 4, -8
+ 635              		.cfi_offset 14, -4
+  48:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a->i = -a->i;
+ 636              		.loc 1 48 5 is_stmt 1 view .LVU100
+ 637              		.loc 1 48 10 is_stmt 0 view .LVU101
+ 638 0002 8268     		ldr	r2, [r0, #8]
+ 639 0004 C168     		ldr	r1, [r0, #12]
+ 640 0006 8024     		movs	r4, #128
+ 641 0008 2406     		lsls	r4, r4, #24
+ARM GAS  /tmp/ccc0MzYR.s 			page 13
+
+
+ 642 000a A446     		mov	ip, r4
+ 643 000c 6144     		add	r1, r1, ip
+ 644 000e 0B00     		movs	r3, r1
+ 645 0010 8260     		str	r2, [r0, #8]
+ 646 0012 C360     		str	r3, [r0, #12]
+  49:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a->j = -a->j;
+ 647              		.loc 1 49 5 is_stmt 1 view .LVU102
+ 648              		.loc 1 49 10 is_stmt 0 view .LVU103
+ 649 0014 0269     		ldr	r2, [r0, #16]
+ 650 0016 4169     		ldr	r1, [r0, #20]
+ 651 0018 6144     		add	r1, r1, ip
+ 652 001a 0B00     		movs	r3, r1
+ 653 001c 0261     		str	r2, [r0, #16]
+ 654 001e 4361     		str	r3, [r0, #20]
+  50:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a->k = -a->k;
+ 655              		.loc 1 50 5 is_stmt 1 view .LVU104
+ 656              		.loc 1 50 10 is_stmt 0 view .LVU105
+ 657 0020 8269     		ldr	r2, [r0, #24]
+ 658 0022 C169     		ldr	r1, [r0, #28]
+ 659 0024 6144     		add	r1, r1, ip
+ 660 0026 0B00     		movs	r3, r1
+ 661 0028 8261     		str	r2, [r0, #24]
+ 662 002a C361     		str	r3, [r0, #28]
+  51:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 663              		.loc 1 51 1 view .LVU106
+ 664              		@ sp needed
+ 665 002c 10BD     		pop	{r4, pc}
+ 666              		.cfi_endproc
+ 667              	.LFE7:
+ 669              		.section	.text.Quaternion_Norm,"ax",%progbits
+ 670              		.align	1
+ 671              		.global	Quaternion_Norm
+ 672              		.syntax unified
+ 673              		.code	16
+ 674              		.thumb_func
+ 676              	Quaternion_Norm:
+ 677              	.LVL47:
+ 678              	.LFB9:
+  52:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  53:Drivers/quaternion_lib/Src/quaternion_lib.c **** quaternion Quaternion_Inverse (quaternion a)
+  54:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+  55:Drivers/quaternion_lib/Src/quaternion_lib.c ****     Quaternion_Conjugate(&a);
+  56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     double norm = Quaternion_Norm(&a);
+  57:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
+  58:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.i /= norm;
+  59:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.j /= norm;
+  60:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.k /= norm;
+  61:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return a;
+  62:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+  63:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  64:Drivers/quaternion_lib/Src/quaternion_lib.c **** double Quaternion_Norm (const quaternion* a)
+  65:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 679              		.loc 1 65 1 is_stmt 1 view -0
+ 680              		.cfi_startproc
+ 681              		@ args = 0, pretend = 0, frame = 0
+ 682              		@ frame_needed = 0, uses_anonymous_args = 0
+ 683              		.loc 1 65 1 is_stmt 0 view .LVU108
+ARM GAS  /tmp/ccc0MzYR.s 			page 14
+
+
+ 684 0000 D0B5     		push	{r4, r6, r7, lr}
+ 685              	.LCFI14:
+ 686              		.cfi_def_cfa_offset 16
+ 687              		.cfi_offset 4, -16
+ 688              		.cfi_offset 6, -12
+ 689              		.cfi_offset 7, -8
+ 690              		.cfi_offset 14, -4
+ 691 0002 0400     		movs	r4, r0
+  66:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return a->a * a->a + a->i * a->i + a->j * a->j + a->k * a->k;
+ 692              		.loc 1 66 5 is_stmt 1 view .LVU109
+ 693              		.loc 1 66 17 is_stmt 0 view .LVU110
+ 694 0004 0268     		ldr	r2, [r0]
+ 695 0006 4368     		ldr	r3, [r0, #4]
+ 696 0008 1000     		movs	r0, r2
+ 697              	.LVL48:
+ 698              		.loc 1 66 17 view .LVU111
+ 699 000a 1900     		movs	r1, r3
+ 700 000c FFF7FEFF 		bl	__aeabi_dmul
+ 701              	.LVL49:
+ 702 0010 0600     		movs	r6, r0
+ 703 0012 0F00     		movs	r7, r1
+ 704              		.loc 1 66 31 view .LVU112
+ 705 0014 A268     		ldr	r2, [r4, #8]
+ 706 0016 E368     		ldr	r3, [r4, #12]
+ 707 0018 1000     		movs	r0, r2
+ 708 001a 1900     		movs	r1, r3
+ 709 001c FFF7FEFF 		bl	__aeabi_dmul
+ 710              	.LVL50:
+ 711 0020 0200     		movs	r2, r0
+ 712 0022 0B00     		movs	r3, r1
+ 713              		.loc 1 66 24 view .LVU113
+ 714 0024 3000     		movs	r0, r6
+ 715 0026 3900     		movs	r1, r7
+ 716 0028 FFF7FEFF 		bl	__aeabi_dadd
+ 717              	.LVL51:
+ 718 002c 0600     		movs	r6, r0
+ 719 002e 0F00     		movs	r7, r1
+ 720              		.loc 1 66 45 view .LVU114
+ 721 0030 2269     		ldr	r2, [r4, #16]
+ 722 0032 6369     		ldr	r3, [r4, #20]
+ 723 0034 1000     		movs	r0, r2
+ 724 0036 1900     		movs	r1, r3
+ 725 0038 FFF7FEFF 		bl	__aeabi_dmul
+ 726              	.LVL52:
+ 727 003c 0200     		movs	r2, r0
+ 728 003e 0B00     		movs	r3, r1
+ 729              		.loc 1 66 38 view .LVU115
+ 730 0040 3000     		movs	r0, r6
+ 731 0042 3900     		movs	r1, r7
+ 732 0044 FFF7FEFF 		bl	__aeabi_dadd
+ 733              	.LVL53:
+ 734 0048 0600     		movs	r6, r0
+ 735 004a 0F00     		movs	r7, r1
+ 736              		.loc 1 66 55 view .LVU116
+ 737 004c A069     		ldr	r0, [r4, #24]
+ 738 004e E169     		ldr	r1, [r4, #28]
+ 739              		.loc 1 66 59 view .LVU117
+ARM GAS  /tmp/ccc0MzYR.s 			page 15
+
+
+ 740 0050 0200     		movs	r2, r0
+ 741 0052 0B00     		movs	r3, r1
+ 742 0054 FFF7FEFF 		bl	__aeabi_dmul
+ 743              	.LVL54:
+ 744 0058 0200     		movs	r2, r0
+ 745 005a 0B00     		movs	r3, r1
+ 746              		.loc 1 66 52 view .LVU118
+ 747 005c 3000     		movs	r0, r6
+ 748 005e 3900     		movs	r1, r7
+ 749 0060 FFF7FEFF 		bl	__aeabi_dadd
+ 750              	.LVL55:
+  67:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 751              		.loc 1 67 1 view .LVU119
+ 752              		@ sp needed
+ 753              	.LVL56:
+ 754              		.loc 1 67 1 view .LVU120
+ 755 0064 D0BD     		pop	{r4, r6, r7, pc}
+ 756              		.cfi_endproc
+ 757              	.LFE9:
+ 759              		.global	__aeabi_ddiv
+ 760              		.section	.text.Quaternion_Inverse,"ax",%progbits
+ 761              		.align	1
+ 762              		.global	Quaternion_Inverse
+ 763              		.syntax unified
+ 764              		.code	16
+ 765              		.thumb_func
+ 767              	Quaternion_Inverse:
+ 768              	.LVL57:
+ 769              	.LFB8:
+  54:Drivers/quaternion_lib/Src/quaternion_lib.c ****     Quaternion_Conjugate(&a);
+ 770              		.loc 1 54 1 is_stmt 1 view -0
+ 771              		.cfi_startproc
+ 772              		@ args = 32, pretend = 8, frame = 0
+ 773              		@ frame_needed = 0, uses_anonymous_args = 0
+  54:Drivers/quaternion_lib/Src/quaternion_lib.c ****     Quaternion_Conjugate(&a);
+ 774              		.loc 1 54 1 is_stmt 0 view .LVU122
+ 775 0000 82B0     		sub	sp, sp, #8
+ 776              	.LCFI15:
+ 777              		.cfi_def_cfa_offset 8
+ 778 0002 70B5     		push	{r4, r5, r6, lr}
+ 779              	.LCFI16:
+ 780              		.cfi_def_cfa_offset 24
+ 781              		.cfi_offset 4, -24
+ 782              		.cfi_offset 5, -20
+ 783              		.cfi_offset 6, -16
+ 784              		.cfi_offset 14, -12
+ 785 0004 0600     		movs	r6, r0
+ 786 0006 0492     		str	r2, [sp, #16]
+ 787 0008 0593     		str	r3, [sp, #20]
+  55:Drivers/quaternion_lib/Src/quaternion_lib.c ****     double norm = Quaternion_Norm(&a);
+ 788              		.loc 1 55 5 is_stmt 1 view .LVU123
+ 789 000a 04A8     		add	r0, sp, #16
+ 790 000c FFF7FEFF 		bl	Quaternion_Conjugate
+ 791              	.LVL58:
+  56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
+ 792              		.loc 1 56 5 view .LVU124
+  56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
+ARM GAS  /tmp/ccc0MzYR.s 			page 16
+
+
+ 793              		.loc 1 56 19 is_stmt 0 view .LVU125
+ 794 0010 04A8     		add	r0, sp, #16
+ 795 0012 FFF7FEFF 		bl	Quaternion_Norm
+ 796              	.LVL59:
+ 797 0016 0400     		movs	r4, r0
+ 798 0018 0D00     		movs	r5, r1
+ 799              	.LVL60:
+  57:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.i /= norm;
+ 800              		.loc 1 57 5 is_stmt 1 view .LVU126
+  57:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.i /= norm;
+ 801              		.loc 1 57 9 is_stmt 0 view .LVU127
+ 802 001a 0200     		movs	r2, r0
+ 803 001c 0B00     		movs	r3, r1
+ 804 001e 0498     		ldr	r0, [sp, #16]
+ 805 0020 0599     		ldr	r1, [sp, #20]
+ 806 0022 FFF7FEFF 		bl	__aeabi_ddiv
+ 807              	.LVL61:
+ 808 0026 0490     		str	r0, [sp, #16]
+ 809 0028 0591     		str	r1, [sp, #20]
+  58:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.j /= norm;
+ 810              		.loc 1 58 5 is_stmt 1 view .LVU128
+  58:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.j /= norm;
+ 811              		.loc 1 58 9 is_stmt 0 view .LVU129
+ 812 002a 2200     		movs	r2, r4
+ 813 002c 2B00     		movs	r3, r5
+ 814 002e 0698     		ldr	r0, [sp, #24]
+ 815 0030 0799     		ldr	r1, [sp, #28]
+ 816 0032 FFF7FEFF 		bl	__aeabi_ddiv
+ 817              	.LVL62:
+ 818 0036 0690     		str	r0, [sp, #24]
+ 819 0038 0791     		str	r1, [sp, #28]
+  59:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.k /= norm;
+ 820              		.loc 1 59 5 is_stmt 1 view .LVU130
+  59:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.k /= norm;
+ 821              		.loc 1 59 9 is_stmt 0 view .LVU131
+ 822 003a 2200     		movs	r2, r4
+ 823 003c 2B00     		movs	r3, r5
+ 824 003e 0898     		ldr	r0, [sp, #32]
+ 825 0040 0999     		ldr	r1, [sp, #36]
+ 826 0042 FFF7FEFF 		bl	__aeabi_ddiv
+ 827              	.LVL63:
+ 828 0046 0890     		str	r0, [sp, #32]
+ 829 0048 0991     		str	r1, [sp, #36]
+  60:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return a;
+ 830              		.loc 1 60 5 is_stmt 1 view .LVU132
+  60:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return a;
+ 831              		.loc 1 60 9 is_stmt 0 view .LVU133
+ 832 004a 2200     		movs	r2, r4
+ 833 004c 2B00     		movs	r3, r5
+ 834 004e 0A98     		ldr	r0, [sp, #40]
+ 835 0050 0B99     		ldr	r1, [sp, #44]
+ 836 0052 FFF7FEFF 		bl	__aeabi_ddiv
+ 837              	.LVL64:
+ 838 0056 0A90     		str	r0, [sp, #40]
+ 839 0058 0B91     		str	r1, [sp, #44]
+  61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 840              		.loc 1 61 5 is_stmt 1 view .LVU134
+ARM GAS  /tmp/ccc0MzYR.s 			page 17
+
+
+  61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 841              		.loc 1 61 12 is_stmt 0 view .LVU135
+ 842 005a 2022     		movs	r2, #32
+ 843 005c 04A9     		add	r1, sp, #16
+ 844 005e 3000     		movs	r0, r6
+ 845 0060 FFF7FEFF 		bl	memcpy
+ 846              	.LVL65:
+  62:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 847              		.loc 1 62 1 view .LVU136
+ 848 0064 3000     		movs	r0, r6
+ 849              		@ sp needed
+ 850              	.LVL66:
+ 851              	.LVL67:
+  62:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 852              		.loc 1 62 1 view .LVU137
+ 853 0066 70BC     		pop	{r4, r5, r6}
+ 854 0068 08BC     		pop	{r3}
+ 855 006a 02B0     		add	sp, sp, #8
+ 856 006c 1847     		bx	r3
+ 857              		.cfi_endproc
+ 858              	.LFE8:
+ 860              		.section	.rodata.Vector_Print.str1.4,"aMS",%progbits,1
+ 861              		.align	2
+ 862              	.LC2:
+ 863 0000 78203D20 		.ascii	"x = %lf, y = %lf, z = %lf\012\000"
+ 863      256C662C 
+ 863      2079203D 
+ 863      20256C66 
+ 863      2C207A20 
+ 864              		.section	.text.Vector_Print,"ax",%progbits
+ 865              		.align	1
+ 866              		.global	Vector_Print
+ 867              		.syntax unified
+ 868              		.code	16
+ 869              		.thumb_func
+ 871              	Vector_Print:
+ 872              	.LFB10:
+  68:Drivers/quaternion_lib/Src/quaternion_lib.c **** //---------------------------------------------------------------------------------------
+  69:Drivers/quaternion_lib/Src/quaternion_lib.c **** //------------------------------VECTOR-FUNCTIONS-----------------------------------------
+  70:Drivers/quaternion_lib/Src/quaternion_lib.c **** void Vector_Print (vector vec)
+  71:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 873              		.loc 1 71 1 is_stmt 1 view -0
+ 874              		.cfi_startproc
+ 875              		@ args = 24, pretend = 16, frame = 0
+ 876              		@ frame_needed = 0, uses_anonymous_args = 0
+ 877 0000 84B0     		sub	sp, sp, #16
+ 878              	.LCFI17:
+ 879              		.cfi_def_cfa_offset 16
+ 880 0002 00B5     		push	{lr}
+ 881              	.LCFI18:
+ 882              		.cfi_def_cfa_offset 20
+ 883              		.cfi_offset 14, -20
+ 884 0004 85B0     		sub	sp, sp, #20
+ 885              	.LCFI19:
+ 886              		.cfi_def_cfa_offset 40
+ 887 0006 0690     		str	r0, [sp, #24]
+ 888 0008 0791     		str	r1, [sp, #28]
+ARM GAS  /tmp/ccc0MzYR.s 			page 18
+
+
+ 889 000a 0892     		str	r2, [sp, #32]
+ 890 000c 0993     		str	r3, [sp, #36]
+  72:Drivers/quaternion_lib/Src/quaternion_lib.c ****     printf("x = %lf, y = %lf, z = %lf\n", vec.x, vec.y, vec.z);
+ 891              		.loc 1 72 5 view .LVU139
+ 892 000e 0A9A     		ldr	r2, [sp, #40]
+ 893 0010 0B9B     		ldr	r3, [sp, #44]
+ 894 0012 0292     		str	r2, [sp, #8]
+ 895 0014 0393     		str	r3, [sp, #12]
+ 896 0016 089A     		ldr	r2, [sp, #32]
+ 897 0018 099B     		ldr	r3, [sp, #36]
+ 898 001a 0092     		str	r2, [sp]
+ 899 001c 0193     		str	r3, [sp, #4]
+ 900 001e 069A     		ldr	r2, [sp, #24]
+ 901 0020 079B     		ldr	r3, [sp, #28]
+ 902 0022 0348     		ldr	r0, .L11
+ 903 0024 FFF7FEFF 		bl	printf
+ 904              	.LVL68:
+  73:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 905              		.loc 1 73 1 is_stmt 0 view .LVU140
+ 906 0028 05B0     		add	sp, sp, #20
+ 907              		@ sp needed
+ 908 002a 08BC     		pop	{r3}
+ 909 002c 04B0     		add	sp, sp, #16
+ 910 002e 1847     		bx	r3
+ 911              	.L12:
+ 912              		.align	2
+ 913              	.L11:
+ 914 0030 00000000 		.word	.LC2
+ 915              		.cfi_endproc
+ 916              	.LFE10:
+ 918              		.section	.text.Vector_Scalar_Mul,"ax",%progbits
+ 919              		.align	1
+ 920              		.global	Vector_Scalar_Mul
+ 921              		.syntax unified
+ 922              		.code	16
+ 923              		.thumb_func
+ 925              	Vector_Scalar_Mul:
+ 926              	.LVL69:
+ 927              	.LFB11:
+  74:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  75:Drivers/quaternion_lib/Src/quaternion_lib.c **** double Vector_Scalar_Mul (vector* a, vector* b)
+  76:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 928              		.loc 1 76 1 is_stmt 1 view -0
+ 929              		.cfi_startproc
+ 930              		@ args = 0, pretend = 0, frame = 0
+ 931              		@ frame_needed = 0, uses_anonymous_args = 0
+ 932              		.loc 1 76 1 is_stmt 0 view .LVU142
+ 933 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 934              	.LCFI20:
+ 935              		.cfi_def_cfa_offset 24
+ 936              		.cfi_offset 3, -24
+ 937              		.cfi_offset 4, -20
+ 938              		.cfi_offset 5, -16
+ 939              		.cfi_offset 6, -12
+ 940              		.cfi_offset 7, -8
+ 941              		.cfi_offset 14, -4
+ 942 0002 0700     		movs	r7, r0
+ARM GAS  /tmp/ccc0MzYR.s 			page 19
+
+
+ 943 0004 0E00     		movs	r6, r1
+  77:Drivers/quaternion_lib/Src/quaternion_lib.c ****     double result = a->x * b->x + a->y * b->y + a->z * b->z;
+ 944              		.loc 1 77 5 is_stmt 1 view .LVU143
+ 945              		.loc 1 77 26 is_stmt 0 view .LVU144
+ 946 0006 0A68     		ldr	r2, [r1]
+ 947 0008 4B68     		ldr	r3, [r1, #4]
+ 948 000a 4168     		ldr	r1, [r0, #4]
+ 949 000c 0068     		ldr	r0, [r0]
+ 950              	.LVL70:
+ 951              		.loc 1 77 26 view .LVU145
+ 952 000e FFF7FEFF 		bl	__aeabi_dmul
+ 953              	.LVL71:
+ 954              		.loc 1 77 26 view .LVU146
+ 955 0012 0400     		movs	r4, r0
+ 956 0014 0D00     		movs	r5, r1
+ 957              		.loc 1 77 40 view .LVU147
+ 958 0016 B268     		ldr	r2, [r6, #8]
+ 959 0018 F368     		ldr	r3, [r6, #12]
+ 960 001a B868     		ldr	r0, [r7, #8]
+ 961 001c F968     		ldr	r1, [r7, #12]
+ 962 001e FFF7FEFF 		bl	__aeabi_dmul
+ 963              	.LVL72:
+ 964 0022 0200     		movs	r2, r0
+ 965 0024 0B00     		movs	r3, r1
+ 966              		.loc 1 77 33 view .LVU148
+ 967 0026 2000     		movs	r0, r4
+ 968 0028 2900     		movs	r1, r5
+ 969 002a FFF7FEFF 		bl	__aeabi_dadd
+ 970              	.LVL73:
+ 971 002e 0400     		movs	r4, r0
+ 972 0030 0D00     		movs	r5, r1
+ 973              		.loc 1 77 50 view .LVU149
+ 974 0032 3869     		ldr	r0, [r7, #16]
+ 975 0034 7969     		ldr	r1, [r7, #20]
+ 976              		.loc 1 77 57 view .LVU150
+ 977 0036 3269     		ldr	r2, [r6, #16]
+ 978 0038 7369     		ldr	r3, [r6, #20]
+ 979              		.loc 1 77 54 view .LVU151
+ 980 003a FFF7FEFF 		bl	__aeabi_dmul
+ 981              	.LVL74:
+ 982 003e 0200     		movs	r2, r0
+ 983 0040 0B00     		movs	r3, r1
+ 984              		.loc 1 77 12 view .LVU152
+ 985 0042 2000     		movs	r0, r4
+ 986 0044 2900     		movs	r1, r5
+ 987 0046 FFF7FEFF 		bl	__aeabi_dadd
+ 988              	.LVL75:
+  78:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 989              		.loc 1 78 5 is_stmt 1 view .LVU153
+  79:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 990              		.loc 1 79 1 is_stmt 0 view .LVU154
+ 991              		@ sp needed
+ 992              	.LVL76:
+ 993              	.LVL77:
+ 994              		.loc 1 79 1 view .LVU155
+ 995 004a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 996              		.cfi_endproc
+ARM GAS  /tmp/ccc0MzYR.s 			page 20
+
+
+ 997              	.LFE11:
+ 999              		.section	.text.Vector_Vector_Mul,"ax",%progbits
+ 1000              		.align	1
+ 1001              		.global	Vector_Vector_Mul
+ 1002              		.syntax unified
+ 1003              		.code	16
+ 1004              		.thumb_func
+ 1006              	Vector_Vector_Mul:
+ 1007              	.LVL78:
+ 1008              	.LFB12:
+  80:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  81:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector Vector_Vector_Mul (vector* a, vector* b)
+  82:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1009              		.loc 1 82 1 is_stmt 1 view -0
+ 1010              		.cfi_startproc
+ 1011              		@ args = 0, pretend = 0, frame = 32
+ 1012              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1013              		.loc 1 82 1 is_stmt 0 view .LVU157
+ 1014 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1015              	.LCFI21:
+ 1016              		.cfi_def_cfa_offset 20
+ 1017              		.cfi_offset 4, -20
+ 1018              		.cfi_offset 5, -16
+ 1019              		.cfi_offset 6, -12
+ 1020              		.cfi_offset 7, -8
+ 1021              		.cfi_offset 14, -4
+ 1022 0002 CE46     		mov	lr, r9
+ 1023 0004 4746     		mov	r7, r8
+ 1024 0006 80B5     		push	{r7, lr}
+ 1025              	.LCFI22:
+ 1026              		.cfi_def_cfa_offset 28
+ 1027              		.cfi_offset 8, -28
+ 1028              		.cfi_offset 9, -24
+ 1029 0008 89B0     		sub	sp, sp, #36
+ 1030              	.LCFI23:
+ 1031              		.cfi_def_cfa_offset 64
+ 1032 000a 8046     		mov	r8, r0
+ 1033 000c 0C00     		movs	r4, r1
+ 1034 000e 9146     		mov	r9, r2
+  83:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};
+ 1035              		.loc 1 83 5 is_stmt 1 view .LVU158
+ 1036              		.loc 1 83 12 is_stmt 0 view .LVU159
+ 1037 0010 1822     		movs	r2, #24
+ 1038              	.LVL79:
+ 1039              		.loc 1 83 12 view .LVU160
+ 1040 0012 0021     		movs	r1, #0
+ 1041              	.LVL80:
+ 1042              		.loc 1 83 12 view .LVU161
+ 1043 0014 FFF7FEFF 		bl	memset
+ 1044              	.LVL81:
+  84:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.x = a->y * b->z - a->z * b->y;
+ 1045              		.loc 1 84 5 is_stmt 1 view .LVU162
+ 1046              		.loc 1 84 17 is_stmt 0 view .LVU163
+ 1047 0018 A068     		ldr	r0, [r4, #8]
+ 1048 001a E168     		ldr	r1, [r4, #12]
+ 1049              		.loc 1 84 24 view .LVU164
+ 1050 001c 4B46     		mov	r3, r9
+ARM GAS  /tmp/ccc0MzYR.s 			page 21
+
+
+ 1051 001e 1E69     		ldr	r6, [r3, #16]
+ 1052 0020 5F69     		ldr	r7, [r3, #20]
+ 1053              		.loc 1 84 21 view .LVU165
+ 1054 0022 3200     		movs	r2, r6
+ 1055 0024 3B00     		movs	r3, r7
+ 1056 0026 0090     		str	r0, [sp]
+ 1057 0028 0191     		str	r1, [sp, #4]
+ 1058 002a FFF7FEFF 		bl	__aeabi_dmul
+ 1059              	.LVL82:
+ 1060 002e 0690     		str	r0, [sp, #24]
+ 1061 0030 0791     		str	r1, [sp, #28]
+ 1062              		.loc 1 84 31 view .LVU166
+ 1063 0032 2269     		ldr	r2, [r4, #16]
+ 1064 0034 6369     		ldr	r3, [r4, #20]
+ 1065 0036 1000     		movs	r0, r2
+ 1066 0038 1900     		movs	r1, r3
+ 1067              		.loc 1 84 38 view .LVU167
+ 1068 003a 4B46     		mov	r3, r9
+ 1069 003c 9A68     		ldr	r2, [r3, #8]
+ 1070 003e DB68     		ldr	r3, [r3, #12]
+ 1071              		.loc 1 84 35 view .LVU168
+ 1072 0040 0492     		str	r2, [sp, #16]
+ 1073 0042 0593     		str	r3, [sp, #20]
+ 1074 0044 0290     		str	r0, [sp, #8]
+ 1075 0046 0391     		str	r1, [sp, #12]
+ 1076 0048 FFF7FEFF 		bl	__aeabi_dmul
+ 1077              	.LVL83:
+ 1078 004c 0200     		movs	r2, r0
+ 1079 004e 0B00     		movs	r3, r1
+ 1080              		.loc 1 84 28 view .LVU169
+ 1081 0050 0698     		ldr	r0, [sp, #24]
+ 1082 0052 0799     		ldr	r1, [sp, #28]
+ 1083 0054 FFF7FEFF 		bl	__aeabi_dsub
+ 1084              	.LVL84:
+ 1085              		.loc 1 84 14 view .LVU170
+ 1086 0058 4346     		mov	r3, r8
+ 1087 005a 1860     		str	r0, [r3]
+ 1088 005c 5960     		str	r1, [r3, #4]
+  85:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.y = -(a->x * b->z - a->z * b->x);
+ 1089              		.loc 1 85 5 is_stmt 1 view .LVU171
+ 1090              		.loc 1 85 19 is_stmt 0 view .LVU172
+ 1091 005e 6568     		ldr	r5, [r4, #4]
+ 1092 0060 2468     		ldr	r4, [r4]
+ 1093              	.LVL85:
+ 1094              		.loc 1 85 23 view .LVU173
+ 1095 0062 2200     		movs	r2, r4
+ 1096 0064 2B00     		movs	r3, r5
+ 1097 0066 3000     		movs	r0, r6
+ 1098 0068 3900     		movs	r1, r7
+ 1099 006a FFF7FEFF 		bl	__aeabi_dmul
+ 1100              	.LVL86:
+ 1101 006e 0690     		str	r0, [sp, #24]
+ 1102 0070 0791     		str	r1, [sp, #28]
+ 1103              		.loc 1 85 40 view .LVU174
+ 1104 0072 4B46     		mov	r3, r9
+ 1105 0074 1E68     		ldr	r6, [r3]
+ 1106 0076 5F68     		ldr	r7, [r3, #4]
+ARM GAS  /tmp/ccc0MzYR.s 			page 22
+
+
+ 1107              		.loc 1 85 37 view .LVU175
+ 1108 0078 3200     		movs	r2, r6
+ 1109 007a 3B00     		movs	r3, r7
+ 1110 007c 0298     		ldr	r0, [sp, #8]
+ 1111 007e 0399     		ldr	r1, [sp, #12]
+ 1112 0080 FFF7FEFF 		bl	__aeabi_dmul
+ 1113              	.LVL87:
+ 1114 0084 0200     		movs	r2, r0
+ 1115 0086 0B00     		movs	r3, r1
+ 1116              		.loc 1 85 30 view .LVU176
+ 1117 0088 0698     		ldr	r0, [sp, #24]
+ 1118 008a 0799     		ldr	r1, [sp, #28]
+ 1119 008c FFF7FEFF 		bl	__aeabi_dsub
+ 1120              	.LVL88:
+ 1121 0090 0300     		movs	r3, r0
+ 1122 0092 0800     		movs	r0, r1
+ 1123 0094 1900     		movs	r1, r3
+ 1124              		.loc 1 85 14 view .LVU177
+ 1125 0096 0A00     		movs	r2, r1
+ 1126 0098 8021     		movs	r1, #128
+ 1127 009a 0906     		lsls	r1, r1, #24
+ 1128 009c 4318     		adds	r3, r0, r1
+ 1129 009e 4146     		mov	r1, r8
+ 1130 00a0 8A60     		str	r2, [r1, #8]
+ 1131 00a2 CB60     		str	r3, [r1, #12]
+  86:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.z = a->x * b->y - a->y * b->x;
+ 1132              		.loc 1 86 5 is_stmt 1 view .LVU178
+ 1133              		.loc 1 86 21 is_stmt 0 view .LVU179
+ 1134 00a4 2200     		movs	r2, r4
+ 1135 00a6 2B00     		movs	r3, r5
+ 1136 00a8 0498     		ldr	r0, [sp, #16]
+ 1137 00aa 0599     		ldr	r1, [sp, #20]
+ 1138 00ac FFF7FEFF 		bl	__aeabi_dmul
+ 1139              	.LVL89:
+ 1140 00b0 0400     		movs	r4, r0
+ 1141 00b2 0D00     		movs	r5, r1
+ 1142              		.loc 1 86 35 view .LVU180
+ 1143 00b4 3200     		movs	r2, r6
+ 1144 00b6 3B00     		movs	r3, r7
+ 1145 00b8 0098     		ldr	r0, [sp]
+ 1146 00ba 0199     		ldr	r1, [sp, #4]
+ 1147 00bc FFF7FEFF 		bl	__aeabi_dmul
+ 1148              	.LVL90:
+ 1149 00c0 0200     		movs	r2, r0
+ 1150 00c2 0B00     		movs	r3, r1
+ 1151              		.loc 1 86 28 view .LVU181
+ 1152 00c4 2000     		movs	r0, r4
+ 1153 00c6 2900     		movs	r1, r5
+ 1154 00c8 FFF7FEFF 		bl	__aeabi_dsub
+ 1155              	.LVL91:
+ 1156              		.loc 1 86 14 view .LVU182
+ 1157 00cc 4346     		mov	r3, r8
+ 1158 00ce 1861     		str	r0, [r3, #16]
+ 1159 00d0 5961     		str	r1, [r3, #20]
+  87:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1160              		.loc 1 87 5 is_stmt 1 view .LVU183
+  88:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ARM GAS  /tmp/ccc0MzYR.s 			page 23
+
+
+ 1161              		.loc 1 88 1 is_stmt 0 view .LVU184
+ 1162 00d2 4046     		mov	r0, r8
+ 1163 00d4 09B0     		add	sp, sp, #36
+ 1164              		@ sp needed
+ 1165              	.LVL92:
+ 1166              	.LVL93:
+ 1167              		.loc 1 88 1 view .LVU185
+ 1168 00d6 C0BC     		pop	{r6, r7}
+ 1169 00d8 B946     		mov	r9, r7
+ 1170 00da B046     		mov	r8, r6
+ 1171 00dc F0BD     		pop	{r4, r5, r6, r7, pc}
+ 1172              		.cfi_endproc
+ 1173              	.LFE12:
+ 1175              		.section	.text.Vector_Number_Mul,"ax",%progbits
+ 1176              		.align	1
+ 1177              		.global	Vector_Number_Mul
+ 1178              		.syntax unified
+ 1179              		.code	16
+ 1180              		.thumb_func
+ 1182              	Vector_Number_Mul:
+ 1183              	.LVL94:
+ 1184              	.LFB13:
+  89:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  90:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector Vector_Number_Mul (vector* a, double num)
+  91:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1185              		.loc 1 91 1 is_stmt 1 view -0
+ 1186              		.cfi_startproc
+ 1187              		@ args = 0, pretend = 0, frame = 0
+ 1188              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1189              		.loc 1 91 1 is_stmt 0 view .LVU187
+ 1190 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1191              	.LCFI24:
+ 1192              		.cfi_def_cfa_offset 24
+ 1193              		.cfi_offset 3, -24
+ 1194              		.cfi_offset 4, -20
+ 1195              		.cfi_offset 5, -16
+ 1196              		.cfi_offset 6, -12
+ 1197              		.cfi_offset 7, -8
+ 1198              		.cfi_offset 14, -4
+ 1199 0002 0400     		movs	r4, r0
+ 1200 0004 0D00     		movs	r5, r1
+ 1201 0006 1600     		movs	r6, r2
+ 1202 0008 1F00     		movs	r7, r3
+  92:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {a->x * num, a->y * num, a->z * num};
+ 1203              		.loc 1 92 5 is_stmt 1 view .LVU188
+ 1204              		.loc 1 92 27 is_stmt 0 view .LVU189
+ 1205 000a 0868     		ldr	r0, [r1]
+ 1206 000c 4968     		ldr	r1, [r1, #4]
+ 1207              	.LVL95:
+ 1208              		.loc 1 92 27 view .LVU190
+ 1209 000e FFF7FEFF 		bl	__aeabi_dmul
+ 1210              	.LVL96:
+ 1211              		.loc 1 92 12 view .LVU191
+ 1212 0012 2060     		str	r0, [r4]
+ 1213 0014 6160     		str	r1, [r4, #4]
+ 1214              		.loc 1 92 39 view .LVU192
+ 1215 0016 3200     		movs	r2, r6
+ARM GAS  /tmp/ccc0MzYR.s 			page 24
+
+
+ 1216 0018 3B00     		movs	r3, r7
+ 1217 001a A868     		ldr	r0, [r5, #8]
+ 1218 001c E968     		ldr	r1, [r5, #12]
+ 1219 001e FFF7FEFF 		bl	__aeabi_dmul
+ 1220              	.LVL97:
+ 1221              		.loc 1 92 12 view .LVU193
+ 1222 0022 A060     		str	r0, [r4, #8]
+ 1223 0024 E160     		str	r1, [r4, #12]
+ 1224              		.loc 1 92 47 view .LVU194
+ 1225 0026 2869     		ldr	r0, [r5, #16]
+ 1226 0028 6969     		ldr	r1, [r5, #20]
+ 1227              		.loc 1 92 51 view .LVU195
+ 1228 002a 3200     		movs	r2, r6
+ 1229 002c 3B00     		movs	r3, r7
+ 1230 002e FFF7FEFF 		bl	__aeabi_dmul
+ 1231              	.LVL98:
+ 1232              		.loc 1 92 12 view .LVU196
+ 1233 0032 2061     		str	r0, [r4, #16]
+ 1234 0034 6161     		str	r1, [r4, #20]
+  93:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1235              		.loc 1 93 5 is_stmt 1 view .LVU197
+  94:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 1236              		.loc 1 94 1 is_stmt 0 view .LVU198
+ 1237 0036 2000     		movs	r0, r4
+ 1238              		@ sp needed
+ 1239              	.LVL99:
+ 1240              	.LVL100:
+ 1241              		.loc 1 94 1 view .LVU199
+ 1242 0038 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1243              		.cfi_endproc
+ 1244              	.LFE13:
+ 1246              		.section	.text.Vector_Multi_Sum,"ax",%progbits
+ 1247              		.align	1
+ 1248              		.global	Vector_Multi_Sum
+ 1249              		.syntax unified
+ 1250              		.code	16
+ 1251              		.thumb_func
+ 1253              	Vector_Multi_Sum:
+ 1254              	.LVL101:
+ 1255              	.LFB14:
+  95:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+  96:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector Vector_Multi_Sum (vector* a, vector* b, vector* c)
+  97:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1256              		.loc 1 97 1 is_stmt 1 view -0
+ 1257              		.cfi_startproc
+ 1258              		@ args = 0, pretend = 0, frame = 0
+ 1259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1260              		.loc 1 97 1 is_stmt 0 view .LVU201
+ 1261 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1262              	.LCFI25:
+ 1263              		.cfi_def_cfa_offset 24
+ 1264              		.cfi_offset 3, -24
+ 1265              		.cfi_offset 4, -20
+ 1266              		.cfi_offset 5, -16
+ 1267              		.cfi_offset 6, -12
+ 1268              		.cfi_offset 7, -8
+ 1269              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccc0MzYR.s 			page 25
+
+
+ 1270 0002 0400     		movs	r4, r0
+ 1271 0004 0F00     		movs	r7, r1
+ 1272 0006 1600     		movs	r6, r2
+ 1273 0008 1D00     		movs	r5, r3
+  98:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {a->x + b->x + c->x, a->y + b->y + c->y, a->z + b->z + c->z};
+ 1274              		.loc 1 98 5 is_stmt 1 view .LVU202
+ 1275              		.loc 1 98 27 is_stmt 0 view .LVU203
+ 1276 000a 5368     		ldr	r3, [r2, #4]
+ 1277 000c 1268     		ldr	r2, [r2]
+ 1278              	.LVL102:
+ 1279              		.loc 1 98 27 view .LVU204
+ 1280 000e 0868     		ldr	r0, [r1]
+ 1281 0010 4968     		ldr	r1, [r1, #4]
+ 1282              	.LVL103:
+ 1283              		.loc 1 98 27 view .LVU205
+ 1284 0012 FFF7FEFF 		bl	__aeabi_dadd
+ 1285              	.LVL104:
+ 1286              		.loc 1 98 34 view .LVU206
+ 1287 0016 2A68     		ldr	r2, [r5]
+ 1288 0018 6B68     		ldr	r3, [r5, #4]
+ 1289 001a FFF7FEFF 		bl	__aeabi_dadd
+ 1290              	.LVL105:
+ 1291              		.loc 1 98 12 view .LVU207
+ 1292 001e 2060     		str	r0, [r4]
+ 1293 0020 6160     		str	r1, [r4, #4]
+ 1294              		.loc 1 98 47 view .LVU208
+ 1295 0022 B268     		ldr	r2, [r6, #8]
+ 1296 0024 F368     		ldr	r3, [r6, #12]
+ 1297 0026 B868     		ldr	r0, [r7, #8]
+ 1298 0028 F968     		ldr	r1, [r7, #12]
+ 1299 002a FFF7FEFF 		bl	__aeabi_dadd
+ 1300              	.LVL106:
+ 1301              		.loc 1 98 54 view .LVU209
+ 1302 002e AA68     		ldr	r2, [r5, #8]
+ 1303 0030 EB68     		ldr	r3, [r5, #12]
+ 1304 0032 FFF7FEFF 		bl	__aeabi_dadd
+ 1305              	.LVL107:
+ 1306              		.loc 1 98 12 view .LVU210
+ 1307 0036 A060     		str	r0, [r4, #8]
+ 1308 0038 E160     		str	r1, [r4, #12]
+ 1309              		.loc 1 98 63 view .LVU211
+ 1310 003a 3869     		ldr	r0, [r7, #16]
+ 1311 003c 7969     		ldr	r1, [r7, #20]
+ 1312              		.loc 1 98 70 view .LVU212
+ 1313 003e 3269     		ldr	r2, [r6, #16]
+ 1314 0040 7369     		ldr	r3, [r6, #20]
+ 1315              		.loc 1 98 67 view .LVU213
+ 1316 0042 FFF7FEFF 		bl	__aeabi_dadd
+ 1317              	.LVL108:
+ 1318              		.loc 1 98 77 view .LVU214
+ 1319 0046 2A69     		ldr	r2, [r5, #16]
+ 1320 0048 6B69     		ldr	r3, [r5, #20]
+ 1321              		.loc 1 98 74 view .LVU215
+ 1322 004a FFF7FEFF 		bl	__aeabi_dadd
+ 1323              	.LVL109:
+ 1324              		.loc 1 98 12 view .LVU216
+ 1325 004e 2061     		str	r0, [r4, #16]
+ARM GAS  /tmp/ccc0MzYR.s 			page 26
+
+
+ 1326 0050 6161     		str	r1, [r4, #20]
+  99:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1327              		.loc 1 99 5 is_stmt 1 view .LVU217
+ 100:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 1328              		.loc 1 100 1 is_stmt 0 view .LVU218
+ 1329 0052 2000     		movs	r0, r4
+ 1330              		@ sp needed
+ 1331              	.LVL110:
+ 1332              	.LVL111:
+ 1333              	.LVL112:
+ 1334              	.LVL113:
+ 1335              		.loc 1 100 1 view .LVU219
+ 1336 0054 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1337              		.cfi_endproc
+ 1338              	.LFE14:
+ 1340              		.section	.text.RotateQuat,"ax",%progbits
+ 1341              		.align	1
+ 1342              		.global	RotateQuat
+ 1343              		.syntax unified
+ 1344              		.code	16
+ 1345              		.thumb_func
+ 1347              	RotateQuat:
+ 1348              	.LVL114:
+ 1349              	.LFB16:
+ 101:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 102:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 103:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector Rotate (vector vec, double phi, double psi, double theta)
+ 104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 109:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 113:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
+ 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
+ 116:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
+ 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result = RotateQuat (rotate, vec);
+ 118:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 120:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 121:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 122:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector RotateQuat (quaternion rotate, vector in)
+ 123:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1350              		.loc 1 123 1 is_stmt 1 view -0
+ 1351              		.cfi_startproc
+ 1352              		@ args = 56, pretend = 8, frame = 136
+ 1353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1354              		.loc 1 123 1 is_stmt 0 view .LVU221
+ 1355 0000 82B0     		sub	sp, sp, #8
+ 1356              	.LCFI26:
+ 1357              		.cfi_def_cfa_offset 8
+ 1358 0002 30B5     		push	{r4, r5, lr}
+ 1359              	.LCFI27:
+ARM GAS  /tmp/ccc0MzYR.s 			page 27
+
+
+ 1360              		.cfi_def_cfa_offset 20
+ 1361              		.cfi_offset 4, -20
+ 1362              		.cfi_offset 5, -16
+ 1363              		.cfi_offset 14, -12
+ 1364 0004 B1B0     		sub	sp, sp, #196
+ 1365              	.LCFI28:
+ 1366              		.cfi_def_cfa_offset 216
+ 1367 0006 0400     		movs	r4, r0
+ 1368 0008 3492     		str	r2, [sp, #208]
+ 1369 000a 3593     		str	r3, [sp, #212]
+ 124:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion in_quaternion = {0, in.x, in.y, in.z};
+ 1370              		.loc 1 124 5 is_stmt 1 view .LVU222
+ 1371              		.loc 1 124 16 is_stmt 0 view .LVU223
+ 1372 000c 0022     		movs	r2, #0
+ 1373 000e 0023     		movs	r3, #0
+ 1374 0010 2892     		str	r2, [sp, #160]
+ 1375 0012 2993     		str	r3, [sp, #164]
+ 1376 0014 3C9A     		ldr	r2, [sp, #240]
+ 1377 0016 3D9B     		ldr	r3, [sp, #244]
+ 1378 0018 2A92     		str	r2, [sp, #168]
+ 1379 001a 2B93     		str	r3, [sp, #172]
+ 1380              		.loc 1 124 44 view .LVU224
+ 1381 001c 3E9A     		ldr	r2, [sp, #248]
+ 1382 001e 3F9B     		ldr	r3, [sp, #252]
+ 1383 0020 0E92     		str	r2, [sp, #56]
+ 1384 0022 0F93     		str	r3, [sp, #60]
+ 1385              		.loc 1 124 16 view .LVU225
+ 1386 0024 2C92     		str	r2, [sp, #176]
+ 1387 0026 2D93     		str	r3, [sp, #180]
+ 1388              		.loc 1 124 50 view .LVU226
+ 1389 0028 409A     		ldr	r2, [sp, #256]
+ 1390 002a 419B     		ldr	r3, [sp, #260]
+ 1391 002c 0E92     		str	r2, [sp, #56]
+ 1392 002e 0F93     		str	r3, [sp, #60]
+ 1393              		.loc 1 124 16 view .LVU227
+ 1394 0030 2E92     		str	r2, [sp, #184]
+ 1395 0032 2F93     		str	r3, [sp, #188]
+ 125:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = Quaternion_Mul (rotate, in_quaternion);
+ 1396              		.loc 1 125 5 is_stmt 1 view .LVU228
+ 1397              		.loc 1 125 25 is_stmt 0 view .LVU229
+ 1398 0034 06AD     		add	r5, sp, #24
+ 1399 0036 2022     		movs	r2, #32
+ 1400 0038 28A9     		add	r1, sp, #160
+ 1401 003a 2800     		movs	r0, r5
+ 1402 003c FFF7FEFF 		bl	memcpy
+ 1403              	.LVL115:
+ 1404              		.loc 1 125 25 view .LVU230
+ 1405 0040 1822     		movs	r2, #24
+ 1406 0042 36A9     		add	r1, sp, #216
+ 1407 0044 6846     		mov	r0, sp
+ 1408 0046 FFF7FEFF 		bl	memcpy
+ 1409              	.LVL116:
+ 1410 004a 349A     		ldr	r2, [sp, #208]
+ 1411 004c 359B     		ldr	r3, [sp, #212]
+ 1412 004e 20A8     		add	r0, sp, #128
+ 1413 0050 FFF7FEFF 		bl	Quaternion_Mul
+ 1414              	.LVL117:
+ARM GAS  /tmp/ccc0MzYR.s 			page 28
+
+
+ 126:Drivers/quaternion_lib/Src/quaternion_lib.c ****                result = Quaternion_Mul (result, Quaternion_Inverse(rotate));
+ 1415              		.loc 1 126 16 is_stmt 1 view .LVU231
+ 1416              		.loc 1 126 25 is_stmt 0 view .LVU232
+ 1417 0054 1822     		movs	r2, #24
+ 1418 0056 36A9     		add	r1, sp, #216
+ 1419 0058 6846     		mov	r0, sp
+ 1420 005a FFF7FEFF 		bl	memcpy
+ 1421              	.LVL118:
+ 1422 005e 349A     		ldr	r2, [sp, #208]
+ 1423 0060 359B     		ldr	r3, [sp, #212]
+ 1424 0062 18A8     		add	r0, sp, #96
+ 1425 0064 FFF7FEFF 		bl	Quaternion_Inverse
+ 1426              	.LVL119:
+ 1427 0068 2022     		movs	r2, #32
+ 1428 006a 18A9     		add	r1, sp, #96
+ 1429 006c 2800     		movs	r0, r5
+ 1430 006e FFF7FEFF 		bl	memcpy
+ 1431              	.LVL120:
+ 1432 0072 1822     		movs	r2, #24
+ 1433 0074 22A9     		add	r1, sp, #136
+ 1434 0076 6846     		mov	r0, sp
+ 1435 0078 FFF7FEFF 		bl	memcpy
+ 1436              	.LVL121:
+ 1437 007c 209A     		ldr	r2, [sp, #128]
+ 1438 007e 219B     		ldr	r3, [sp, #132]
+ 1439 0080 10A8     		add	r0, sp, #64
+ 1440 0082 FFF7FEFF 		bl	Quaternion_Mul
+ 1441              	.LVL122:
+ 1442 0086 2022     		movs	r2, #32
+ 1443 0088 10A9     		add	r1, sp, #64
+ 1444 008a 20A8     		add	r0, sp, #128
+ 1445 008c FFF7FEFF 		bl	memcpy
+ 1446              	.LVL123:
+ 127:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector out = {result.i, result.j, result.k};
+ 1447              		.loc 1 127 5 is_stmt 1 view .LVU233
+ 1448              		.loc 1 127 25 is_stmt 0 view .LVU234
+ 1449 0090 229A     		ldr	r2, [sp, #136]
+ 1450 0092 239B     		ldr	r3, [sp, #140]
+ 1451 0094 0E92     		str	r2, [sp, #56]
+ 1452 0096 0F93     		str	r3, [sp, #60]
+ 1453              		.loc 1 127 12 view .LVU235
+ 1454 0098 2260     		str	r2, [r4]
+ 1455 009a 6360     		str	r3, [r4, #4]
+ 1456              		.loc 1 127 35 view .LVU236
+ 1457 009c 249A     		ldr	r2, [sp, #144]
+ 1458 009e 259B     		ldr	r3, [sp, #148]
+ 1459 00a0 0E92     		str	r2, [sp, #56]
+ 1460 00a2 0F93     		str	r3, [sp, #60]
+ 1461              		.loc 1 127 12 view .LVU237
+ 1462 00a4 A260     		str	r2, [r4, #8]
+ 1463 00a6 E360     		str	r3, [r4, #12]
+ 1464              		.loc 1 127 45 view .LVU238
+ 1465 00a8 269A     		ldr	r2, [sp, #152]
+ 1466 00aa 279B     		ldr	r3, [sp, #156]
+ 1467 00ac 2261     		str	r2, [r4, #16]
+ 1468 00ae 6361     		str	r3, [r4, #20]
+ 128:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return out;
+ARM GAS  /tmp/ccc0MzYR.s 			page 29
+
+
+ 1469              		.loc 1 128 5 is_stmt 1 view .LVU239
+ 129:Drivers/quaternion_lib/Src/quaternion_lib.c **** }...
+ 1470              		.loc 1 129 1 is_stmt 0 view .LVU240
+ 1471 00b0 2000     		movs	r0, r4
+ 1472 00b2 31B0     		add	sp, sp, #196
+ 1473              		@ sp needed
+ 1474              	.LVL124:
+ 1475              		.loc 1 129 1 view .LVU241
+ 1476 00b4 30BC     		pop	{r4, r5}
+ 1477 00b6 08BC     		pop	{r3}
+ 1478 00b8 02B0     		add	sp, sp, #8
+ 1479 00ba 1847     		bx	r3
+ 1480              		.cfi_endproc
+ 1481              	.LFE16:
+ 1483              		.section	.text.Rotate,"ax",%progbits
+ 1484              		.align	1
+ 1485              		.global	Rotate
+ 1486              		.syntax unified
+ 1487              		.code	16
+ 1488              		.thumb_func
+ 1490              	Rotate:
+ 1491              	.LVL125:
+ 1492              	.LFB15:
+ 104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1493              		.loc 1 104 1 is_stmt 1 view -0
+ 1494              		.cfi_startproc
+ 1495              		@ args = 48, pretend = 8, frame = 272
+ 1496              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 1497              		.loc 1 104 1 is_stmt 0 view .LVU243
+ 1498 0000 82B0     		sub	sp, sp, #8
+ 1499              	.LCFI29:
+ 1500              		.cfi_def_cfa_offset 8
+ 1501 0002 F0B5     		push	{r4, r5, r6, r7, lr}
+ 1502              	.LCFI30:
+ 1503              		.cfi_def_cfa_offset 28
+ 1504              		.cfi_offset 4, -28
+ 1505              		.cfi_offset 5, -24
+ 1506              		.cfi_offset 6, -20
+ 1507              		.cfi_offset 7, -16
+ 1508              		.cfi_offset 14, -12
+ 1509 0004 C646     		mov	lr, r8
+ 1510 0006 00B5     		push	{lr}
+ 1511              	.LCFI31:
+ 1512              		.cfi_def_cfa_offset 32
+ 1513              		.cfi_offset 8, -32
+ 1514 0008 D2B0     		sub	sp, sp, #328
+ 1515              	.LCFI32:
+ 1516              		.cfi_def_cfa_offset 360
+ 1517 000a 8046     		mov	r8, r0
+ 1518 000c 5892     		str	r2, [sp, #352]
+ 1519 000e 5993     		str	r3, [sp, #356]
+ 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
+ 1520              		.loc 1 105 5 is_stmt 1 view .LVU244
+ 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
+ 1521              		.loc 1 105 12 is_stmt 0 view .LVU245
+ 1522 0010 1822     		movs	r2, #24
+ARM GAS  /tmp/ccc0MzYR.s 			page 30
+
+
+ 1523 0012 0021     		movs	r1, #0
+ 1524 0014 FFF7FEFF 		bl	memset
+ 1525              	.LVL126:
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
+ 1526              		.loc 1 106 5 is_stmt 1 view .LVU246
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
+ 1527              		.loc 1 106 12 is_stmt 0 view .LVU247
+ 1528 0018 0026     		movs	r6, #0
+ 1529 001a 0027     		movs	r7, #0
+ 1530 001c 4C96     		str	r6, [sp, #304]
+ 1531 001e 4D97     		str	r7, [sp, #308]
+ 1532 0020 4E96     		str	r6, [sp, #312]
+ 1533 0022 4F97     		str	r7, [sp, #316]
+ 1534 0024 0022     		movs	r2, #0
+ 1535 0026 764B     		ldr	r3, .L19
+ 1536 0028 5092     		str	r2, [sp, #320]
+ 1537 002a 5193     		str	r3, [sp, #324]
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1538              		.loc 1 107 5 is_stmt 1 view .LVU248
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1539              		.loc 1 107 32 is_stmt 0 view .LVU249
+ 1540 002c 5E98     		ldr	r0, [sp, #376]
+ 1541 002e 5F99     		ldr	r1, [sp, #380]
+ 1542 0030 FFF7FEFF 		bl	cos
+ 1543              	.LVL127:
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1544              		.loc 1 107 12 view .LVU250
+ 1545 0034 0E90     		str	r0, [sp, #56]
+ 1546 0036 0F91     		str	r1, [sp, #60]
+ 1547 0038 0300     		movs	r3, r0
+ 1548 003a 0C00     		movs	r4, r1
+ 1549 003c 4693     		str	r3, [sp, #280]
+ 1550 003e 4794     		str	r4, [sp, #284]
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1551              		.loc 1 107 42 view .LVU251
+ 1552 0040 5E98     		ldr	r0, [sp, #376]
+ 1553 0042 5F99     		ldr	r1, [sp, #380]
+ 1554 0044 FFF7FEFF 		bl	sin
+ 1555              	.LVL128:
+ 1556 0048 0200     		movs	r2, r0
+ 1557 004a 0B00     		movs	r3, r1
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1558              		.loc 1 107 12 view .LVU252
+ 1559 004c 1092     		str	r2, [sp, #64]
+ 1560 004e 1193     		str	r3, [sp, #68]
+ 1561 0050 4892     		str	r2, [sp, #288]
+ 1562 0052 4993     		str	r3, [sp, #292]
+ 1563 0054 4A96     		str	r6, [sp, #296]
+ 1564 0056 4B97     		str	r7, [sp, #300]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1565              		.loc 1 108 5 is_stmt 1 view .LVU253
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1566              		.loc 1 108 31 is_stmt 0 view .LVU254
+ 1567 0058 6098     		ldr	r0, [sp, #384]
+ 1568 005a 6199     		ldr	r1, [sp, #388]
+ 1569 005c FFF7FEFF 		bl	sin
+ 1570              	.LVL129:
+ARM GAS  /tmp/ccc0MzYR.s 			page 31
+
+
+ 1571 0060 0400     		movs	r4, r0
+ 1572 0062 0D00     		movs	r5, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1573              		.loc 1 108 40 view .LVU255
+ 1574 0064 0200     		movs	r2, r0
+ 1575 0066 0B00     		movs	r3, r1
+ 1576 0068 1098     		ldr	r0, [sp, #64]
+ 1577 006a 1199     		ldr	r1, [sp, #68]
+ 1578 006c FFF7FEFF 		bl	__aeabi_dmul
+ 1579              	.LVL130:
+ 1580 0070 0A00     		movs	r2, r1
+ 1581 0072 0100     		movs	r1, r0
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1582              		.loc 1 108 12 view .LVU256
+ 1583 0074 1491     		str	r1, [sp, #80]
+ 1584 0076 1592     		str	r2, [sp, #84]
+ 1585 0078 4091     		str	r1, [sp, #256]
+ 1586 007a 4192     		str	r2, [sp, #260]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1587              		.loc 1 108 61 view .LVU257
+ 1588 007c 2200     		movs	r2, r4
+ 1589 007e 2B00     		movs	r3, r5
+ 1590 0080 0E98     		ldr	r0, [sp, #56]
+ 1591 0082 0F99     		ldr	r1, [sp, #60]
+ 1592 0084 FFF7FEFF 		bl	__aeabi_dmul
+ 1593              	.LVL131:
+ 1594 0088 0400     		movs	r4, r0
+ 1595 008a 0D00     		movs	r5, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1596              		.loc 1 108 12 view .LVU258
+ 1597 008c 1694     		str	r4, [sp, #88]
+ 1598 008e 1795     		str	r5, [sp, #92]
+ 1599 0090 4294     		str	r4, [sp, #264]
+ 1600 0092 4395     		str	r5, [sp, #268]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1601              		.loc 1 108 73 view .LVU259
+ 1602 0094 6098     		ldr	r0, [sp, #384]
+ 1603 0096 6199     		ldr	r1, [sp, #388]
+ 1604 0098 FFF7FEFF 		bl	cos
+ 1605              	.LVL132:
+ 1606 009c 0300     		movs	r3, r0
+ 1607 009e 0C00     		movs	r4, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 1608              		.loc 1 108 12 view .LVU260
+ 1609 00a0 1293     		str	r3, [sp, #72]
+ 1610 00a2 1394     		str	r4, [sp, #76]
+ 1611 00a4 4493     		str	r3, [sp, #272]
+ 1612 00a6 4594     		str	r4, [sp, #276]
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1613              		.loc 1 110 5 is_stmt 1 view .LVU261
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1614              		.loc 1 110 32 is_stmt 0 view .LVU262
+ 1615 00a8 0022     		movs	r2, #0
+ 1616 00aa 564B     		ldr	r3, .L19+4
+ 1617 00ac 5E98     		ldr	r0, [sp, #376]
+ 1618 00ae 5F99     		ldr	r1, [sp, #380]
+ 1619 00b0 FFF7FEFF 		bl	__aeabi_dmul
+ARM GAS  /tmp/ccc0MzYR.s 			page 32
+
+
+ 1620              	.LVL133:
+ 1621 00b4 0400     		movs	r4, r0
+ 1622 00b6 0D00     		movs	r5, r1
+ 1623 00b8 FFF7FEFF 		bl	cos
+ 1624              	.LVL134:
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1625              		.loc 1 110 16 view .LVU263
+ 1626 00bc 3890     		str	r0, [sp, #224]
+ 1627 00be 3991     		str	r1, [sp, #228]
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1628              		.loc 1 110 46 view .LVU264
+ 1629 00c0 2000     		movs	r0, r4
+ 1630 00c2 2900     		movs	r1, r5
+ 1631 00c4 FFF7FEFF 		bl	sin
+ 1632              	.LVL135:
+ 1633 00c8 0400     		movs	r4, r0
+ 1634 00ca 0D00     		movs	r5, r1
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1635              		.loc 1 110 59 view .LVU265
+ 1636 00cc 3200     		movs	r2, r6
+ 1637 00ce 3B00     		movs	r3, r7
+ 1638 00d0 FFF7FEFF 		bl	__aeabi_dmul
+ 1639              	.LVL136:
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
+ 1640              		.loc 1 110 16 view .LVU266
+ 1641 00d4 3A90     		str	r0, [sp, #232]
+ 1642 00d6 3B91     		str	r1, [sp, #236]
+ 1643 00d8 3C90     		str	r0, [sp, #240]
+ 1644 00da 3D91     		str	r1, [sp, #244]
+ 1645 00dc 3E94     		str	r4, [sp, #248]
+ 1646 00de 3F95     		str	r5, [sp, #252]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1647              		.loc 1 111 5 is_stmt 1 view .LVU267
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1648              		.loc 1 111 33 is_stmt 0 view .LVU268
+ 1649 00e0 0022     		movs	r2, #0
+ 1650 00e2 484B     		ldr	r3, .L19+4
+ 1651 00e4 6098     		ldr	r0, [sp, #384]
+ 1652 00e6 6199     		ldr	r1, [sp, #388]
+ 1653 00e8 FFF7FEFF 		bl	__aeabi_dmul
+ 1654              	.LVL137:
+ 1655 00ec 0400     		movs	r4, r0
+ 1656 00ee 0D00     		movs	r5, r1
+ 1657 00f0 FFF7FEFF 		bl	cos
+ 1658              	.LVL138:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1659              		.loc 1 111 16 view .LVU269
+ 1660 00f4 3090     		str	r0, [sp, #192]
+ 1661 00f6 3191     		str	r1, [sp, #196]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1662              		.loc 1 111 47 view .LVU270
+ 1663 00f8 2000     		movs	r0, r4
+ 1664 00fa 2900     		movs	r1, r5
+ 1665 00fc FFF7FEFF 		bl	sin
+ 1666              	.LVL139:
+ 1667 0100 0400     		movs	r4, r0
+ 1668 0102 0D00     		movs	r5, r1
+ARM GAS  /tmp/ccc0MzYR.s 			page 33
+
+
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1669              		.loc 1 111 60 view .LVU271
+ 1670 0104 0200     		movs	r2, r0
+ 1671 0106 0B00     		movs	r3, r1
+ 1672 0108 0E98     		ldr	r0, [sp, #56]
+ 1673 010a 0F99     		ldr	r1, [sp, #60]
+ 1674 010c FFF7FEFF 		bl	__aeabi_dmul
+ 1675              	.LVL140:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1676              		.loc 1 111 16 view .LVU272
+ 1677 0110 3290     		str	r0, [sp, #200]
+ 1678 0112 3391     		str	r1, [sp, #204]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1679              		.loc 1 111 95 view .LVU273
+ 1680 0114 2200     		movs	r2, r4
+ 1681 0116 2B00     		movs	r3, r5
+ 1682 0118 1098     		ldr	r0, [sp, #64]
+ 1683 011a 1199     		ldr	r1, [sp, #68]
+ 1684 011c FFF7FEFF 		bl	__aeabi_dmul
+ 1685              	.LVL141:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1686              		.loc 1 111 16 view .LVU274
+ 1687 0120 3490     		str	r0, [sp, #208]
+ 1688 0122 3591     		str	r1, [sp, #212]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1689              		.loc 1 111 130 view .LVU275
+ 1690 0124 3200     		movs	r2, r6
+ 1691 0126 3B00     		movs	r3, r7
+ 1692 0128 2000     		movs	r0, r4
+ 1693 012a 2900     		movs	r1, r5
+ 1694 012c FFF7FEFF 		bl	__aeabi_dmul
+ 1695              	.LVL142:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1696              		.loc 1 111 16 view .LVU276
+ 1697 0130 3690     		str	r0, [sp, #216]
+ 1698 0132 3791     		str	r1, [sp, #220]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1699              		.loc 1 112 5 is_stmt 1 view .LVU277
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1700              		.loc 1 112 32 is_stmt 0 view .LVU278
+ 1701 0134 0022     		movs	r2, #0
+ 1702 0136 334B     		ldr	r3, .L19+4
+ 1703 0138 6298     		ldr	r0, [sp, #392]
+ 1704 013a 6399     		ldr	r1, [sp, #396]
+ 1705 013c FFF7FEFF 		bl	__aeabi_dmul
+ 1706              	.LVL143:
+ 1707 0140 0400     		movs	r4, r0
+ 1708 0142 0D00     		movs	r5, r1
+ 1709 0144 FFF7FEFF 		bl	cos
+ 1710              	.LVL144:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1711              		.loc 1 112 16 view .LVU279
+ 1712 0148 2890     		str	r0, [sp, #160]
+ 1713 014a 2991     		str	r1, [sp, #164]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1714              		.loc 1 112 48 view .LVU280
+ 1715 014c 2000     		movs	r0, r4
+ARM GAS  /tmp/ccc0MzYR.s 			page 34
+
+
+ 1716 014e 2900     		movs	r1, r5
+ 1717 0150 FFF7FEFF 		bl	sin
+ 1718              	.LVL145:
+ 1719 0154 0400     		movs	r4, r0
+ 1720 0156 0D00     		movs	r5, r1
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1721              		.loc 1 112 63 view .LVU281
+ 1722 0158 0200     		movs	r2, r0
+ 1723 015a 0B00     		movs	r3, r1
+ 1724 015c 1498     		ldr	r0, [sp, #80]
+ 1725 015e 1599     		ldr	r1, [sp, #84]
+ 1726 0160 FFF7FEFF 		bl	__aeabi_dmul
+ 1727              	.LVL146:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1728              		.loc 1 112 16 view .LVU282
+ 1729 0164 2A90     		str	r0, [sp, #168]
+ 1730 0166 2B91     		str	r1, [sp, #172]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1731              		.loc 1 112 99 view .LVU283
+ 1732 0168 2200     		movs	r2, r4
+ 1733 016a 2B00     		movs	r3, r5
+ 1734 016c 1698     		ldr	r0, [sp, #88]
+ 1735 016e 1799     		ldr	r1, [sp, #92]
+ 1736 0170 FFF7FEFF 		bl	__aeabi_dmul
+ 1737              	.LVL147:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1738              		.loc 1 112 16 view .LVU284
+ 1739 0174 2C90     		str	r0, [sp, #176]
+ 1740 0176 2D91     		str	r1, [sp, #180]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1741              		.loc 1 112 135 view .LVU285
+ 1742 0178 2200     		movs	r2, r4
+ 1743 017a 2B00     		movs	r3, r5
+ 1744 017c 1298     		ldr	r0, [sp, #72]
+ 1745 017e 1399     		ldr	r1, [sp, #76]
+ 1746 0180 FFF7FEFF 		bl	__aeabi_dmul
+ 1747              	.LVL148:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1748              		.loc 1 112 16 view .LVU286
+ 1749 0184 2E90     		str	r0, [sp, #184]
+ 1750 0186 2F91     		str	r1, [sp, #188]
+ 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
+ 1751              		.loc 1 114 5 is_stmt 1 view .LVU287
+ 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
+ 1752              		.loc 1 114 25 is_stmt 0 view .LVU288
+ 1753 0188 06AC     		add	r4, sp, #24
+ 1754 018a 2022     		movs	r2, #32
+ 1755 018c 30A9     		add	r1, sp, #192
+ 1756 018e 2000     		movs	r0, r4
+ 1757 0190 FFF7FEFF 		bl	memcpy
+ 1758              	.LVL149:
+ 1759 0194 1822     		movs	r2, #24
+ 1760 0196 2AA9     		add	r1, sp, #168
+ 1761 0198 6846     		mov	r0, sp
+ 1762 019a FFF7FEFF 		bl	memcpy
+ 1763              	.LVL150:
+ 1764 019e 289A     		ldr	r2, [sp, #160]
+ARM GAS  /tmp/ccc0MzYR.s 			page 35
+
+
+ 1765 01a0 299B     		ldr	r3, [sp, #164]
+ 1766 01a2 20A8     		add	r0, sp, #128
+ 1767 01a4 FFF7FEFF 		bl	Quaternion_Mul
+ 1768              	.LVL151:
+ 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
+ 1769              		.loc 1 115 16 is_stmt 1 view .LVU289
+ 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
+ 1770              		.loc 1 115 25 is_stmt 0 view .LVU290
+ 1771 01a8 2022     		movs	r2, #32
+ 1772 01aa 38A9     		add	r1, sp, #224
+ 1773 01ac 2000     		movs	r0, r4
+ 1774 01ae FFF7FEFF 		bl	memcpy
+ 1775              	.LVL152:
+ 1776 01b2 1822     		movs	r2, #24
+ 1777 01b4 22A9     		add	r1, sp, #136
+ 1778 01b6 6846     		mov	r0, sp
+ 1779 01b8 FFF7FEFF 		bl	memcpy
+ 1780              	.LVL153:
+ 1781 01bc 209A     		ldr	r2, [sp, #128]
+ 1782 01be 219B     		ldr	r3, [sp, #132]
+ 1783 01c0 18A8     		add	r0, sp, #96
+ 1784 01c2 FFF7FEFF 		bl	Quaternion_Mul
+ 1785              	.LVL154:
+ 1786 01c6 2022     		movs	r2, #32
+ 1787 01c8 18A9     		add	r1, sp, #96
+ 1788 01ca 20A8     		add	r0, sp, #128
+ 1789 01cc FFF7FEFF 		bl	memcpy
+ 1790              	.LVL155:
+ 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result = RotateQuat (rotate, vec);
+ 1791              		.loc 1 117 5 is_stmt 1 view .LVU291
+ 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result = RotateQuat (rotate, vec);
+ 1792              		.loc 1 117 14 is_stmt 0 view .LVU292
+ 1793 01d0 1822     		movs	r2, #24
+ 1794 01d2 58A9     		add	r1, sp, #352
+ 1795 01d4 2000     		movs	r0, r4
+ 1796 01d6 FFF7FEFF 		bl	memcpy
+ 1797              	.LVL156:
+ 1798 01da 1822     		movs	r2, #24
+ 1799 01dc 22A9     		add	r1, sp, #136
+ 1800 01de 6846     		mov	r0, sp
+ 1801 01e0 FFF7FEFF 		bl	memcpy
+ 1802              	.LVL157:
+ 1803 01e4 209A     		ldr	r2, [sp, #128]
+ 1804 01e6 219B     		ldr	r3, [sp, #132]
+ 1805 01e8 4046     		mov	r0, r8
+ 1806 01ea FFF7FEFF 		bl	RotateQuat
+ 1807              	.LVL158:
+ 118:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1808              		.loc 1 118 5 is_stmt 1 view .LVU293
+ 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 1809              		.loc 1 119 1 is_stmt 0 view .LVU294
+ 1810 01ee 4046     		mov	r0, r8
+ 1811 01f0 52B0     		add	sp, sp, #328
+ 1812              		@ sp needed
+ 1813              	.LVL159:
+ 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 1814              		.loc 1 119 1 view .LVU295
+ARM GAS  /tmp/ccc0MzYR.s 			page 36
+
+
+ 1815 01f2 80BC     		pop	{r7}
+ 1816 01f4 B846     		mov	r8, r7
+ 1817 01f6 F0BC     		pop	{r4, r5, r6, r7}
+ 1818 01f8 08BC     		pop	{r3}
+ 1819 01fa 02B0     		add	sp, sp, #8
+ 1820 01fc 1847     		bx	r3
+ 1821              	.L20:
+ 1822 01fe C046     		.align	2
+ 1823              	.L19:
+ 1824 0200 0000F03F 		.word	1072693248
+ 1825 0204 0000E03F 		.word	1071644672
+ 1826              		.cfi_endproc
+ 1827              	.LFE15:
+ 1829              		.text
+ 1830              	.Letext0:
+ 1831              		.file 2 "Drivers/quaternion_lib/Inc/quaternion_lib.h"
+ 1832              		.file 3 "<built-in>"
+ 1833              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
+ 1834              		.file 5 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h"
+ARM GAS  /tmp/ccc0MzYR.s 			page 37
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 quaternion_lib.c
+     /tmp/ccc0MzYR.s:19     .text.Quaternion_Add:0000000000000000 $t
+     /tmp/ccc0MzYR.s:25     .text.Quaternion_Add:0000000000000000 Quaternion_Add
+     /tmp/ccc0MzYR.s:121    .text.Quaternion_Sub:0000000000000000 $t
+     /tmp/ccc0MzYR.s:127    .text.Quaternion_Sub:0000000000000000 Quaternion_Sub
+     /tmp/ccc0MzYR.s:222    .text.Quaternion_Mul:0000000000000000 $t
+     /tmp/ccc0MzYR.s:228    .text.Quaternion_Mul:0000000000000000 Quaternion_Mul
+     /tmp/ccc0MzYR.s:555    .rodata.Quaternion_Print.str1.4:0000000000000000 $d
+     /tmp/ccc0MzYR.s:559    .text.Quaternion_Print:0000000000000000 $t
+     /tmp/ccc0MzYR.s:565    .text.Quaternion_Print:0000000000000000 Quaternion_Print
+     /tmp/ccc0MzYR.s:612    .text.Quaternion_Print:0000000000000038 $d
+     /tmp/ccc0MzYR.s:617    .text.Quaternion_Conjugate:0000000000000000 $t
+     /tmp/ccc0MzYR.s:623    .text.Quaternion_Conjugate:0000000000000000 Quaternion_Conjugate
+     /tmp/ccc0MzYR.s:670    .text.Quaternion_Norm:0000000000000000 $t
+     /tmp/ccc0MzYR.s:676    .text.Quaternion_Norm:0000000000000000 Quaternion_Norm
+     /tmp/ccc0MzYR.s:761    .text.Quaternion_Inverse:0000000000000000 $t
+     /tmp/ccc0MzYR.s:767    .text.Quaternion_Inverse:0000000000000000 Quaternion_Inverse
+     /tmp/ccc0MzYR.s:861    .rodata.Vector_Print.str1.4:0000000000000000 $d
+     /tmp/ccc0MzYR.s:865    .text.Vector_Print:0000000000000000 $t
+     /tmp/ccc0MzYR.s:871    .text.Vector_Print:0000000000000000 Vector_Print
+     /tmp/ccc0MzYR.s:914    .text.Vector_Print:0000000000000030 $d
+     /tmp/ccc0MzYR.s:919    .text.Vector_Scalar_Mul:0000000000000000 $t
+     /tmp/ccc0MzYR.s:925    .text.Vector_Scalar_Mul:0000000000000000 Vector_Scalar_Mul
+     /tmp/ccc0MzYR.s:1000   .text.Vector_Vector_Mul:0000000000000000 $t
+     /tmp/ccc0MzYR.s:1006   .text.Vector_Vector_Mul:0000000000000000 Vector_Vector_Mul
+     /tmp/ccc0MzYR.s:1176   .text.Vector_Number_Mul:0000000000000000 $t
+     /tmp/ccc0MzYR.s:1182   .text.Vector_Number_Mul:0000000000000000 Vector_Number_Mul
+     /tmp/ccc0MzYR.s:1247   .text.Vector_Multi_Sum:0000000000000000 $t
+     /tmp/ccc0MzYR.s:1253   .text.Vector_Multi_Sum:0000000000000000 Vector_Multi_Sum
+     /tmp/ccc0MzYR.s:1341   .text.RotateQuat:0000000000000000 $t
+     /tmp/ccc0MzYR.s:1347   .text.RotateQuat:0000000000000000 RotateQuat
+     /tmp/ccc0MzYR.s:1484   .text.Rotate:0000000000000000 $t
+     /tmp/ccc0MzYR.s:1490   .text.Rotate:0000000000000000 Rotate
+     /tmp/ccc0MzYR.s:1824   .text.Rotate:0000000000000200 $d
+
+UNDEFINED SYMBOLS
+__aeabi_dadd
+memset
+__aeabi_dsub
+__aeabi_dmul
+printf
+__aeabi_ddiv
+memcpy
+cos
+sin
