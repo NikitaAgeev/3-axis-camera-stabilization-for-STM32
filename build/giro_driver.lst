@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cchX71nJ.s 			page 1
+ARM GAS  /tmp/cclxDj3B.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -24,8 +24,9 @@ ARM GAS  /tmp/cchX71nJ.s 			page 1
   21              		.code	16
   22              		.thumb_func
   24              	giro_config:
-  25              	.LFB244:
-  26              		.file 1 "Drivers/Giro/Src/giro_driver.c"
+  25              	.LVL0:
+  26              	.LFB244:
+  27              		.file 1 "Drivers/Giro/Src/giro_driver.c"
    1:Drivers/Giro/Src/giro_driver.c **** #include "main.h"
    2:Drivers/Giro/Src/giro_driver.c **** #include "stdlib.h"
    3:Drivers/Giro/Src/giro_driver.c **** #include "string.h"
@@ -49,351 +50,480 @@ ARM GAS  /tmp/cchX71nJ.s 			page 1
   21:Drivers/Giro/Src/giro_driver.c **** #define PWR_MGMT_1_REG 0x6B
   22:Drivers/Giro/Src/giro_driver.c **** #define WHO_AM_I_REG 0x75
   23:Drivers/Giro/Src/giro_driver.c **** 
-  24:Drivers/Giro/Src/giro_driver.c **** int giro_config(I2C_HandleTypeDef hi2)
+  24:Drivers/Giro/Src/giro_driver.c **** int giro_config(I2C_HandleTypeDef* hi2)
   25:Drivers/Giro/Src/giro_driver.c **** {
-  27              		.loc 1 25 1 view -0
-  28              		.cfi_startproc
-  29              		@ args = 76, pretend = 16, frame = 8
-  30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31 0000 84B0     		sub	sp, sp, #16
-  32              	.LCFI0:
-  33              		.cfi_def_cfa_offset 16
-ARM GAS  /tmp/cchX71nJ.s 			page 2
+  28              		.loc 1 25 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 25 1 is_stmt 0 view .LVU1
+  33 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ARM GAS  /tmp/cclxDj3B.s 			page 2
 
 
-  34 0002 F0B5     		push	{r4, r5, r6, r7, lr}
-  35              	.LCFI1:
-  36              		.cfi_def_cfa_offset 36
-  37              		.cfi_offset 4, -36
-  38              		.cfi_offset 5, -32
-  39              		.cfi_offset 6, -28
-  40              		.cfi_offset 7, -24
-  41              		.cfi_offset 14, -20
-  42 0004 87B0     		sub	sp, sp, #28
-  43              	.LCFI2:
-  44              		.cfi_def_cfa_offset 64
-  45 0006 0C90     		str	r0, [sp, #48]
-  46 0008 0D91     		str	r1, [sp, #52]
-  47 000a 0E92     		str	r2, [sp, #56]
-  48 000c 0F93     		str	r3, [sp, #60]
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 20
+  36              		.cfi_offset 4, -20
+  37              		.cfi_offset 5, -16
+  38              		.cfi_offset 6, -12
+  39              		.cfi_offset 7, -8
+  40              		.cfi_offset 14, -4
+  41 0002 C646     		mov	lr, r8
+  42 0004 00B5     		push	{lr}
+  43              	.LCFI1:
+  44              		.cfi_def_cfa_offset 24
+  45              		.cfi_offset 8, -24
+  46 0006 86B0     		sub	sp, sp, #24
+  47              	.LCFI2:
+  48              		.cfi_def_cfa_offset 48
+  49 0008 0400     		movs	r4, r0
   26:Drivers/Giro/Src/giro_driver.c **** 	uint8_t check, Data;
-  49              		.loc 1 26 2 view .LVU1
+  50              		.loc 1 26 2 is_stmt 1 view .LVU2
   27:Drivers/Giro/Src/giro_driver.c **** 
-  28:Drivers/Giro/Src/giro_driver.c **** 	HAL_I2C_Mem_Read (&hi2, MPU6050_ADDR, WHO_AM_I_REG,1, &check, 1, 1000);
-  50              		.loc 1 28 2 view .LVU2
-  51 000e FA23     		movs	r3, #250
-  52 0010 9B00     		lsls	r3, r3, #2
-  53 0012 0293     		str	r3, [sp, #8]
-  54 0014 0123     		movs	r3, #1
-  55 0016 0193     		str	r3, [sp, #4]
-  56 0018 1724     		movs	r4, #23
-  57 001a 6C44     		add	r4, r4, sp
-  58 001c 0094     		str	r4, [sp]
-  59 001e 7522     		movs	r2, #117
-  60 0020 D021     		movs	r1, #208
-  61 0022 0CA8     		add	r0, sp, #48
-  62 0024 FFF7FEFF 		bl	HAL_I2C_Mem_Read
-  63              	.LVL0:
+  28:Drivers/Giro/Src/giro_driver.c **** 	HAL_I2C_Mem_Read (hi2, MPU6050_ADDR, WHO_AM_I_REG,1, &check, 1, 1000);
+  51              		.loc 1 28 2 view .LVU3
+  52 000a FA23     		movs	r3, #250
+  53 000c 9B00     		lsls	r3, r3, #2
+  54 000e 0293     		str	r3, [sp, #8]
+  55 0010 0123     		movs	r3, #1
+  56 0012 0193     		str	r3, [sp, #4]
+  57 0014 1725     		movs	r5, #23
+  58 0016 6D44     		add	r5, r5, sp
+  59 0018 0095     		str	r5, [sp]
+  60 001a 7522     		movs	r2, #117
+  61 001c D021     		movs	r1, #208
+  62 001e FFF7FEFF 		bl	HAL_I2C_Mem_Read
+  63              	.LVL1:
   29:Drivers/Giro/Src/giro_driver.c **** 		
   30:Drivers/Giro/Src/giro_driver.c **** 	if (check == 0x68)
-  64              		.loc 1 30 2 view .LVU3
-  65              		.loc 1 30 12 is_stmt 0 view .LVU4
-  66 0028 2378     		ldrb	r3, [r4]
-  67              		.loc 1 30 5 view .LVU5
-  68 002a 682B     		cmp	r3, #104
-  69 002c 04D0     		beq	.L3
+  64              		.loc 1 30 2 view .LVU4
+  65              		.loc 1 30 12 is_stmt 0 view .LVU5
+  66 0022 2B78     		ldrb	r3, [r5]
+  67              		.loc 1 30 5 view .LVU6
+  68 0024 682B     		cmp	r3, #104
+  69 0026 03D0     		beq	.L3
   70              	.L2:
   31:Drivers/Giro/Src/giro_driver.c ****       {
   32:Drivers/Giro/Src/giro_driver.c ****             /////////
   33:Drivers/Giro/Src/giro_driver.c ****             Data = 0;
-  34:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+  34:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
   35:Drivers/Giro/Src/giro_driver.c ****             ////////
   36:Drivers/Giro/Src/giro_driver.c ****             Data = 0x07;
-  37:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+  37:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
   38:Drivers/Giro/Src/giro_driver.c ****             /////////
   39:Drivers/Giro/Src/giro_driver.c ****             Data = 0x00;
-  40:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+  40:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
   41:Drivers/Giro/Src/giro_driver.c ****             ////////
   42:Drivers/Giro/Src/giro_driver.c ****             Data = 0x00;
-  43:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
+  43:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
   44:Drivers/Giro/Src/giro_driver.c ****       }
   45:Drivers/Giro/Src/giro_driver.c **** }
-ARM GAS  /tmp/cchX71nJ.s 			page 3
+ARM GAS  /tmp/cclxDj3B.s 			page 3
 
 
-  71              		.loc 1 45 1 view .LVU6
-  72 002e 07B0     		add	sp, sp, #28
+  71              		.loc 1 45 1 view .LVU7
+  72 0028 06B0     		add	sp, sp, #24
   73              		@ sp needed
-  74 0030 F0BC     		pop	{r4, r5, r6, r7}
-  75 0032 08BC     		pop	{r3}
-  76 0034 04B0     		add	sp, sp, #16
-  77 0036 1847     		bx	r3
-  78              	.L3:
-  33:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
-  79              		.loc 1 33 13 is_stmt 1 view .LVU7
-  33:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
-  80              		.loc 1 33 18 is_stmt 0 view .LVU8
-  81 0038 1624     		movs	r4, #22
-  82 003a 6C44     		add	r4, r4, sp
-  83 003c 0027     		movs	r7, #0
-  84 003e 2770     		strb	r7, [r4]
+  74              	.LVL2:
+  75              		.loc 1 45 1 view .LVU8
+  76 002a 80BC     		pop	{r7}
+  77 002c B846     		mov	r8, r7
+  78 002e F0BD     		pop	{r4, r5, r6, r7, pc}
+  79              	.LVL3:
+  80              	.L3:
+  33:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+  81              		.loc 1 33 13 is_stmt 1 view .LVU9
+  33:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, PWR_MGMT_1_REG, 1, &Data, 1, 1000);
+  82              		.loc 1 33 18 is_stmt 0 view .LVU10
+  83 0030 1625     		movs	r5, #22
+  84 0032 6D44     		add	r5, r5, sp
+  85 0034 0023     		movs	r3, #0
+  86 0036 9846     		mov	r8, r3
+  87 0038 2B70     		strb	r3, [r5]
   34:Drivers/Giro/Src/giro_driver.c ****             ////////
-  85              		.loc 1 34 13 is_stmt 1 view .LVU9
-  86 0040 FA26     		movs	r6, #250
-  87 0042 B600     		lsls	r6, r6, #2
-  88 0044 0296     		str	r6, [sp, #8]
-  89 0046 0125     		movs	r5, #1
-  90 0048 0195     		str	r5, [sp, #4]
-  91 004a 0094     		str	r4, [sp]
-  92 004c 673B     		subs	r3, r3, #103
-  93 004e 6B22     		movs	r2, #107
-  94 0050 D021     		movs	r1, #208
-  95 0052 0CA8     		add	r0, sp, #48
-  96 0054 FFF7FEFF 		bl	HAL_I2C_Mem_Write
-  97              	.LVL1:
-  36:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
-  98              		.loc 1 36 13 view .LVU10
-  36:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
-  99              		.loc 1 36 18 is_stmt 0 view .LVU11
- 100 0058 0723     		movs	r3, #7
- 101 005a 2370     		strb	r3, [r4]
+  88              		.loc 1 34 13 is_stmt 1 view .LVU11
+  89 003a FA27     		movs	r7, #250
+  90 003c BF00     		lsls	r7, r7, #2
+  91 003e 0297     		str	r7, [sp, #8]
+  92 0040 0126     		movs	r6, #1
+  93 0042 0196     		str	r6, [sp, #4]
+  94 0044 0095     		str	r5, [sp]
+  95 0046 0133     		adds	r3, r3, #1
+  96 0048 6B22     		movs	r2, #107
+  97 004a D021     		movs	r1, #208
+  98 004c 2000     		movs	r0, r4
+  99 004e FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 100              	.LVL4:
+  36:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+ 101              		.loc 1 36 13 view .LVU12
+  36:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, SMPLRT_DIV_REG, 1, &Data, 1, 1000);
+ 102              		.loc 1 36 18 is_stmt 0 view .LVU13
+ 103 0052 0723     		movs	r3, #7
+ 104 0054 2B70     		strb	r3, [r5]
   37:Drivers/Giro/Src/giro_driver.c ****             /////////
- 102              		.loc 1 37 13 is_stmt 1 view .LVU12
- 103 005c 0296     		str	r6, [sp, #8]
- 104 005e 0195     		str	r5, [sp, #4]
- 105 0060 0094     		str	r4, [sp]
- 106 0062 063B     		subs	r3, r3, #6
- 107 0064 1922     		movs	r2, #25
- 108 0066 D021     		movs	r1, #208
- 109 0068 0CA8     		add	r0, sp, #48
- 110 006a FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 111              	.LVL2:
-  39:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
- 112              		.loc 1 39 13 view .LVU13
-  39:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
- 113              		.loc 1 39 18 is_stmt 0 view .LVU14
- 114 006e 2770     		strb	r7, [r4]
+ 105              		.loc 1 37 13 is_stmt 1 view .LVU14
+ 106 0056 0297     		str	r7, [sp, #8]
+ 107 0058 0196     		str	r6, [sp, #4]
+ 108 005a 0095     		str	r5, [sp]
+ 109 005c 063B     		subs	r3, r3, #6
+ 110 005e 1922     		movs	r2, #25
+ 111 0060 D021     		movs	r1, #208
+ 112 0062 2000     		movs	r0, r4
+ 113 0064 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 114              	.LVL5:
+  39:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+ 115              		.loc 1 39 13 view .LVU15
+  39:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, ACCEL_CONFIG_REG, 1, &Data, 1, 1000);
+ 116              		.loc 1 39 18 is_stmt 0 view .LVU16
+ 117 0068 4346     		mov	r3, r8
+ 118 006a 2B70     		strb	r3, [r5]
   40:Drivers/Giro/Src/giro_driver.c ****             ////////
- 115              		.loc 1 40 13 is_stmt 1 view .LVU15
- 116 0070 0296     		str	r6, [sp, #8]
- 117 0072 0195     		str	r5, [sp, #4]
- 118 0074 0094     		str	r4, [sp]
-ARM GAS  /tmp/cchX71nJ.s 			page 4
+ARM GAS  /tmp/cclxDj3B.s 			page 4
 
 
- 119 0076 0123     		movs	r3, #1
- 120 0078 1C22     		movs	r2, #28
- 121 007a D021     		movs	r1, #208
- 122 007c 0CA8     		add	r0, sp, #48
- 123 007e FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 124              	.LVL3:
-  42:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
- 125              		.loc 1 42 13 view .LVU16
-  42:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(&hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
- 126              		.loc 1 42 18 is_stmt 0 view .LVU17
- 127 0082 2770     		strb	r7, [r4]
+ 119              		.loc 1 40 13 is_stmt 1 view .LVU17
+ 120 006c 0297     		str	r7, [sp, #8]
+ 121 006e 0196     		str	r6, [sp, #4]
+ 122 0070 0095     		str	r5, [sp]
+ 123 0072 0133     		adds	r3, r3, #1
+ 124 0074 1C22     		movs	r2, #28
+ 125 0076 D021     		movs	r1, #208
+ 126 0078 2000     		movs	r0, r4
+ 127 007a FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 128              	.LVL6:
+  42:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
+ 129              		.loc 1 42 13 view .LVU18
+  42:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
+ 130              		.loc 1 42 18 is_stmt 0 view .LVU19
+ 131 007e 4346     		mov	r3, r8
+ 132 0080 2B70     		strb	r3, [r5]
   43:Drivers/Giro/Src/giro_driver.c ****       }
- 128              		.loc 1 43 13 is_stmt 1 view .LVU18
- 129 0084 0296     		str	r6, [sp, #8]
- 130 0086 0195     		str	r5, [sp, #4]
- 131 0088 0094     		str	r4, [sp]
- 132 008a 0123     		movs	r3, #1
- 133 008c 1B22     		movs	r2, #27
- 134 008e D021     		movs	r1, #208
- 135 0090 0CA8     		add	r0, sp, #48
- 136 0092 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 137              	.LVL4:
- 138 0096 CAE7     		b	.L2
- 139              		.cfi_endproc
- 140              	.LFE244:
- 142              		.global	__aeabi_i2d
- 143              		.global	__aeabi_dmul
- 144              		.section	.text.giro_read_angls,"ax",%progbits
- 145              		.align	1
- 146              		.global	giro_read_angls
- 147              		.syntax unified
- 148              		.code	16
- 149              		.thumb_func
- 151              	giro_read_angls:
- 152              	.LVL5:
- 153              	.LFB245:
+ 133              		.loc 1 43 13 is_stmt 1 view .LVU20
+ 134 0082 0297     		str	r7, [sp, #8]
+ 135 0084 0196     		str	r6, [sp, #4]
+ 136 0086 0095     		str	r5, [sp]
+ 137 0088 0133     		adds	r3, r3, #1
+ 138 008a 1B22     		movs	r2, #27
+ 139 008c D021     		movs	r1, #208
+ 140 008e 2000     		movs	r0, r4
+ 141 0090 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 142              	.LVL7:
+ 143 0094 C8E7     		b	.L2
+ 144              		.cfi_endproc
+ 145              	.LFE244:
+ 147              		.global	__aeabi_i2d
+ 148              		.global	__aeabi_dmul
+ 149              		.global	__aeabi_dcmplt
+ 150              		.global	__aeabi_dcmpgt
+ 151              		.section	.text.giro_read_angls,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	giro_read_angls
+ 154              		.syntax unified
+ 155              		.code	16
+ 156              		.thumb_func
+ 158              	giro_read_angls:
+ 159              	.LVL8:
+ 160              	.LFB245:
   46:Drivers/Giro/Src/giro_driver.c **** 
-  47:Drivers/Giro/Src/giro_driver.c **** int giro_read_angls(I2C_HandleTypeDef hi2, double* angle_x, double* angle_y, double* angle_z)
-  48:Drivers/Giro/Src/giro_driver.c **** {
- 154              		.loc 1 48 1 view -0
- 155              		.cfi_startproc
- 156              		@ args = 88, pretend = 16, frame = 8
- 157              		@ frame_needed = 0, uses_anonymous_args = 0
- 158              		.loc 1 48 1 is_stmt 0 view .LVU20
- 159 0000 84B0     		sub	sp, sp, #16
- 160              	.LCFI3:
- 161              		.cfi_def_cfa_offset 16
- 162 0002 30B5     		push	{r4, r5, lr}
- 163              	.LCFI4:
- 164              		.cfi_def_cfa_offset 28
- 165              		.cfi_offset 4, -28
- 166              		.cfi_offset 5, -24
- 167              		.cfi_offset 14, -20
- 168 0004 87B0     		sub	sp, sp, #28
- 169              	.LCFI5:
- 170              		.cfi_def_cfa_offset 56
- 171 0006 0A90     		str	r0, [sp, #40]
-ARM GAS  /tmp/cchX71nJ.s 			page 5
+  47:Drivers/Giro/Src/giro_driver.c **** #define FILTR 0.00001
+  48:Drivers/Giro/Src/giro_driver.c **** 
+  49:Drivers/Giro/Src/giro_driver.c **** int giro_read_angls(I2C_HandleTypeDef* hi2, double* angle_x, double* angle_y, double* angle_z)
+  50:Drivers/Giro/Src/giro_driver.c **** {
+ 161              		.loc 1 50 1 view -0
+ 162              		.cfi_startproc
+ 163              		@ args = 0, pretend = 0, frame = 8
+ 164              		@ frame_needed = 0, uses_anonymous_args = 0
+ 165              		.loc 1 50 1 is_stmt 0 view .LVU22
+ 166 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 167              	.LCFI3:
+ 168              		.cfi_def_cfa_offset 20
+ 169              		.cfi_offset 4, -20
+ARM GAS  /tmp/cclxDj3B.s 			page 5
 
 
- 172 0008 0B91     		str	r1, [sp, #44]
- 173 000a 0C92     		str	r2, [sp, #48]
- 174 000c 0D93     		str	r3, [sp, #52]
-  49:Drivers/Giro/Src/giro_driver.c ****       uint8_t Rec_Data[6] = {0};
- 175              		.loc 1 49 7 is_stmt 1 view .LVU21
- 176              		.loc 1 49 15 is_stmt 0 view .LVU22
- 177 000e 04AC     		add	r4, sp, #16
- 178 0010 0023     		movs	r3, #0
- 179 0012 0493     		str	r3, [sp, #16]
- 180 0014 A380     		strh	r3, [r4, #4]
-  50:Drivers/Giro/Src/giro_driver.c ****       
-  51:Drivers/Giro/Src/giro_driver.c ****       HAL_I2C_Mem_Read(&hi2, MPU6050_ADDR, GYRO_XOUT_H_REG , 1, Rec_Data, 6, 1000);
- 181              		.loc 1 51 7 is_stmt 1 view .LVU23
- 182 0016 FA23     		movs	r3, #250
- 183 0018 9B00     		lsls	r3, r3, #2
- 184 001a 0293     		str	r3, [sp, #8]
- 185 001c 0623     		movs	r3, #6
- 186 001e 0193     		str	r3, [sp, #4]
- 187 0020 0094     		str	r4, [sp]
- 188 0022 053B     		subs	r3, r3, #5
- 189 0024 4322     		movs	r2, #67
- 190 0026 D021     		movs	r1, #208
- 191 0028 0AA8     		add	r0, sp, #40
- 192 002a FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 193              	.LVL6:
+ 170              		.cfi_offset 5, -16
+ 171              		.cfi_offset 6, -12
+ 172              		.cfi_offset 7, -8
+ 173              		.cfi_offset 14, -4
+ 174 0002 CE46     		mov	lr, r9
+ 175 0004 4746     		mov	r7, r8
+ 176 0006 80B5     		push	{r7, lr}
+ 177              	.LCFI4:
+ 178              		.cfi_def_cfa_offset 28
+ 179              		.cfi_offset 8, -28
+ 180              		.cfi_offset 9, -24
+ 181 0008 87B0     		sub	sp, sp, #28
+ 182              	.LCFI5:
+ 183              		.cfi_def_cfa_offset 56
+ 184 000a 8946     		mov	r9, r1
+ 185 000c 9046     		mov	r8, r2
+ 186 000e 1D00     		movs	r5, r3
+  51:Drivers/Giro/Src/giro_driver.c ****       uint8_t Rec_Data[6] = {0};
+ 187              		.loc 1 51 7 is_stmt 1 view .LVU23
+ 188              		.loc 1 51 15 is_stmt 0 view .LVU24
+ 189 0010 04AC     		add	r4, sp, #16
+ 190 0012 0023     		movs	r3, #0
+ 191              	.LVL9:
+ 192              		.loc 1 51 15 view .LVU25
+ 193 0014 0493     		str	r3, [sp, #16]
+ 194 0016 A380     		strh	r3, [r4, #4]
   52:Drivers/Giro/Src/giro_driver.c ****       
-  53:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data[1]);
- 194              		.loc 1 53 7 view .LVU24
- 195              		.loc 1 53 46 is_stmt 0 view .LVU25
- 196 002e 2078     		ldrb	r0, [r4]
- 197              		.loc 1 53 50 view .LVU26
- 198 0030 0002     		lsls	r0, r0, #8
- 199              		.loc 1 53 28 view .LVU27
- 200 0032 00B2     		sxth	r0, r0
- 201              		.loc 1 53 65 view .LVU28
- 202 0034 6378     		ldrb	r3, [r4, #1]
- 203              		.loc 1 53 15 view .LVU29
- 204 0036 1843     		orrs	r0, r3
- 205              	.LVL7:
-  54:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data[3]);
- 206              		.loc 1 54 7 is_stmt 1 view .LVU30
- 207              		.loc 1 54 46 is_stmt 0 view .LVU31
- 208 0038 A578     		ldrb	r5, [r4, #2]
- 209              		.loc 1 54 50 view .LVU32
- 210 003a 2D02     		lsls	r5, r5, #8
- 211              		.loc 1 54 28 view .LVU33
- 212 003c 2DB2     		sxth	r5, r5
- 213              		.loc 1 54 65 view .LVU34
- 214 003e E378     		ldrb	r3, [r4, #3]
- 215              		.loc 1 54 15 view .LVU35
- 216 0040 1D43     		orrs	r5, r3
- 217              	.LVL8:
-  55:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data[5]);
- 218              		.loc 1 55 7 is_stmt 1 view .LVU36
- 219              		.loc 1 55 46 is_stmt 0 view .LVU37
- 220 0042 2379     		ldrb	r3, [r4, #4]
- 221              		.loc 1 55 50 view .LVU38
-ARM GAS  /tmp/cchX71nJ.s 			page 6
+  53:Drivers/Giro/Src/giro_driver.c ****       HAL_I2C_Mem_Read(hi2, MPU6050_ADDR, GYRO_XOUT_H_REG , 1, Rec_Data, 6, 1000);
+ 195              		.loc 1 53 7 is_stmt 1 view .LVU26
+ 196 0018 FA23     		movs	r3, #250
+ 197 001a 9B00     		lsls	r3, r3, #2
+ 198 001c 0293     		str	r3, [sp, #8]
+ 199 001e 0623     		movs	r3, #6
+ 200 0020 0193     		str	r3, [sp, #4]
+ 201 0022 0094     		str	r4, [sp]
+ 202 0024 053B     		subs	r3, r3, #5
+ 203 0026 4322     		movs	r2, #67
+ 204              	.LVL10:
+ 205              		.loc 1 53 7 is_stmt 0 view .LVU27
+ 206 0028 D021     		movs	r1, #208
+ 207              	.LVL11:
+ 208              		.loc 1 53 7 view .LVU28
+ 209 002a FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 210              	.LVL12:
+  54:Drivers/Giro/Src/giro_driver.c ****       
+  55:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_X_RAW = (int16_t)(Rec_Data[0] << 8 | Rec_Data[1]);
+ 211              		.loc 1 55 7 is_stmt 1 view .LVU29
+ 212              		.loc 1 55 46 is_stmt 0 view .LVU30
+ 213 002e 2078     		ldrb	r0, [r4]
+ 214              		.loc 1 55 50 view .LVU31
+ 215 0030 0002     		lsls	r0, r0, #8
+ 216              		.loc 1 55 28 view .LVU32
+ 217 0032 00B2     		sxth	r0, r0
+ 218              		.loc 1 55 65 view .LVU33
+ 219 0034 6378     		ldrb	r3, [r4, #1]
+ 220              		.loc 1 55 15 view .LVU34
+ 221 0036 1843     		orrs	r0, r3
+ARM GAS  /tmp/cclxDj3B.s 			page 6
 
 
- 222 0044 1B02     		lsls	r3, r3, #8
- 223              		.loc 1 55 28 view .LVU39
- 224 0046 1BB2     		sxth	r3, r3
- 225              		.loc 1 55 65 view .LVU40
- 226 0048 6479     		ldrb	r4, [r4, #5]
- 227              		.loc 1 55 15 view .LVU41
- 228 004a 1C43     		orrs	r4, r3
- 229              	.LVL9:
-  56:Drivers/Giro/Src/giro_driver.c ****       ////////
-  57:Drivers/Giro/Src/giro_driver.c ****       *angle_x = Gyro_X_RAW*(250*3.1415/(63*180));
- 230              		.loc 1 57 7 is_stmt 1 view .LVU42
- 231              		.loc 1 57 28 is_stmt 0 view .LVU43
- 232 004c FFF7FEFF 		bl	__aeabi_i2d
- 233              	.LVL10:
- 234              		.loc 1 57 28 view .LVU44
- 235 0050 0F4A     		ldr	r2, .L5
- 236 0052 104B     		ldr	r3, .L5+4
- 237 0054 FFF7FEFF 		bl	__aeabi_dmul
- 238              	.LVL11:
- 239              		.loc 1 57 16 view .LVU45
- 240 0058 1D9B     		ldr	r3, [sp, #116]
- 241 005a 1860     		str	r0, [r3]
- 242 005c 5960     		str	r1, [r3, #4]
-  58:Drivers/Giro/Src/giro_driver.c ****       *angle_y = Gyro_Y_RAW*(250*3.1415/(63*180));
- 243              		.loc 1 58 7 is_stmt 1 view .LVU46
- 244              		.loc 1 58 28 is_stmt 0 view .LVU47
- 245 005e 2800     		movs	r0, r5
- 246 0060 FFF7FEFF 		bl	__aeabi_i2d
- 247              	.LVL12:
- 248 0064 0A4A     		ldr	r2, .L5
- 249 0066 0B4B     		ldr	r3, .L5+4
- 250 0068 FFF7FEFF 		bl	__aeabi_dmul
- 251              	.LVL13:
- 252              		.loc 1 58 16 view .LVU48
- 253 006c 1E9B     		ldr	r3, [sp, #120]
- 254 006e 1860     		str	r0, [r3]
- 255 0070 5960     		str	r1, [r3, #4]
-  59:Drivers/Giro/Src/giro_driver.c ****       *angle_z = Gyro_Z_RAW*(250*3.1415/(63*180));
- 256              		.loc 1 59 7 is_stmt 1 view .LVU49
- 257              		.loc 1 59 28 is_stmt 0 view .LVU50
- 258 0072 2000     		movs	r0, r4
- 259 0074 FFF7FEFF 		bl	__aeabi_i2d
- 260              	.LVL14:
- 261 0078 054A     		ldr	r2, .L5
- 262 007a 064B     		ldr	r3, .L5+4
- 263 007c FFF7FEFF 		bl	__aeabi_dmul
- 264              	.LVL15:
- 265              		.loc 1 59 16 view .LVU51
- 266 0080 1F9B     		ldr	r3, [sp, #124]
- 267 0082 1860     		str	r0, [r3]
- 268 0084 5960     		str	r1, [r3, #4]
-  60:Drivers/Giro/Src/giro_driver.c **** }
- 269              		.loc 1 60 1 view .LVU52
- 270 0086 07B0     		add	sp, sp, #28
- 271              		@ sp needed
- 272              	.LVL16:
- 273              	.LVL17:
-ARM GAS  /tmp/cchX71nJ.s 			page 7
+ 222              	.LVL13:
+  56:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_Y_RAW = (int16_t)(Rec_Data[2] << 8 | Rec_Data[3]);
+ 223              		.loc 1 56 7 is_stmt 1 view .LVU35
+ 224              		.loc 1 56 46 is_stmt 0 view .LVU36
+ 225 0038 A678     		ldrb	r6, [r4, #2]
+ 226              		.loc 1 56 50 view .LVU37
+ 227 003a 3602     		lsls	r6, r6, #8
+ 228              		.loc 1 56 28 view .LVU38
+ 229 003c 36B2     		sxth	r6, r6
+ 230              		.loc 1 56 65 view .LVU39
+ 231 003e E378     		ldrb	r3, [r4, #3]
+ 232              		.loc 1 56 15 view .LVU40
+ 233 0040 1E43     		orrs	r6, r3
+ 234              	.LVL14:
+  57:Drivers/Giro/Src/giro_driver.c ****       int16_t Gyro_Z_RAW = (int16_t)(Rec_Data[4] << 8 | Rec_Data[5]);
+ 235              		.loc 1 57 7 is_stmt 1 view .LVU41
+ 236              		.loc 1 57 46 is_stmt 0 view .LVU42
+ 237 0042 2379     		ldrb	r3, [r4, #4]
+ 238              		.loc 1 57 50 view .LVU43
+ 239 0044 1B02     		lsls	r3, r3, #8
+ 240              		.loc 1 57 28 view .LVU44
+ 241 0046 1BB2     		sxth	r3, r3
+ 242              		.loc 1 57 65 view .LVU45
+ 243 0048 6479     		ldrb	r4, [r4, #5]
+ 244              		.loc 1 57 15 view .LVU46
+ 245 004a 1C43     		orrs	r4, r3
+ 246              	.LVL15:
+  58:Drivers/Giro/Src/giro_driver.c ****       ////////
+  59:Drivers/Giro/Src/giro_driver.c ****       *angle_x = Gyro_X_RAW*(500*3.1415/(65535*180));
+ 247              		.loc 1 59 7 is_stmt 1 view .LVU47
+ 248              		.loc 1 59 28 is_stmt 0 view .LVU48
+ 249 004c FFF7FEFF 		bl	__aeabi_i2d
+ 250              	.LVL16:
+ 251              		.loc 1 59 28 view .LVU49
+ 252 0050 324A     		ldr	r2, .L20
+ 253 0052 334B     		ldr	r3, .L20+4
+ 254 0054 FFF7FEFF 		bl	__aeabi_dmul
+ 255              	.LVL17:
+ 256              		.loc 1 59 16 view .LVU50
+ 257 0058 4B46     		mov	r3, r9
+ 258 005a 1860     		str	r0, [r3]
+ 259 005c 5960     		str	r1, [r3, #4]
+  60:Drivers/Giro/Src/giro_driver.c ****       *angle_y = Gyro_Y_RAW*(250*3.1415/(32767*180));
+ 260              		.loc 1 60 7 is_stmt 1 view .LVU51
+ 261              		.loc 1 60 28 is_stmt 0 view .LVU52
+ 262 005e 3000     		movs	r0, r6
+ 263 0060 FFF7FEFF 		bl	__aeabi_i2d
+ 264              	.LVL18:
+ 265 0064 2F4A     		ldr	r2, .L20+8
+ 266 0066 304B     		ldr	r3, .L20+12
+ 267 0068 FFF7FEFF 		bl	__aeabi_dmul
+ 268              	.LVL19:
+ 269              		.loc 1 60 16 view .LVU53
+ 270 006c 4346     		mov	r3, r8
+ 271 006e 1860     		str	r0, [r3]
+ 272 0070 5960     		str	r1, [r3, #4]
+  61:Drivers/Giro/Src/giro_driver.c ****       *angle_z = Gyro_Z_RAW*(250*3.1415/(32767*180));
+ARM GAS  /tmp/cclxDj3B.s 			page 7
 
 
- 274              		.loc 1 60 1 view .LVU53
- 275 0088 30BC     		pop	{r4, r5}
- 276 008a 08BC     		pop	{r3}
- 277 008c 04B0     		add	sp, sp, #16
- 278 008e 1847     		bx	r3
- 279              	.L6:
- 280              		.align	2
- 281              	.L5:
- 282 0090 5846D790 		.word	-1864939944
- 283 0094 D4BAB13F 		.word	1068612308
- 284              		.cfi_endproc
- 285              	.LFE245:
- 287              		.text
- 288              	.Letext0:
- 289              		.file 2 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
- 290              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
- 291              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
- 292              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
- 293              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
- 294              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
-ARM GAS  /tmp/cchX71nJ.s 			page 8
+ 273              		.loc 1 61 7 is_stmt 1 view .LVU54
+ 274              		.loc 1 61 28 is_stmt 0 view .LVU55
+ 275 0072 2000     		movs	r0, r4
+ 276 0074 FFF7FEFF 		bl	__aeabi_i2d
+ 277              	.LVL20:
+ 278 0078 2A4A     		ldr	r2, .L20+8
+ 279 007a 2B4B     		ldr	r3, .L20+12
+ 280 007c FFF7FEFF 		bl	__aeabi_dmul
+ 281              	.LVL21:
+ 282              		.loc 1 61 16 view .LVU56
+ 283 0080 2860     		str	r0, [r5]
+ 284 0082 6960     		str	r1, [r5, #4]
+  62:Drivers/Giro/Src/giro_driver.c ****       
+  63:Drivers/Giro/Src/giro_driver.c ****       if((*angle_x < FILTR) && (*angle_x > -FILTR)) *angle_x = 0;
+ 285              		.loc 1 63 7 is_stmt 1 view .LVU57
+ 286              		.loc 1 63 11 is_stmt 0 view .LVU58
+ 287 0084 4B46     		mov	r3, r9
+ 288 0086 1E68     		ldr	r6, [r3]
+ 289 0088 5F68     		ldr	r7, [r3, #4]
+ 290              	.LVL22:
+ 291              		.loc 1 63 9 view .LVU59
+ 292 008a 284A     		ldr	r2, .L20+16
+ 293 008c 284B     		ldr	r3, .L20+20
+ 294 008e 3000     		movs	r0, r6
+ 295 0090 3900     		movs	r1, r7
+ 296 0092 FFF7FEFF 		bl	__aeabi_dcmplt
+ 297              	.LVL23:
+ 298 0096 0028     		cmp	r0, #0
+ 299 0098 0CD0     		beq	.L5
+ 300              		.loc 1 63 29 discriminator 1 view .LVU60
+ 301 009a 244A     		ldr	r2, .L20+16
+ 302 009c 254B     		ldr	r3, .L20+24
+ 303 009e 3000     		movs	r0, r6
+ 304 00a0 3900     		movs	r1, r7
+ 305 00a2 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 306              	.LVL24:
+ 307 00a6 0028     		cmp	r0, #0
+ 308 00a8 04D0     		beq	.L5
+ 309              		.loc 1 63 53 is_stmt 1 discriminator 2 view .LVU61
+ 310              		.loc 1 63 62 is_stmt 0 discriminator 2 view .LVU62
+ 311 00aa 0022     		movs	r2, #0
+ 312 00ac 0023     		movs	r3, #0
+ 313 00ae 4946     		mov	r1, r9
+ 314 00b0 0A60     		str	r2, [r1]
+ 315 00b2 4B60     		str	r3, [r1, #4]
+ 316              	.L5:
+  64:Drivers/Giro/Src/giro_driver.c ****       if((*angle_y < FILTR) && (*angle_y > -FILTR)) *angle_y = 0;
+ 317              		.loc 1 64 7 is_stmt 1 view .LVU63
+ 318              		.loc 1 64 11 is_stmt 0 view .LVU64
+ 319 00b4 4346     		mov	r3, r8
+ 320 00b6 1E68     		ldr	r6, [r3]
+ 321 00b8 5F68     		ldr	r7, [r3, #4]
+ 322              		.loc 1 64 9 view .LVU65
+ 323 00ba 1C4A     		ldr	r2, .L20+16
+ 324 00bc 1C4B     		ldr	r3, .L20+20
+ 325 00be 3000     		movs	r0, r6
+ 326 00c0 3900     		movs	r1, r7
+ARM GAS  /tmp/cclxDj3B.s 			page 8
+
+
+ 327 00c2 FFF7FEFF 		bl	__aeabi_dcmplt
+ 328              	.LVL25:
+ 329 00c6 0028     		cmp	r0, #0
+ 330 00c8 0CD0     		beq	.L8
+ 331              		.loc 1 64 29 discriminator 1 view .LVU66
+ 332 00ca 184A     		ldr	r2, .L20+16
+ 333 00cc 194B     		ldr	r3, .L20+24
+ 334 00ce 3000     		movs	r0, r6
+ 335 00d0 3900     		movs	r1, r7
+ 336 00d2 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 337              	.LVL26:
+ 338 00d6 0028     		cmp	r0, #0
+ 339 00d8 04D0     		beq	.L8
+ 340              		.loc 1 64 53 is_stmt 1 discriminator 2 view .LVU67
+ 341              		.loc 1 64 62 is_stmt 0 discriminator 2 view .LVU68
+ 342 00da 0022     		movs	r2, #0
+ 343 00dc 0023     		movs	r3, #0
+ 344 00de 4146     		mov	r1, r8
+ 345 00e0 0A60     		str	r2, [r1]
+ 346 00e2 4B60     		str	r3, [r1, #4]
+ 347              	.L8:
+  65:Drivers/Giro/Src/giro_driver.c ****       if((*angle_z < FILTR) && (*angle_z > -FILTR)) *angle_z = 0;
+ 348              		.loc 1 65 7 is_stmt 1 view .LVU69
+ 349              		.loc 1 65 11 is_stmt 0 view .LVU70
+ 350 00e4 2E68     		ldr	r6, [r5]
+ 351 00e6 6F68     		ldr	r7, [r5, #4]
+ 352              		.loc 1 65 9 view .LVU71
+ 353 00e8 104A     		ldr	r2, .L20+16
+ 354 00ea 114B     		ldr	r3, .L20+20
+ 355 00ec 3000     		movs	r0, r6
+ 356 00ee 3900     		movs	r1, r7
+ 357 00f0 FFF7FEFF 		bl	__aeabi_dcmplt
+ 358              	.LVL27:
+ 359 00f4 0028     		cmp	r0, #0
+ 360 00f6 0BD0     		beq	.L11
+ 361              		.loc 1 65 29 discriminator 1 view .LVU72
+ 362 00f8 0C4A     		ldr	r2, .L20+16
+ 363 00fa 0E4B     		ldr	r3, .L20+24
+ 364 00fc 3000     		movs	r0, r6
+ 365 00fe 3900     		movs	r1, r7
+ 366 0100 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 367              	.LVL28:
+ 368 0104 0028     		cmp	r0, #0
+ 369 0106 03D0     		beq	.L11
+ 370              		.loc 1 65 53 is_stmt 1 discriminator 2 view .LVU73
+ 371              		.loc 1 65 62 is_stmt 0 discriminator 2 view .LVU74
+ 372 0108 0022     		movs	r2, #0
+ 373 010a 0023     		movs	r3, #0
+ 374 010c 2A60     		str	r2, [r5]
+ 375 010e 6B60     		str	r3, [r5, #4]
+ 376              	.L11:
+  66:Drivers/Giro/Src/giro_driver.c ****       
+  67:Drivers/Giro/Src/giro_driver.c **** }
+ 377              		.loc 1 67 1 view .LVU75
+ 378 0110 07B0     		add	sp, sp, #28
+ 379              		@ sp needed
+ 380              	.LVL29:
+ARM GAS  /tmp/cclxDj3B.s 			page 9
+
+
+ 381              	.LVL30:
+ 382              	.LVL31:
+ 383              	.LVL32:
+ 384              		.loc 1 67 1 view .LVU76
+ 385 0112 C0BC     		pop	{r6, r7}
+ 386 0114 B946     		mov	r9, r7
+ 387 0116 B046     		mov	r8, r6
+ 388 0118 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 389              	.L21:
+ 390 011a C046     		.align	2
+ 391              	.L20:
+ 392 011c CD9B8EB2 		.word	-1299276851
+ 393 0120 FA73213F 		.word	1059156986
+ 394 0124 9736AC26 		.word	648820375
+ 395 0128 0C74213F 		.word	1059157004
+ 396 012c F168E388 		.word	-1998362383
+ 397 0130 B5F8E43E 		.word	1055193269
+ 398 0134 B5F8E4BE 		.word	-1092290379
+ 399              		.cfi_endproc
+ 400              	.LFE245:
+ 402              		.text
+ 403              	.Letext0:
+ 404              		.file 2 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
+ 405              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
+ 406              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
+ 407              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 408              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
+ 409              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
+ARM GAS  /tmp/cclxDj3B.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 giro_driver.c
-     /tmp/cchX71nJ.s:18     .text.giro_config:0000000000000000 $t
-     /tmp/cchX71nJ.s:24     .text.giro_config:0000000000000000 giro_config
-     /tmp/cchX71nJ.s:145    .text.giro_read_angls:0000000000000000 $t
-     /tmp/cchX71nJ.s:151    .text.giro_read_angls:0000000000000000 giro_read_angls
-     /tmp/cchX71nJ.s:282    .text.giro_read_angls:0000000000000090 $d
+     /tmp/cclxDj3B.s:18     .text.giro_config:0000000000000000 $t
+     /tmp/cclxDj3B.s:24     .text.giro_config:0000000000000000 giro_config
+     /tmp/cclxDj3B.s:152    .text.giro_read_angls:0000000000000000 $t
+     /tmp/cclxDj3B.s:158    .text.giro_read_angls:0000000000000000 giro_read_angls
+     /tmp/cclxDj3B.s:392    .text.giro_read_angls:000000000000011c $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Mem_Read
 HAL_I2C_Mem_Write
 __aeabi_i2d
 __aeabi_dmul
+__aeabi_dcmplt
+__aeabi_dcmpgt

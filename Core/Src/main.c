@@ -121,7 +121,19 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   //LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_9);
-  giro_config(hi2c1);
+  /*
+  uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
+	pin_mask = pin_mask & (~LL_GPIO_PIN_9);
+	pin_mask = pin_mask | LL_GPIO_PIN_9;
+  LL_GPIO_WriteOutputPort(GPIOC, pin_mask);
+  */
+  giro_config(&hi2c1);
+		/*
+    uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
+		pin_mask = pin_mask & (~LL_GPIO_PIN_9);
+		pin_mask = pin_mask | LL_GPIO_PIN_9;
+    LL_GPIO_WriteOutputPort(GPIOC, pin_mask);
+    */
   //LL_GPIO_TogglePin(GPIOC, LL_GPIO_PIN_9);
 
   htim1.Instance->CCR4 = 0;
@@ -194,10 +206,10 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 
-  LL_InitTick(48000000, sis_tik_frik);
-  LL_SYSTICK_EnableIT();
+  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
+  HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
+  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
-
 /**
   * @brief I2C1 Initialization Function
   * @param None
@@ -392,8 +404,8 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
 
   LL_AHB1_GRP1_EnableClock(LL_AHB1_GRP1_PERIPH_GPIOC);
-  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_8, LL_GPIO_MODE_OUTPUT);
-  LL_GPIO_SetPinMode(GPIOA, LL_GPIO_PIN_9, LL_GPIO_MODE_OUTPUT);
+  LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_8, LL_GPIO_MODE_OUTPUT);
+  LL_GPIO_SetPinMode(GPIOC, LL_GPIO_PIN_9, LL_GPIO_MODE_OUTPUT);
 }
 
 /* USER CODE BEGIN 4 */

@@ -205,20 +205,31 @@ void SysTick_Handler(void)
 		}
 	}
 
+#define POPRAVKA 0.005
+
   if(mode == LOCK_MODE)
   {
-    giro_read_angls(hi2c1, &psi, &teta, &phi);
+    giro_read_angls(&hi2c1, &psi, &teta, &phi);
+    squeaker_set_frik(&htim1, 4, 9000);
 
-    psi *= dtime;
-    teta *= dtime;  
-    phi *= dtime;
+    uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
+		
+		pin_mask = pin_mask & (~(LL_GPIO_PIN_8 | LL_GPIO_PIN_9));
+
+    double servo_rick = 0;
+    double servo_tang = 0;
+    double servo_kren = 0;
+
+    psi = psi*POPRAVKA;
+    teta = teta*POPRAVKA;  
+    phi = phi*POPRAVKA;
 
     front = Rotate(front, phi, psi, teta);
     right = Rotate(right, phi, psi, teta);
-
-    double servo_rick = atan(front.y / front.x);
-    double servo_tang = asin(front.z);
-
+    
+    servo_rick = atan(front.y / front.x);
+    servo_tang = asin(front.z);
+    
     vector f_proec = {front.x, front.y, 0};
     vector r_proec = {right.x, right.y, 0};
 
@@ -229,9 +240,24 @@ void SysTick_Handler(void)
 
     double nr_len = Vector_Scalar_Mul(&nr_proec, &nr_proec);
 
-    double servo_kren = acos(nr_len);
+    servo_kren = (right.z/abs(right.z))*acos(sqrt(nr_len));
 
-    set_3_servo(&htim2, servo_rick + 3.14/2, servo_tang + 3.14/2, servo_kren + 3.14/2);
+
+    set_3_servo(&htim2, servo_rick + 3.14/2 , servo_tang + 3.14/2, servo_kren + 3.14/2);
+
+    if(servo_tang > 0)
+		{
+			pin_mask = pin_mask | LL_GPIO_PIN_8;
+		}
+		else if (servo_tang < 0)
+		{
+			pin_mask = pin_mask | LL_GPIO_PIN_9;
+		}
+    LL_GPIO_WriteOutputPort(GPIOC, pin_mask);
+  }
+  else
+  {
+    off_squeaker(&htim1, 4);
   }
   
   /* USER CODE END SysTick_IRQn 0 */

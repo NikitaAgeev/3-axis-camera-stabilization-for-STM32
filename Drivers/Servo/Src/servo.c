@@ -31,6 +31,13 @@ int set_servo(TIM_HandleTypeDef* tim, uint8_t chanal, double angle)
 
 int set_3_servo(TIM_HandleTypeDef* tim, double angle_1, double angle_2, double angle_3)
 {
+    if(angle_1 < 0) angle_1 = 0;
+    if(angle_1 > 3.1415) angle_1 = 3,1415;
+    if(angle_2 < 0) angle_2 = 0;
+    if(angle_2 > 3.1415) angle_2 = 3,1415;
+    if(angle_3 < 0) angle_3 = 0;
+    if(angle_3 > 3.1415) angle_3 = 3,1415;
+
     tim->Instance->CCR1 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_1/3.1415));
     tim->Instance->CCR2 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_2/3.1415));
     tim->Instance->CCR3 = (MIN_SIZE + (MAX_SIZE - MIN_SIZE)*(angle_3/3.1415));
