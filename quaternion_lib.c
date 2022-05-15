@@ -103,9 +103,9 @@ vector Vector_Multi_Sum (vector* a, vector* b, vector* c)
 vector Rotate (vector vec, double phi, double psi, double theta)
 {
     vector result = {0};    
-    vector first_direction = {0, 0, 1};
-    vector second_direction = {cos(phi), sin(phi), 0};
-    vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+    vector first_direction = {1, 0, 0};
+    vector second_direction = {0, cos(phi), sin(phi)};
+    vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
 
     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first_direction.y, sin(phi / 2) * first_direction.z};
     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * second_direction.y, sin(psi / 2) * second_direction.z};
