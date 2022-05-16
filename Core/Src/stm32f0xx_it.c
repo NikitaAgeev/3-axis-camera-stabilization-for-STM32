@@ -224,8 +224,8 @@ void SysTick_Handler(void)
     teta = teta*POPRAVKA;  
     phi = phi*POPRAVKA;
 
-    front = Rotate(front, phi, psi, teta);
-    right = Rotate(right, phi, psi, teta);
+    front = Rotate(front, psi, teta, phi);
+    right = Rotate(right, psi, teta, phi);
     
     servo_rick = atan(front.y / front.x);
     servo_tang = asin(front.z);

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc8qSLgG.s 			page 1
+ARM GAS  /tmp/ccMsiaRR.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
   30:Core/Src/stm32f0xx_it.c **** 
   31:Core/Src/stm32f0xx_it.c **** #include "stm32f0xx_ll_rcc.h"
   32:Core/Src/stm32f0xx_it.c **** #include "stm32f0xx_ll_system.h"
-ARM GAS  /tmp/cc8qSLgG.s 			page 2
+ARM GAS  /tmp/ccMsiaRR.s 			page 2
 
 
   33:Core/Src/stm32f0xx_it.c **** #include "stm32f0xx_ll_bus.h"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
   87:Core/Src/stm32f0xx_it.c **** /* USER CODE END PV */
   88:Core/Src/stm32f0xx_it.c **** 
   89:Core/Src/stm32f0xx_it.c **** /* Private function prototypes -----------------------------------------------*/
-ARM GAS  /tmp/cc8qSLgG.s 			page 3
+ARM GAS  /tmp/ccMsiaRR.s 			page 3
 
 
   90:Core/Src/stm32f0xx_it.c **** /* USER CODE BEGIN PFP */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  122:Core/Src/stm32f0xx_it.c **** 
  123:Core/Src/stm32f0xx_it.c **** /**
  124:Core/Src/stm32f0xx_it.c ****   * @brief This function handles Hard fault interrupt.
-ARM GAS  /tmp/cc8qSLgG.s 			page 4
+ARM GAS  /tmp/ccMsiaRR.s 			page 4
 
 
  125:Core/Src/stm32f0xx_it.c ****   */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
   80 0000 7047     		bx	lr
   81              		.cfi_endproc
   82              	.LFE249:
-ARM GAS  /tmp/cc8qSLgG.s 			page 5
+ARM GAS  /tmp/ccMsiaRR.s 			page 5
 
 
   84              		.section	.text.PendSV_Handler,"ax",%progbits
@@ -277,107 +277,106 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  106              		.global	__aeabi_dsub
  107              		.global	__aeabi_d2iz
  108              		.global	__aeabi_i2d
- 109              		.global	__aeabi_dadd
- 110              		.global	__aeabi_dcmpgt
- 111              		.global	__aeabi_dcmplt
- 112              		.section	.text.SysTick_Handler,"ax",%progbits
- 113              		.align	1
- 114              		.global	SysTick_Handler
- 115              		.syntax unified
- 116              		.code	16
- 117              		.thumb_func
- 119              	SysTick_Handler:
- 120              	.LFB251:
+ 109              		.global	__aeabi_dcmpgt
+ 110              		.global	__aeabi_dcmplt
+ 111              		.section	.text.SysTick_Handler,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	SysTick_Handler
+ 114              		.syntax unified
+ 115              		.code	16
+ 116              		.thumb_func
+ 118              	SysTick_Handler:
+ 119              	.LFB251:
  163:Core/Src/stm32f0xx_it.c **** 
  164:Core/Src/stm32f0xx_it.c **** /**
  165:Core/Src/stm32f0xx_it.c ****   * @brief This function handles System tick timer.
  166:Core/Src/stm32f0xx_it.c ****   */
  167:Core/Src/stm32f0xx_it.c **** void SysTick_Handler(void)
  168:Core/Src/stm32f0xx_it.c **** {
- 121              		.loc 1 168 1 view -0
- 122              		.cfi_startproc
- 123              		@ args = 0, pretend = 0, frame = 152
- 124              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/cc8qSLgG.s 			page 6
+ 120              		.loc 1 168 1 view -0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 144
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ARM GAS  /tmp/ccMsiaRR.s 			page 6
 
 
- 125 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 126              	.LCFI0:
- 127              		.cfi_def_cfa_offset 20
- 128              		.cfi_offset 4, -20
- 129              		.cfi_offset 5, -16
- 130              		.cfi_offset 6, -12
- 131              		.cfi_offset 7, -8
- 132              		.cfi_offset 14, -4
- 133 0002 D646     		mov	lr, r10
- 134 0004 4F46     		mov	r7, r9
- 135 0006 80B5     		push	{r7, lr}
- 136              	.LCFI1:
- 137              		.cfi_def_cfa_offset 28
- 138              		.cfi_offset 9, -28
- 139              		.cfi_offset 10, -24
- 140 0008 B1B0     		sub	sp, sp, #196
- 141              	.LCFI2:
- 142              		.cfi_def_cfa_offset 224
+ 125              	.LCFI0:
+ 126              		.cfi_def_cfa_offset 20
+ 127              		.cfi_offset 4, -20
+ 128              		.cfi_offset 5, -16
+ 129              		.cfi_offset 6, -12
+ 130              		.cfi_offset 7, -8
+ 131              		.cfi_offset 14, -4
+ 132 0002 D646     		mov	lr, r10
+ 133 0004 4746     		mov	r7, r8
+ 134 0006 80B5     		push	{r7, lr}
+ 135              	.LCFI1:
+ 136              		.cfi_def_cfa_offset 28
+ 137              		.cfi_offset 8, -28
+ 138              		.cfi_offset 10, -24
+ 139 0008 AFB0     		sub	sp, sp, #188
+ 140              	.LCFI2:
+ 141              		.cfi_def_cfa_offset 216
  169:Core/Src/stm32f0xx_it.c ****   
  170:Core/Src/stm32f0xx_it.c ****   double phi = 0;
- 143              		.loc 1 170 3 view .LVU13
- 144              		.loc 1 170 10 is_stmt 0 view .LVU14
- 145 000a 0022     		movs	r2, #0
- 146 000c 0023     		movs	r3, #0
- 147 000e 2E92     		str	r2, [sp, #184]
- 148 0010 2F93     		str	r3, [sp, #188]
+ 142              		.loc 1 170 3 view .LVU13
+ 143              		.loc 1 170 10 is_stmt 0 view .LVU14
+ 144 000a 0022     		movs	r2, #0
+ 145 000c 0023     		movs	r3, #0
+ 146 000e 2C92     		str	r2, [sp, #176]
+ 147 0010 2D93     		str	r3, [sp, #180]
  171:Core/Src/stm32f0xx_it.c ****   double psi = 0;
- 149              		.loc 1 171 3 is_stmt 1 view .LVU15
- 150              		.loc 1 171 10 is_stmt 0 view .LVU16
- 151 0012 2C92     		str	r2, [sp, #176]
- 152 0014 2D93     		str	r3, [sp, #180]
+ 148              		.loc 1 171 3 is_stmt 1 view .LVU15
+ 149              		.loc 1 171 10 is_stmt 0 view .LVU16
+ 150 0012 2A92     		str	r2, [sp, #168]
+ 151 0014 2B93     		str	r3, [sp, #172]
  172:Core/Src/stm32f0xx_it.c ****   double teta = 0;
- 153              		.loc 1 172 3 is_stmt 1 view .LVU17
- 154              		.loc 1 172 10 is_stmt 0 view .LVU18
- 155 0016 2A92     		str	r2, [sp, #168]
- 156 0018 2B93     		str	r3, [sp, #172]
+ 152              		.loc 1 172 3 is_stmt 1 view .LVU17
+ 153              		.loc 1 172 10 is_stmt 0 view .LVU18
+ 154 0016 2892     		str	r2, [sp, #160]
+ 155 0018 2993     		str	r3, [sp, #164]
  173:Core/Src/stm32f0xx_it.c ****   double dtime = 1/sis_tik_frik;
- 157              		.loc 1 173 3 is_stmt 1 view .LVU19
- 158              	.LVL0:
+ 156              		.loc 1 173 3 is_stmt 1 view .LVU19
+ 157              	.LVL0:
  174:Core/Src/stm32f0xx_it.c ****   
  175:Core/Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 0 */
  176:Core/Src/stm32f0xx_it.c **** 	if((button_status & BUTTON_PUSH) && (button_delay_counter < BUTTON_DELAY))
- 159              		.loc 1 176 2 view .LVU20
- 160              		.loc 1 176 20 is_stmt 0 view .LVU21
- 161 001a C64B     		ldr	r3, .L24
- 162 001c 0025     		movs	r5, #0
- 163 001e 5D57     		ldrsb	r5, [r3, r5]
- 164 0020 1B78     		ldrb	r3, [r3]
- 165 0022 0122     		movs	r2, #1
- 166 0024 1400     		movs	r4, r2
- 167 0026 1C40     		ands	r4, r3
- 168              		.loc 1 176 4 view .LVU22
- 169 0028 1A42     		tst	r2, r3
- 170 002a 1BD0     		beq	.L8
- 171              		.loc 1 176 60 discriminator 1 view .LVU23
- 172 002c C24A     		ldr	r2, .L24+4
- 173 002e 1068     		ldr	r0, [r2]
-ARM GAS  /tmp/cc8qSLgG.s 			page 7
+ 158              		.loc 1 176 2 view .LVU20
+ 159              		.loc 1 176 20 is_stmt 0 view .LVU21
+ 160 001a B54B     		ldr	r3, .L24
+ 161 001c 0025     		movs	r5, #0
+ 162 001e 5D57     		ldrsb	r5, [r3, r5]
+ 163 0020 1B78     		ldrb	r3, [r3]
+ 164 0022 0122     		movs	r2, #1
+ 165 0024 1400     		movs	r4, r2
+ 166 0026 1C40     		ands	r4, r3
+ 167              		.loc 1 176 4 view .LVU22
+ 168 0028 1A42     		tst	r2, r3
+ 169 002a 1BD0     		beq	.L8
+ 170              		.loc 1 176 60 discriminator 1 view .LVU23
+ 171 002c B14A     		ldr	r2, .L24+4
+ 172 002e 1068     		ldr	r0, [r2]
+ 173 0030 5168     		ldr	r1, [r2, #4]
+ARM GAS  /tmp/ccMsiaRR.s 			page 7
 
 
- 174 0030 5168     		ldr	r1, [r2, #4]
- 175              		.loc 1 176 35 discriminator 1 view .LVU24
- 176 0032 0200     		movs	r2, r0
- 177 0034 0A43     		orrs	r2, r1
- 178 0036 15D1     		bne	.L8
+ 174              		.loc 1 176 35 discriminator 1 view .LVU24
+ 175 0032 0200     		movs	r2, r0
+ 176 0034 0A43     		orrs	r2, r1
+ 177 0036 15D1     		bne	.L8
  177:Core/Src/stm32f0xx_it.c ****     {
  178:Core/Src/stm32f0xx_it.c ****         button_delay_counter++;
- 179              		.loc 1 178 9 is_stmt 1 view .LVU25
- 180              		.loc 1 178 29 is_stmt 0 view .LVU26
- 181 0038 0122     		movs	r2, #1
- 182 003a 0023     		movs	r3, #0
- 183 003c 8018     		adds	r0, r0, r2
- 184 003e 5941     		adcs	r1, r1, r3
- 185 0040 BD4B     		ldr	r3, .L24+4
- 186 0042 1860     		str	r0, [r3]
- 187 0044 5960     		str	r1, [r3, #4]
- 188              	.L9:
+ 178              		.loc 1 178 9 is_stmt 1 view .LVU25
+ 179              		.loc 1 178 29 is_stmt 0 view .LVU26
+ 180 0038 0122     		movs	r2, #1
+ 181 003a 0023     		movs	r3, #0
+ 182 003c 8018     		adds	r0, r0, r2
+ 183 003e 5941     		adcs	r1, r1, r3
+ 184 0040 AC4B     		ldr	r3, .L24+4
+ 185 0042 1860     		str	r0, [r3]
+ 186 0044 5960     		str	r1, [r3, #4]
+ 187              	.L9:
  179:Core/Src/stm32f0xx_it.c ****     }
  180:Core/Src/stm32f0xx_it.c **** 	else if(button_status & BUTTON_PUSH)
  181:Core/Src/stm32f0xx_it.c **** 	{
@@ -410,18 +409,18 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  208:Core/Src/stm32f0xx_it.c **** #define POPRAVKA 0.005
  209:Core/Src/stm32f0xx_it.c **** 
  210:Core/Src/stm32f0xx_it.c ****   if(mode == LOCK_MODE)
- 189              		.loc 1 210 3 is_stmt 1 view .LVU27
- 190              		.loc 1 210 11 is_stmt 0 view .LVU28
- 191 0046 BD4B     		ldr	r3, .L24+8
- 192 0048 1B78     		ldrb	r3, [r3]
- 193              		.loc 1 210 5 view .LVU29
- 194 004a 012B     		cmp	r3, #1
- 195 004c 2DD0     		beq	.L22
+ 188              		.loc 1 210 3 is_stmt 1 view .LVU27
+ 189              		.loc 1 210 11 is_stmt 0 view .LVU28
+ 190 0046 AC4B     		ldr	r3, .L24+8
+ 191 0048 1B78     		ldrb	r3, [r3]
+ 192              		.loc 1 210 5 view .LVU29
+ 193 004a 012B     		cmp	r3, #1
+ 194 004c 2DD0     		beq	.L22
  211:Core/Src/stm32f0xx_it.c ****   {
-ARM GAS  /tmp/cc8qSLgG.s 			page 8
-
-
  212:Core/Src/stm32f0xx_it.c ****     giro_read_angls(&hi2c1, &psi, &teta, &phi);
+ARM GAS  /tmp/ccMsiaRR.s 			page 8
+
+
  213:Core/Src/stm32f0xx_it.c ****     squeaker_set_frik(&htim1, 4, 9000);
  214:Core/Src/stm32f0xx_it.c **** 
  215:Core/Src/stm32f0xx_it.c ****     uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
@@ -436,8 +435,8 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  224:Core/Src/stm32f0xx_it.c ****     teta = teta*POPRAVKA;  
  225:Core/Src/stm32f0xx_it.c ****     phi = phi*POPRAVKA;
  226:Core/Src/stm32f0xx_it.c **** 
- 227:Core/Src/stm32f0xx_it.c ****     front = Rotate(front, phi, psi, teta);
- 228:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, phi, psi, teta);
+ 227:Core/Src/stm32f0xx_it.c ****     front = Rotate(front, psi, teta, phi);
+ 228:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, psi, teta, phi);
  229:Core/Src/stm32f0xx_it.c ****     
  230:Core/Src/stm32f0xx_it.c ****     servo_rick = atan(front.y / front.x);
  231:Core/Src/stm32f0xx_it.c ****     servo_tang = asin(front.z);
@@ -455,7 +454,7 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  243:Core/Src/stm32f0xx_it.c ****     servo_kren = (right.z/abs(right.z))*acos(sqrt(nr_len));
  244:Core/Src/stm32f0xx_it.c **** 
  245:Core/Src/stm32f0xx_it.c **** 
- 246:Core/Src/stm32f0xx_it.c ****     set_3_servo(&htim2, servo_rick + 3.14/2 , servo_tang + 3.14/2, servo_kren + 3.14/2);
+ 246:Core/Src/stm32f0xx_it.c ****     set_3_servo(&htim2, /*servo_rick*/ + 3.14/2 , /*servo_tang*/ + 3.14/2, servo_kren);
  247:Core/Src/stm32f0xx_it.c **** 
  248:Core/Src/stm32f0xx_it.c ****     if(servo_tang > 0)
  249:Core/Src/stm32f0xx_it.c **** 		{
@@ -470,47 +469,47 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  258:Core/Src/stm32f0xx_it.c ****   else
  259:Core/Src/stm32f0xx_it.c ****   {
  260:Core/Src/stm32f0xx_it.c ****     off_squeaker(&htim1, 4);
- 196              		.loc 1 260 5 is_stmt 1 view .LVU30
- 197 004e 0421     		movs	r1, #4
- 198 0050 BB48     		ldr	r0, .L24+12
- 199 0052 FFF7FEFF 		bl	off_squeaker
- 200              	.LVL1:
- 201              	.L18:
+ 195              		.loc 1 260 5 is_stmt 1 view .LVU30
+ 196 004e 0421     		movs	r1, #4
+ 197 0050 AA48     		ldr	r0, .L24+12
+ 198 0052 FFF7FEFF 		bl	off_squeaker
+ 199              	.LVL1:
+ 200              	.L18:
  261:Core/Src/stm32f0xx_it.c ****   }
  262:Core/Src/stm32f0xx_it.c ****   
-ARM GAS  /tmp/cc8qSLgG.s 			page 9
-
-
  263:Core/Src/stm32f0xx_it.c ****   /* USER CODE END SysTick_IRQn 0 */
+ARM GAS  /tmp/ccMsiaRR.s 			page 9
+
+
  264:Core/Src/stm32f0xx_it.c ****   HAL_IncTick();
- 202              		.loc 1 264 3 view .LVU31
- 203 0056 FFF7FEFF 		bl	HAL_IncTick
- 204              	.LVL2:
+ 201              		.loc 1 264 3 view .LVU31
+ 202 0056 FFF7FEFF 		bl	HAL_IncTick
+ 203              	.LVL2:
  265:Core/Src/stm32f0xx_it.c ****   /* USER CODE BEGIN SysTick_IRQn 1 */
  266:Core/Src/stm32f0xx_it.c **** 
  267:Core/Src/stm32f0xx_it.c **** 
  268:Core/Src/stm32f0xx_it.c ****   /* USER CODE END SysTick_IRQn 1 */
  269:Core/Src/stm32f0xx_it.c **** }
- 205              		.loc 1 269 1 is_stmt 0 view .LVU32
- 206 005a 31B0     		add	sp, sp, #196
- 207              		@ sp needed
- 208 005c C0BC     		pop	{r6, r7}
- 209 005e BA46     		mov	r10, r7
- 210 0060 B146     		mov	r9, r6
- 211 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
- 212              	.L8:
+ 204              		.loc 1 269 1 is_stmt 0 view .LVU32
+ 205 005a 2FB0     		add	sp, sp, #188
+ 206              		@ sp needed
+ 207 005c C0BC     		pop	{r6, r7}
+ 208 005e BA46     		mov	r10, r7
+ 209 0060 B046     		mov	r8, r6
+ 210 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 211              	.L8:
  180:Core/Src/stm32f0xx_it.c **** 	{
- 213              		.loc 1 180 7 is_stmt 1 view .LVU33
+ 212              		.loc 1 180 7 is_stmt 1 view .LVU33
  180:Core/Src/stm32f0xx_it.c **** 	{
- 214              		.loc 1 180 9 is_stmt 0 view .LVU34
- 215 0064 002C     		cmp	r4, #0
- 216 0066 EED0     		beq	.L9
+ 213              		.loc 1 180 9 is_stmt 0 view .LVU34
+ 214 0064 002C     		cmp	r4, #0
+ 215 0066 EED0     		beq	.L9
  182:Core/Src/stm32f0xx_it.c **** 		{
- 217              		.loc 1 182 3 is_stmt 1 view .LVU35
- 218              	.LVL3:
- 219              	.LBB9:
- 220              	.LBI9:
- 221              		.file 2 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h"
+ 216              		.loc 1 182 3 is_stmt 1 view .LVU35
+ 217              	.LVL3:
+ 218              	.LBB9:
+ 219              	.LBI9:
+ 220              		.file 2 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h"
    1:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
    2:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   ******************************************************************************
    3:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @file    stm32f0xx_ll_gpio.h
@@ -538,10 +537,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
   25:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** extern "C" {
   26:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #endif
   27:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
-ARM GAS  /tmp/cc8qSLgG.s 			page 10
-
-
   28:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /* Includes ------------------------------------------------------------------*/
+ARM GAS  /tmp/ccMsiaRR.s 			page 10
+
+
   29:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #include "stm32f0xx.h"
   30:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
   31:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /** @addtogroup STM32F0xx_LL_Driver
@@ -598,10 +597,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
   82:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****                               GPIO HW configuration can be modified afterwards using unitary functi
   83:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
   84:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   uint32_t Pull;         /*!< Specifies the operating Pull-up/Pull down for the selected pins.
-ARM GAS  /tmp/cc8qSLgG.s 			page 11
-
-
   85:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****                               This parameter can be a value of @ref GPIO_LL_EC_PULL.
+ARM GAS  /tmp/ccMsiaRR.s 			page 11
+
+
   86:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
   87:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****                               GPIO HW configuration can be modified afterwards using unitary functi
   88:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
@@ -658,10 +657,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  139:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #define LL_GPIO_MODE_ALTERNATE             GPIO_MODER_MODER0_1  /*!< Select alternate function mode
  140:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** #define LL_GPIO_MODE_ANALOG                GPIO_MODER_MODER0    /*!< Select analog mode */
  141:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
-ARM GAS  /tmp/cc8qSLgG.s 			page 12
-
-
  142:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @}
+ARM GAS  /tmp/ccMsiaRR.s 			page 12
+
+
  143:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  144:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  145:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /** @defgroup GPIO_LL_EC_OUTPUT Output Type
@@ -718,10 +717,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  196:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /* Exported macro ------------------------------------------------------------*/
  197:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /** @defgroup GPIO_LL_Exported_Macros GPIO Exported Macros
  198:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @{
-ARM GAS  /tmp/cc8qSLgG.s 			page 13
-
-
  199:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
+ARM GAS  /tmp/ccMsiaRR.s 			page 13
+
+
  200:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  201:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /** @defgroup GPIO_LL_EM_WRITE_READ Common Write and read registers Macros
  202:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @{
@@ -778,10 +777,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  253:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
  254:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  255:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
-ARM GAS  /tmp/cc8qSLgG.s 			page 14
-
-
  256:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
+ARM GAS  /tmp/ccMsiaRR.s 			page 14
+
+
  257:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
  258:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_13
  259:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_14
@@ -838,10 +837,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  310:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         alternate modes. Possible type are Push-pull or Open-drain.
  311:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @rmtoll OTYPER       OTy           LL_GPIO_SetPinOutputType
  312:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
-ARM GAS  /tmp/cc8qSLgG.s 			page 15
-
-
  313:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  PinMask This parameter can be a combination of the following values:
+ARM GAS  /tmp/ccMsiaRR.s 			page 15
+
+
  314:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_0
  315:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_1
  316:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_2
@@ -898,10 +897,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  367:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_OUTPUT_PUSHPULL
  368:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_OUTPUT_OPENDRAIN
  369:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  /tmp/cc8qSLgG.s 			page 16
-
-
  370:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_GetPinOutputType(GPIO_TypeDef *GPIOx, uint32_t Pin)
+ARM GAS  /tmp/ccMsiaRR.s 			page 16
+
+
  371:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  372:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   return (uint32_t)(READ_BIT(GPIOx->OTYPER, Pin) / Pin);
  373:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
@@ -958,10 +957,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  424:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_4
  425:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_5
  426:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_6
-ARM GAS  /tmp/cc8qSLgG.s 			page 17
-
-
  427:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_7
+ARM GAS  /tmp/ccMsiaRR.s 			page 17
+
+
  428:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
  429:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
  430:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
@@ -1018,10 +1017,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  481:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @note   Warning: only one pin can be passed as parameter.
  482:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @rmtoll PUPDR        PUPDy         LL_GPIO_GetPinPull
  483:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
-ARM GAS  /tmp/cc8qSLgG.s 			page 18
-
-
  484:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  Pin This parameter can be one of the following values:
+ARM GAS  /tmp/ccMsiaRR.s 			page 18
+
+
  485:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_0
  486:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_1
  487:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_2
@@ -1078,10 +1077,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  538:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  539:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   MODIFY_REG(GPIOx->AFR[0], ((((Pin * Pin) * Pin) * Pin) * GPIO_AFRL_AFSEL0),
  540:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****              ((((Pin * Pin) * Pin) * Pin) * Alternate));
-ARM GAS  /tmp/cc8qSLgG.s 			page 19
-
-
  541:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
+ARM GAS  /tmp/ccMsiaRR.s 			page 19
+
+
  542:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  543:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
  544:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @brief  Return gpio alternate function of a dedicated pin from 0 to 7 for a dedicated port.
@@ -1138,10 +1137,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  595:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_AF_7
  596:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval None
  597:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  /tmp/cc8qSLgG.s 			page 20
-
-
  598:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE void LL_GPIO_SetAFPin_8_15(GPIO_TypeDef *GPIOx, uint32_t Pin, uint32_t Alternate)
+ARM GAS  /tmp/ccMsiaRR.s 			page 20
+
+
  599:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  600:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   MODIFY_REG(GPIOx->AFR[1], (((((Pin >> 8U) * (Pin >> 8U)) * (Pin >> 8U)) * (Pin >> 8U)) * GPIO_AFR
  601:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****              (((((Pin >> 8U) * (Pin >> 8U)) * (Pin >> 8U)) * (Pin >> 8U)) * Alternate));
@@ -1198,10 +1197,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  652:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_6
  653:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_7
  654:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_8
-ARM GAS  /tmp/cc8qSLgG.s 			page 21
-
-
  655:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_9
+ARM GAS  /tmp/ccMsiaRR.s 			page 21
+
+
  656:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_10
  657:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_11
  658:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   *         @arg @ref LL_GPIO_PIN_12
@@ -1258,10 +1257,10 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  709:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  710:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_IsAnyPinLocked(GPIO_TypeDef *GPIOx)
  711:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
-ARM GAS  /tmp/cc8qSLgG.s 			page 22
-
-
  712:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   return (READ_BIT(GPIOx->LCKR, GPIO_LCKR_LCKK) == (GPIO_LCKR_LCKK));
+ARM GAS  /tmp/ccMsiaRR.s 			page 22
+
+
  713:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
  714:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  715:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
@@ -1308,116 +1307,116 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  756:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval State of bit (1 or 0).
  757:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
  758:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_IsInputPinSet(GPIO_TypeDef *GPIOx, uint32_t PinMask)
- 222              		.loc 2 758 26 view .LVU36
- 223              	.LBB10:
+ 221              		.loc 2 758 26 view .LVU36
+ 222              	.LBB10:
  759:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  760:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   return (READ_BIT(GPIOx->IDR, PinMask) == (PinMask));
- 224              		.loc 2 760 3 view .LVU37
- 225              		.loc 2 760 11 is_stmt 0 view .LVU38
- 226 0068 9022     		movs	r2, #144
- 227 006a D205     		lsls	r2, r2, #23
- 228 006c 1269     		ldr	r2, [r2, #16]
- 229              	.LVL4:
-ARM GAS  /tmp/cc8qSLgG.s 			page 23
+ 223              		.loc 2 760 3 view .LVU37
+ 224              		.loc 2 760 11 is_stmt 0 view .LVU38
+ 225 0068 9022     		movs	r2, #144
+ 226 006a D205     		lsls	r2, r2, #23
+ 227 006c 1269     		ldr	r2, [r2, #16]
+ 228              	.LVL4:
+ 229              		.loc 2 760 11 view .LVU39
+ARM GAS  /tmp/ccMsiaRR.s 			page 23
 
 
- 230              		.loc 2 760 11 view .LVU39
- 231              	.LBE10:
- 232              	.LBE9:
+ 230              	.LBE10:
+ 231              	.LBE9:
  182:Core/Src/stm32f0xx_it.c **** 		{
- 233              		.loc 1 182 5 view .LVU40
- 234 006e 1207     		lsls	r2, r2, #28
- 235 0070 11D4     		bmi	.L10
+ 232              		.loc 1 182 5 view .LVU40
+ 233 006e 1207     		lsls	r2, r2, #28
+ 234 0070 11D4     		bmi	.L10
  184:Core/Src/stm32f0xx_it.c **** 			{
- 236              		.loc 1 184 4 is_stmt 1 view .LVU41
+ 235              		.loc 1 184 4 is_stmt 1 view .LVU41
  184:Core/Src/stm32f0xx_it.c **** 			{
- 237              		.loc 1 184 6 is_stmt 0 view .LVU42
- 238 0072 9B07     		lsls	r3, r3, #30
- 239 0074 E7D4     		bmi	.L9
+ 236              		.loc 1 184 6 is_stmt 0 view .LVU42
+ 237 0072 9B07     		lsls	r3, r3, #30
+ 238 0074 E7D4     		bmi	.L9
  186:Core/Src/stm32f0xx_it.c ****         {
- 240              		.loc 1 186 9 is_stmt 1 view .LVU43
+ 239              		.loc 1 186 9 is_stmt 1 view .LVU43
  186:Core/Src/stm32f0xx_it.c ****         {
- 241              		.loc 1 186 17 is_stmt 0 view .LVU44
- 242 0076 B14B     		ldr	r3, .L24+8
- 243 0078 1B78     		ldrb	r3, [r3]
+ 240              		.loc 1 186 17 is_stmt 0 view .LVU44
+ 241 0076 A04B     		ldr	r3, .L24+8
+ 242 0078 1B78     		ldrb	r3, [r3]
  186:Core/Src/stm32f0xx_it.c ****         {
- 244              		.loc 1 186 11 view .LVU45
- 245 007a 012B     		cmp	r3, #1
- 246 007c 07D0     		beq	.L23
+ 243              		.loc 1 186 11 view .LVU45
+ 244 007a 012B     		cmp	r3, #1
+ 245 007c 07D0     		beq	.L23
  192:Core/Src/stm32f0xx_it.c ****         }
- 247              		.loc 1 192 11 is_stmt 1 view .LVU46
+ 246              		.loc 1 192 11 is_stmt 1 view .LVU46
  192:Core/Src/stm32f0xx_it.c ****         }
- 248              		.loc 1 192 16 is_stmt 0 view .LVU47
- 249 007e AF4B     		ldr	r3, .L24+8
- 250 0080 0122     		movs	r2, #1
- 251 0082 1A70     		strb	r2, [r3]
- 252              	.L12:
+ 247              		.loc 1 192 16 is_stmt 0 view .LVU47
+ 248 007e 9E4B     		ldr	r3, .L24+8
+ 249 0080 0122     		movs	r2, #1
+ 250 0082 1A70     		strb	r2, [r3]
+ 251              	.L12:
  194:Core/Src/stm32f0xx_it.c **** 			}
- 253              		.loc 1 194 5 is_stmt 1 view .LVU48
+ 252              		.loc 1 194 5 is_stmt 1 view .LVU48
  194:Core/Src/stm32f0xx_it.c **** 			}
- 254              		.loc 1 194 19 is_stmt 0 view .LVU49
- 255 0084 0223     		movs	r3, #2
- 256 0086 1D43     		orrs	r5, r3
- 257 0088 AA4B     		ldr	r3, .L24
- 258 008a 1D70     		strb	r5, [r3]
- 259 008c DBE7     		b	.L9
- 260              	.L23:
+ 253              		.loc 1 194 19 is_stmt 0 view .LVU49
+ 254 0084 0223     		movs	r3, #2
+ 255 0086 1D43     		orrs	r5, r3
+ 256 0088 994B     		ldr	r3, .L24
+ 257 008a 1D70     		strb	r5, [r3]
+ 258 008c DBE7     		b	.L9
+ 259              	.L23:
  188:Core/Src/stm32f0xx_it.c ****         }
- 261              		.loc 1 188 11 is_stmt 1 view .LVU50
+ 260              		.loc 1 188 11 is_stmt 1 view .LVU50
  188:Core/Src/stm32f0xx_it.c ****         }
- 262              		.loc 1 188 16 is_stmt 0 view .LVU51
- 263 008e AB4B     		ldr	r3, .L24+8
- 264 0090 0222     		movs	r2, #2
- 265 0092 1A70     		strb	r2, [r3]
- 266 0094 F6E7     		b	.L12
- 267              	.L10:
+ 261              		.loc 1 188 16 is_stmt 0 view .LVU51
+ 262 008e 9A4B     		ldr	r3, .L24+8
+ 263 0090 0222     		movs	r2, #2
+ 264 0092 1A70     		strb	r2, [r3]
+ 265 0094 F6E7     		b	.L12
+ 266              	.L10:
  199:Core/Src/stm32f0xx_it.c **** 			{
- 268              		.loc 1 199 4 is_stmt 1 view .LVU52
+ 267              		.loc 1 199 4 is_stmt 1 view .LVU52
  199:Core/Src/stm32f0xx_it.c **** 			{
- 269              		.loc 1 199 6 is_stmt 0 view .LVU53
- 270 0096 5B07     		lsls	r3, r3, #29
- 271 0098 D5D4     		bmi	.L9
+ 268              		.loc 1 199 6 is_stmt 0 view .LVU53
+ 269 0096 5B07     		lsls	r3, r3, #29
+ 270 0098 D5D4     		bmi	.L9
  202:Core/Src/stm32f0xx_it.c **** 				button_status = button_status | BUTTON_UNPUSHED;
-ARM GAS  /tmp/cc8qSLgG.s 			page 24
+ 271              		.loc 1 202 5 is_stmt 1 view .LVU54
+ARM GAS  /tmp/ccMsiaRR.s 			page 24
 
 
- 272              		.loc 1 202 5 is_stmt 1 view .LVU54
  202:Core/Src/stm32f0xx_it.c **** 				button_status = button_status | BUTTON_UNPUSHED;
- 273              		.loc 1 202 19 is_stmt 0 view .LVU55
- 274 009a 0323     		movs	r3, #3
- 275 009c 9D43     		bics	r5, r3
- 276 009e A54B     		ldr	r3, .L24
- 277 00a0 1D70     		strb	r5, [r3]
+ 272              		.loc 1 202 19 is_stmt 0 view .LVU55
+ 273 009a 0323     		movs	r3, #3
+ 274 009c 9D43     		bics	r5, r3
+ 275 009e 944B     		ldr	r3, .L24
+ 276 00a0 1D70     		strb	r5, [r3]
  203:Core/Src/stm32f0xx_it.c **** 			}
- 278              		.loc 1 203 5 is_stmt 1 view .LVU56
+ 277              		.loc 1 203 5 is_stmt 1 view .LVU56
  203:Core/Src/stm32f0xx_it.c **** 			}
- 279              		.loc 1 203 19 is_stmt 0 view .LVU57
- 280 00a2 0422     		movs	r2, #4
- 281 00a4 1543     		orrs	r5, r2
- 282 00a6 1D70     		strb	r5, [r3]
- 283 00a8 CDE7     		b	.L9
- 284              	.L22:
- 285              	.LBB11:
+ 278              		.loc 1 203 19 is_stmt 0 view .LVU57
+ 279 00a2 0422     		movs	r2, #4
+ 280 00a4 1543     		orrs	r5, r2
+ 281 00a6 1D70     		strb	r5, [r3]
+ 282 00a8 CDE7     		b	.L9
+ 283              	.L22:
+ 284              	.LBB11:
  212:Core/Src/stm32f0xx_it.c ****     squeaker_set_frik(&htim1, 4, 9000);
- 286              		.loc 1 212 5 is_stmt 1 view .LVU58
- 287 00aa 2EAB     		add	r3, sp, #184
- 288 00ac 2AAA     		add	r2, sp, #168
- 289 00ae 2CA9     		add	r1, sp, #176
- 290 00b0 A448     		ldr	r0, .L24+16
- 291 00b2 FFF7FEFF 		bl	giro_read_angls
- 292              	.LVL5:
+ 285              		.loc 1 212 5 is_stmt 1 view .LVU58
+ 286 00aa 2CAB     		add	r3, sp, #176
+ 287 00ac 28AA     		add	r2, sp, #160
+ 288 00ae 2AA9     		add	r1, sp, #168
+ 289 00b0 9348     		ldr	r0, .L24+16
+ 290 00b2 FFF7FEFF 		bl	giro_read_angls
+ 291              	.LVL5:
  213:Core/Src/stm32f0xx_it.c **** 
- 293              		.loc 1 213 5 view .LVU59
- 294 00b6 0022     		movs	r2, #0
- 295 00b8 A34B     		ldr	r3, .L24+20
- 296 00ba 0421     		movs	r1, #4
- 297 00bc A048     		ldr	r0, .L24+12
- 298 00be FFF7FEFF 		bl	squeaker_set_frik
- 299              	.LVL6:
+ 292              		.loc 1 213 5 view .LVU59
+ 293 00b6 0022     		movs	r2, #0
+ 294 00b8 924B     		ldr	r3, .L24+20
+ 295 00ba 0421     		movs	r1, #4
+ 296 00bc 8F48     		ldr	r0, .L24+12
+ 297 00be FFF7FEFF 		bl	squeaker_set_frik
+ 298              	.LVL6:
  215:Core/Src/stm32f0xx_it.c **** 		
- 300              		.loc 1 215 5 view .LVU60
- 301              	.LBB12:
- 302              	.LBI12:
+ 299              		.loc 1 215 5 view .LVU60
+ 300              	.LBB12:
+ 301              	.LBI12:
  761:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
  762:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** 
  763:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** /**
@@ -1438,573 +1437,526 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  778:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @param  GPIOx GPIO Port
  779:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   * @retval Output data register value of port
  780:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   */
-ARM GAS  /tmp/cc8qSLgG.s 			page 25
-
-
  781:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** __STATIC_INLINE uint32_t LL_GPIO_ReadOutputPort(GPIO_TypeDef *GPIOx)
- 303              		.loc 2 781 26 view .LVU61
- 304              	.LBB13:
+ARM GAS  /tmp/ccMsiaRR.s 			page 25
+
+
+ 302              		.loc 2 781 26 view .LVU61
+ 303              	.LBB13:
  782:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
  783:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h ****   return (uint32_t)(READ_REG(GPIOx->ODR));
- 305              		.loc 2 783 3 view .LVU62
- 306              		.loc 2 783 10 is_stmt 0 view .LVU63
- 307 00c2 A24B     		ldr	r3, .L24+24
- 308 00c4 5B69     		ldr	r3, [r3, #20]
- 309              	.LVL7:
- 310              		.loc 2 783 10 view .LVU64
- 311              	.LBE13:
- 312              	.LBE12:
+ 304              		.loc 2 783 3 view .LVU62
+ 305              		.loc 2 783 10 is_stmt 0 view .LVU63
+ 306 00c2 914B     		ldr	r3, .L24+24
+ 307 00c4 5B69     		ldr	r3, [r3, #20]
+ 308              	.LVL7:
+ 309              		.loc 2 783 10 view .LVU64
+ 310              	.LBE13:
+ 311              	.LBE12:
  215:Core/Src/stm32f0xx_it.c **** 		
- 313              		.loc 1 215 14 view .LVU65
- 314 00c6 9BB2     		uxth	r3, r3
- 315              	.LVL8:
+ 312              		.loc 1 215 14 view .LVU65
+ 313 00c6 9BB2     		uxth	r3, r3
+ 314              	.LVL8:
  217:Core/Src/stm32f0xx_it.c **** 
- 316              		.loc 1 217 3 is_stmt 1 view .LVU66
+ 315              		.loc 1 217 3 is_stmt 1 view .LVU66
  217:Core/Src/stm32f0xx_it.c **** 
- 317              		.loc 1 217 12 is_stmt 0 view .LVU67
- 318 00c8 A14A     		ldr	r2, .L24+28
- 319 00ca 1340     		ands	r3, r2
- 320              	.LVL9:
+ 316              		.loc 1 217 12 is_stmt 0 view .LVU67
+ 317 00c8 904A     		ldr	r2, .L24+28
+ 318 00ca 1340     		ands	r3, r2
+ 319              	.LVL9:
  217:Core/Src/stm32f0xx_it.c **** 
- 321              		.loc 1 217 12 view .LVU68
- 322 00cc 9A46     		mov	r10, r3
- 323              	.LVL10:
+ 320              		.loc 1 217 12 view .LVU68
+ 321 00cc 9A46     		mov	r10, r3
+ 322              	.LVL10:
  219:Core/Src/stm32f0xx_it.c ****     double servo_tang = 0;
- 324              		.loc 1 219 5 is_stmt 1 view .LVU69
+ 323              		.loc 1 219 5 is_stmt 1 view .LVU69
  220:Core/Src/stm32f0xx_it.c ****     double servo_kren = 0;
- 325              		.loc 1 220 5 view .LVU70
+ 324              		.loc 1 220 5 view .LVU70
  221:Core/Src/stm32f0xx_it.c **** 
- 326              		.loc 1 221 5 view .LVU71
+ 325              		.loc 1 221 5 view .LVU71
  223:Core/Src/stm32f0xx_it.c ****     teta = teta*POPRAVKA;  
- 327              		.loc 1 223 5 view .LVU72
+ 326              		.loc 1 223 5 view .LVU72
  223:Core/Src/stm32f0xx_it.c ****     teta = teta*POPRAVKA;  
- 328              		.loc 1 223 14 is_stmt 0 view .LVU73
- 329 00ce A14A     		ldr	r2, .L24+32
- 330 00d0 A14B     		ldr	r3, .L24+36
- 331 00d2 2C98     		ldr	r0, [sp, #176]
- 332 00d4 2D99     		ldr	r1, [sp, #180]
- 333 00d6 FFF7FEFF 		bl	__aeabi_dmul
- 334              	.LVL11:
- 335 00da 0600     		movs	r6, r0
- 336 00dc 0F00     		movs	r7, r1
+ 327              		.loc 1 223 14 is_stmt 0 view .LVU73
+ 328 00ce 904A     		ldr	r2, .L24+32
+ 329 00d0 904B     		ldr	r3, .L24+36
+ 330 00d2 2A98     		ldr	r0, [sp, #168]
+ 331 00d4 2B99     		ldr	r1, [sp, #172]
+ 332 00d6 FFF7FEFF 		bl	__aeabi_dmul
+ 333              	.LVL11:
+ 334 00da 0600     		movs	r6, r0
+ 335 00dc 0F00     		movs	r7, r1
  223:Core/Src/stm32f0xx_it.c ****     teta = teta*POPRAVKA;  
- 337              		.loc 1 223 9 view .LVU74
- 338 00de 2C96     		str	r6, [sp, #176]
- 339 00e0 2D97     		str	r7, [sp, #180]
+ 336              		.loc 1 223 9 view .LVU74
+ 337 00de 2A96     		str	r6, [sp, #168]
+ 338 00e0 2B97     		str	r7, [sp, #172]
  224:Core/Src/stm32f0xx_it.c ****     phi = phi*POPRAVKA;
- 340              		.loc 1 224 5 is_stmt 1 view .LVU75
+ 339              		.loc 1 224 5 is_stmt 1 view .LVU75
  224:Core/Src/stm32f0xx_it.c ****     phi = phi*POPRAVKA;
- 341              		.loc 1 224 16 is_stmt 0 view .LVU76
- 342 00e2 9C4A     		ldr	r2, .L24+32
- 343 00e4 9C4B     		ldr	r3, .L24+36
- 344 00e6 2A98     		ldr	r0, [sp, #168]
-ARM GAS  /tmp/cc8qSLgG.s 			page 26
+ 340              		.loc 1 224 16 is_stmt 0 view .LVU76
+ 341 00e2 8B4A     		ldr	r2, .L24+32
+ 342 00e4 8B4B     		ldr	r3, .L24+36
+ 343 00e6 2898     		ldr	r0, [sp, #160]
+ 344 00e8 2999     		ldr	r1, [sp, #164]
+ARM GAS  /tmp/ccMsiaRR.s 			page 26
 
 
- 345 00e8 2B99     		ldr	r1, [sp, #172]
- 346 00ea FFF7FEFF 		bl	__aeabi_dmul
- 347              	.LVL12:
+ 345 00ea FFF7FEFF 		bl	__aeabi_dmul
+ 346              	.LVL12:
  224:Core/Src/stm32f0xx_it.c ****     phi = phi*POPRAVKA;
- 348              		.loc 1 224 10 view .LVU77
- 349 00ee 0A90     		str	r0, [sp, #40]
- 350 00f0 0B91     		str	r1, [sp, #44]
- 351 00f2 0300     		movs	r3, r0
- 352 00f4 0C00     		movs	r4, r1
- 353 00f6 2A93     		str	r3, [sp, #168]
- 354 00f8 2B94     		str	r4, [sp, #172]
+ 347              		.loc 1 224 10 view .LVU77
+ 348 00ee 0A90     		str	r0, [sp, #40]
+ 349 00f0 0B91     		str	r1, [sp, #44]
+ 350 00f2 0300     		movs	r3, r0
+ 351 00f4 0C00     		movs	r4, r1
+ 352 00f6 2893     		str	r3, [sp, #160]
+ 353 00f8 2994     		str	r4, [sp, #164]
  225:Core/Src/stm32f0xx_it.c **** 
- 355              		.loc 1 225 5 is_stmt 1 view .LVU78
+ 354              		.loc 1 225 5 is_stmt 1 view .LVU78
  225:Core/Src/stm32f0xx_it.c **** 
- 356              		.loc 1 225 14 is_stmt 0 view .LVU79
- 357 00fa 964A     		ldr	r2, .L24+32
- 358 00fc 964B     		ldr	r3, .L24+36
- 359 00fe 2E98     		ldr	r0, [sp, #184]
- 360 0100 2F99     		ldr	r1, [sp, #188]
- 361 0102 FFF7FEFF 		bl	__aeabi_dmul
- 362              	.LVL13:
+ 355              		.loc 1 225 14 is_stmt 0 view .LVU79
+ 356 00fa 854A     		ldr	r2, .L24+32
+ 357 00fc 854B     		ldr	r3, .L24+36
+ 358 00fe 2C98     		ldr	r0, [sp, #176]
+ 359 0100 2D99     		ldr	r1, [sp, #180]
+ 360 0102 FFF7FEFF 		bl	__aeabi_dmul
+ 361              	.LVL13:
  225:Core/Src/stm32f0xx_it.c **** 
- 363              		.loc 1 225 9 view .LVU80
- 364 0106 2E90     		str	r0, [sp, #184]
- 365 0108 2F91     		str	r1, [sp, #188]
- 227:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, phi, psi, teta);
- 366              		.loc 1 227 5 is_stmt 1 view .LVU81
- 227:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, phi, psi, teta);
- 367              		.loc 1 227 13 is_stmt 0 view .LVU82
- 368 010a 944C     		ldr	r4, .L24+40
- 369 010c 0A9A     		ldr	r2, [sp, #40]
- 370 010e 0B9B     		ldr	r3, [sp, #44]
- 371 0110 0892     		str	r2, [sp, #32]
- 372 0112 0993     		str	r3, [sp, #36]
- 373 0114 0696     		str	r6, [sp, #24]
- 374 0116 0797     		str	r7, [sp, #28]
- 375 0118 0490     		str	r0, [sp, #16]
- 376 011a 0591     		str	r1, [sp, #20]
- 377 011c 2100     		movs	r1, r4
- 378 011e 0831     		adds	r1, r1, #8
- 379 0120 1022     		movs	r2, #16
- 380 0122 6846     		mov	r0, sp
- 381 0124 FFF7FEFF 		bl	memcpy
- 382              	.LVL14:
- 383 0128 2268     		ldr	r2, [r4]
- 384 012a 6368     		ldr	r3, [r4, #4]
- 385 012c 12A8     		add	r0, sp, #72
- 386 012e FFF7FEFF 		bl	Rotate
- 387              	.LVL15:
- 388 0132 1822     		movs	r2, #24
- 389 0134 12A9     		add	r1, sp, #72
- 390 0136 2000     		movs	r0, r4
- 391 0138 FFF7FEFF 		bl	memcpy
- 392              	.LVL16:
+ 362              		.loc 1 225 9 view .LVU80
+ 363 0106 2C90     		str	r0, [sp, #176]
+ 364 0108 2D91     		str	r1, [sp, #180]
+ 227:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, psi, teta, phi);
+ 365              		.loc 1 227 5 is_stmt 1 view .LVU81
+ 227:Core/Src/stm32f0xx_it.c ****     right = Rotate(right, psi, teta, phi);
+ 366              		.loc 1 227 13 is_stmt 0 view .LVU82
+ 367 010a 834C     		ldr	r4, .L24+40
+ 368 010c 0890     		str	r0, [sp, #32]
+ 369 010e 0991     		str	r1, [sp, #36]
+ 370 0110 0A9A     		ldr	r2, [sp, #40]
+ 371 0112 0B9B     		ldr	r3, [sp, #44]
+ 372 0114 0692     		str	r2, [sp, #24]
+ 373 0116 0793     		str	r3, [sp, #28]
+ 374 0118 0496     		str	r6, [sp, #16]
+ 375 011a 0597     		str	r7, [sp, #20]
+ 376 011c 2100     		movs	r1, r4
+ 377 011e 0831     		adds	r1, r1, #8
+ 378 0120 1022     		movs	r2, #16
+ 379 0122 6846     		mov	r0, sp
+ 380 0124 FFF7FEFF 		bl	memcpy
+ 381              	.LVL14:
+ 382 0128 2268     		ldr	r2, [r4]
+ 383 012a 6368     		ldr	r3, [r4, #4]
+ 384 012c 10A8     		add	r0, sp, #64
+ 385 012e FFF7FEFF 		bl	Rotate
+ 386              	.LVL15:
+ 387 0132 1822     		movs	r2, #24
+ 388 0134 10A9     		add	r1, sp, #64
+ 389 0136 2000     		movs	r0, r4
+ 390 0138 FFF7FEFF 		bl	memcpy
+ 391              	.LVL16:
  228:Core/Src/stm32f0xx_it.c ****     
- 393              		.loc 1 228 5 is_stmt 1 view .LVU83
+ 392              		.loc 1 228 5 is_stmt 1 view .LVU83
  228:Core/Src/stm32f0xx_it.c ****     
-ARM GAS  /tmp/cc8qSLgG.s 			page 27
+ 393              		.loc 1 228 13 is_stmt 0 view .LVU84
+ARM GAS  /tmp/ccMsiaRR.s 			page 27
 
 
- 394              		.loc 1 228 13 is_stmt 0 view .LVU84
- 395 013c 884B     		ldr	r3, .L24+44
- 396 013e 9946     		mov	r9, r3
- 397 0140 2A9A     		ldr	r2, [sp, #168]
- 398 0142 2B9B     		ldr	r3, [sp, #172]
- 399 0144 0892     		str	r2, [sp, #32]
- 400 0146 0993     		str	r3, [sp, #36]
- 401 0148 2C9A     		ldr	r2, [sp, #176]
- 402 014a 2D9B     		ldr	r3, [sp, #180]
- 403 014c 0692     		str	r2, [sp, #24]
- 404 014e 0793     		str	r3, [sp, #28]
- 405 0150 2E9A     		ldr	r2, [sp, #184]
- 406 0152 2F9B     		ldr	r3, [sp, #188]
- 407 0154 0492     		str	r2, [sp, #16]
- 408 0156 0593     		str	r3, [sp, #20]
- 409 0158 4946     		mov	r1, r9
- 410 015a 0831     		adds	r1, r1, #8
- 411 015c 1022     		movs	r2, #16
- 412 015e 6846     		mov	r0, sp
- 413 0160 FFF7FEFF 		bl	memcpy
- 414              	.LVL17:
- 415 0164 4B46     		mov	r3, r9
- 416 0166 1A68     		ldr	r2, [r3]
- 417 0168 5B68     		ldr	r3, [r3, #4]
- 418 016a 12A8     		add	r0, sp, #72
- 419 016c FFF7FEFF 		bl	Rotate
- 420              	.LVL18:
- 421 0170 1822     		movs	r2, #24
- 422 0172 12A9     		add	r1, sp, #72
- 423 0174 4846     		mov	r0, r9
- 424 0176 FFF7FEFF 		bl	memcpy
- 425              	.LVL19:
+ 394 013c 774B     		ldr	r3, .L24+44
+ 395 013e 9846     		mov	r8, r3
+ 396 0140 2C9A     		ldr	r2, [sp, #176]
+ 397 0142 2D9B     		ldr	r3, [sp, #180]
+ 398 0144 0892     		str	r2, [sp, #32]
+ 399 0146 0993     		str	r3, [sp, #36]
+ 400 0148 289A     		ldr	r2, [sp, #160]
+ 401 014a 299B     		ldr	r3, [sp, #164]
+ 402 014c 0692     		str	r2, [sp, #24]
+ 403 014e 0793     		str	r3, [sp, #28]
+ 404 0150 2A9A     		ldr	r2, [sp, #168]
+ 405 0152 2B9B     		ldr	r3, [sp, #172]
+ 406 0154 0492     		str	r2, [sp, #16]
+ 407 0156 0593     		str	r3, [sp, #20]
+ 408 0158 4146     		mov	r1, r8
+ 409 015a 0831     		adds	r1, r1, #8
+ 410 015c 1022     		movs	r2, #16
+ 411 015e 6846     		mov	r0, sp
+ 412 0160 FFF7FEFF 		bl	memcpy
+ 413              	.LVL17:
+ 414 0164 4346     		mov	r3, r8
+ 415 0166 1A68     		ldr	r2, [r3]
+ 416 0168 5B68     		ldr	r3, [r3, #4]
+ 417 016a 10A8     		add	r0, sp, #64
+ 418 016c FFF7FEFF 		bl	Rotate
+ 419              	.LVL18:
+ 420 0170 1822     		movs	r2, #24
+ 421 0172 10A9     		add	r1, sp, #64
+ 422 0174 4046     		mov	r0, r8
+ 423 0176 FFF7FEFF 		bl	memcpy
+ 424              	.LVL19:
  230:Core/Src/stm32f0xx_it.c ****     servo_tang = asin(front.z);
- 426              		.loc 1 230 5 is_stmt 1 view .LVU85
- 230:Core/Src/stm32f0xx_it.c ****     servo_tang = asin(front.z);
- 427              		.loc 1 230 18 is_stmt 0 view .LVU86
- 428 017a 2268     		ldr	r2, [r4]
- 429 017c 6368     		ldr	r3, [r4, #4]
- 430 017e A068     		ldr	r0, [r4, #8]
- 431 0180 E168     		ldr	r1, [r4, #12]
- 432 0182 FFF7FEFF 		bl	__aeabi_ddiv
- 433              	.LVL20:
- 434 0186 FFF7FEFF 		bl	atan
- 435              	.LVL21:
- 436 018a 1090     		str	r0, [sp, #64]
- 437 018c 1191     		str	r1, [sp, #68]
- 438              	.LVL22:
+ 425              		.loc 1 230 5 is_stmt 1 view .LVU85
  231:Core/Src/stm32f0xx_it.c ****     
- 439              		.loc 1 231 5 is_stmt 1 view .LVU87
+ 426              		.loc 1 231 5 view .LVU86
  231:Core/Src/stm32f0xx_it.c ****     
- 440              		.loc 1 231 18 is_stmt 0 view .LVU88
- 441 018e 2069     		ldr	r0, [r4, #16]
- 442 0190 6169     		ldr	r1, [r4, #20]
- 443              	.LVL23:
- 231:Core/Src/stm32f0xx_it.c ****     
- 444              		.loc 1 231 18 view .LVU89
- 445 0192 FFF7FEFF 		bl	asin
-ARM GAS  /tmp/cc8qSLgG.s 			page 28
+ 427              		.loc 1 231 18 is_stmt 0 view .LVU87
+ 428 017a 2069     		ldr	r0, [r4, #16]
+ 429 017c 6169     		ldr	r1, [r4, #20]
+ 430 017e FFF7FEFF 		bl	asin
+ 431              	.LVL20:
+ 432 0182 0C90     		str	r0, [sp, #48]
+ 433 0184 0D91     		str	r1, [sp, #52]
+ 434              	.LVL21:
+ 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
+ 435              		.loc 1 233 5 is_stmt 1 view .LVU88
+ 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
+ 436              		.loc 1 233 12 is_stmt 0 view .LVU89
+ 437 0186 2268     		ldr	r2, [r4]
+ 438 0188 6368     		ldr	r3, [r4, #4]
+ 439 018a 1692     		str	r2, [sp, #88]
+ 440 018c 1793     		str	r3, [sp, #92]
+ 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
+ 441              		.loc 1 233 37 view .LVU90
+ 442 018e A368     		ldr	r3, [r4, #8]
+ 443 0190 E468     		ldr	r4, [r4, #12]
+ 444 0192 0A93     		str	r3, [sp, #40]
+ARM GAS  /tmp/ccMsiaRR.s 			page 28
 
 
- 446              	.LVL24:
- 447 0196 0C90     		str	r0, [sp, #48]
- 448 0198 0D91     		str	r1, [sp, #52]
- 449              	.LVL25:
+ 445 0194 0B94     		str	r4, [sp, #44]
  233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
- 450              		.loc 1 233 5 is_stmt 1 view .LVU90
- 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
- 451              		.loc 1 233 12 is_stmt 0 view .LVU91
- 452 019a 2268     		ldr	r2, [r4]
- 453 019c 6368     		ldr	r3, [r4, #4]
- 454 019e 1892     		str	r2, [sp, #96]
- 455 01a0 1993     		str	r3, [sp, #100]
- 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
- 456              		.loc 1 233 37 view .LVU92
- 457 01a2 A368     		ldr	r3, [r4, #8]
- 458 01a4 E468     		ldr	r4, [r4, #12]
- 459 01a6 0A93     		str	r3, [sp, #40]
- 460 01a8 0B94     		str	r4, [sp, #44]
- 233:Core/Src/stm32f0xx_it.c ****     vector r_proec = {right.x, right.y, 0};
- 461              		.loc 1 233 12 view .LVU93
- 462 01aa 1A93     		str	r3, [sp, #104]
- 463 01ac 1B94     		str	r4, [sp, #108]
- 464 01ae 0023     		movs	r3, #0
- 465 01b0 0024     		movs	r4, #0
- 466 01b2 1C93     		str	r3, [sp, #112]
- 467 01b4 1D94     		str	r4, [sp, #116]
+ 446              		.loc 1 233 12 view .LVU91
+ 447 0196 1893     		str	r3, [sp, #96]
+ 448 0198 1994     		str	r4, [sp, #100]
+ 449 019a 0023     		movs	r3, #0
+ 450 019c 0024     		movs	r4, #0
+ 451 019e 1A93     		str	r3, [sp, #104]
+ 452 01a0 1B94     		str	r4, [sp, #108]
  234:Core/Src/stm32f0xx_it.c **** 
- 468              		.loc 1 234 5 is_stmt 1 view .LVU94
+ 453              		.loc 1 234 5 is_stmt 1 view .LVU92
  234:Core/Src/stm32f0xx_it.c **** 
- 469              		.loc 1 234 12 is_stmt 0 view .LVU95
- 470 01b6 4A46     		mov	r2, r9
- 471 01b8 1168     		ldr	r1, [r2]
- 472 01ba 5268     		ldr	r2, [r2, #4]
- 473 01bc 1E91     		str	r1, [sp, #120]
- 474 01be 1F92     		str	r2, [sp, #124]
- 475 01c0 4A46     		mov	r2, r9
- 476 01c2 9168     		ldr	r1, [r2, #8]
- 477 01c4 D268     		ldr	r2, [r2, #12]
- 478 01c6 2091     		str	r1, [sp, #128]
- 479 01c8 2192     		str	r2, [sp, #132]
- 480 01ca 2293     		str	r3, [sp, #136]
- 481 01cc 2394     		str	r4, [sp, #140]
+ 454              		.loc 1 234 12 is_stmt 0 view .LVU93
+ 455 01a2 4246     		mov	r2, r8
+ 456 01a4 1168     		ldr	r1, [r2]
+ 457 01a6 5268     		ldr	r2, [r2, #4]
+ 458 01a8 1C91     		str	r1, [sp, #112]
+ 459 01aa 1D92     		str	r2, [sp, #116]
+ 460 01ac 4246     		mov	r2, r8
+ 461 01ae 9168     		ldr	r1, [r2, #8]
+ 462 01b0 D268     		ldr	r2, [r2, #12]
+ 463 01b2 1E91     		str	r1, [sp, #120]
+ 464 01b4 1F92     		str	r2, [sp, #124]
+ 465 01b6 2093     		str	r3, [sp, #128]
+ 466 01b8 2194     		str	r4, [sp, #132]
  236:Core/Src/stm32f0xx_it.c ****     double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
- 482              		.loc 1 236 5 is_stmt 1 view .LVU96
+ 467              		.loc 1 236 5 is_stmt 1 view .LVU94
  236:Core/Src/stm32f0xx_it.c ****     double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
- 483              		.loc 1 236 23 is_stmt 0 view .LVU97
- 484 01ce 1EA9     		add	r1, sp, #120
- 485 01d0 18AB     		add	r3, sp, #96
- 486 01d2 1800     		movs	r0, r3
+ 468              		.loc 1 236 23 is_stmt 0 view .LVU95
+ 469 01ba 1CA9     		add	r1, sp, #112
+ 470 01bc 16AB     		add	r3, sp, #88
+ 471 01be 1800     		movs	r0, r3
+ 472              	.LVL22:
+ 236:Core/Src/stm32f0xx_it.c ****     double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
+ 473              		.loc 1 236 23 view .LVU96
+ 474 01c0 FFF7FEFF 		bl	Vector_Scalar_Mul
+ 475              	.LVL23:
+ 476 01c4 0600     		movs	r6, r0
+ 477 01c6 0F00     		movs	r7, r1
+ 478              	.LVL24:
+ 237:Core/Src/stm32f0xx_it.c **** 
+ 479              		.loc 1 237 5 is_stmt 1 view .LVU97
+ 237:Core/Src/stm32f0xx_it.c **** 
+ 480              		.loc 1 237 20 is_stmt 0 view .LVU98
+ 481 01c8 16A9     		add	r1, sp, #88
+ 482 01ca 0800     		movs	r0, r1
+ 483 01cc FFF7FEFF 		bl	Vector_Scalar_Mul
+ 484              	.LVL25:
+ 485 01d0 0400     		movs	r4, r0
+ 486 01d2 0D00     		movs	r5, r1
  487              	.LVL26:
- 236:Core/Src/stm32f0xx_it.c ****     double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
- 488              		.loc 1 236 23 view .LVU98
- 489 01d4 FFF7FEFF 		bl	Vector_Scalar_Mul
- 490              	.LVL27:
- 491 01d8 0600     		movs	r6, r0
- 492 01da 0F00     		movs	r7, r1
- 493              	.LVL28:
-ARM GAS  /tmp/cc8qSLgG.s 			page 29
+ 239:Core/Src/stm32f0xx_it.c **** 
+ 488              		.loc 1 239 5 is_stmt 1 view .LVU99
+ 239:Core/Src/stm32f0xx_it.c **** 
+ 489              		.loc 1 239 45 is_stmt 0 view .LVU100
+ 490 01d4 3200     		movs	r2, r6
+ 491 01d6 3B00     		movs	r3, r7
+ARM GAS  /tmp/ccMsiaRR.s 			page 29
 
 
- 237:Core/Src/stm32f0xx_it.c **** 
- 494              		.loc 1 237 5 is_stmt 1 view .LVU99
- 237:Core/Src/stm32f0xx_it.c **** 
- 495              		.loc 1 237 20 is_stmt 0 view .LVU100
- 496 01dc 18A9     		add	r1, sp, #96
- 497 01de 0800     		movs	r0, r1
- 498 01e0 FFF7FEFF 		bl	Vector_Scalar_Mul
- 499              	.LVL29:
- 500 01e4 0400     		movs	r4, r0
- 501 01e6 0D00     		movs	r5, r1
- 502              	.LVL30:
+ 492 01d8 1698     		ldr	r0, [sp, #88]
+ 493 01da 1799     		ldr	r1, [sp, #92]
+ 494 01dc FFF7FEFF 		bl	__aeabi_dmul
+ 495              	.LVL27:
  239:Core/Src/stm32f0xx_it.c **** 
- 503              		.loc 1 239 5 is_stmt 1 view .LVU101
+ 496              		.loc 1 239 54 view .LVU101
+ 497 01e0 0A94     		str	r4, [sp, #40]
+ 498 01e2 0B95     		str	r5, [sp, #44]
+ 499 01e4 2200     		movs	r2, r4
+ 500 01e6 2B00     		movs	r3, r5
+ 501 01e8 FFF7FEFF 		bl	__aeabi_ddiv
+ 502              	.LVL28:
+ 503 01ec 0200     		movs	r2, r0
+ 504 01ee 0B00     		movs	r3, r1
  239:Core/Src/stm32f0xx_it.c **** 
- 504              		.loc 1 239 45 is_stmt 0 view .LVU102
- 505 01e8 3200     		movs	r2, r6
- 506 01ea 3B00     		movs	r3, r7
- 507 01ec 1898     		ldr	r0, [sp, #96]
- 508 01ee 1999     		ldr	r1, [sp, #100]
- 509 01f0 FFF7FEFF 		bl	__aeabi_dmul
- 510              	.LVL31:
+ 505              		.loc 1 239 34 view .LVU102
+ 506 01f0 1C98     		ldr	r0, [sp, #112]
+ 507 01f2 1D99     		ldr	r1, [sp, #116]
+ 508 01f4 FFF7FEFF 		bl	__aeabi_dsub
+ 509              	.LVL29:
  239:Core/Src/stm32f0xx_it.c **** 
- 511              		.loc 1 239 54 view .LVU103
- 512 01f4 0A94     		str	r4, [sp, #40]
- 513 01f6 0B95     		str	r5, [sp, #44]
- 514 01f8 2200     		movs	r2, r4
- 515 01fa 2B00     		movs	r3, r5
- 516 01fc FFF7FEFF 		bl	__aeabi_ddiv
- 517              	.LVL32:
- 518 0200 0200     		movs	r2, r0
- 519 0202 0B00     		movs	r3, r1
+ 510              		.loc 1 239 12 view .LVU103
+ 511 01f8 2290     		str	r0, [sp, #136]
+ 512 01fa 2391     		str	r1, [sp, #140]
  239:Core/Src/stm32f0xx_it.c **** 
- 520              		.loc 1 239 34 view .LVU104
- 521 0204 1E98     		ldr	r0, [sp, #120]
- 522 0206 1F99     		ldr	r1, [sp, #124]
- 523 0208 FFF7FEFF 		bl	__aeabi_dsub
- 524              	.LVL33:
+ 513              		.loc 1 239 69 view .LVU104
+ 514 01fc 1E9C     		ldr	r4, [sp, #120]
+ 515 01fe 1F9D     		ldr	r5, [sp, #124]
+ 516              	.LVL30:
  239:Core/Src/stm32f0xx_it.c **** 
- 525              		.loc 1 239 12 view .LVU105
- 526 020c 2490     		str	r0, [sp, #144]
- 527 020e 2591     		str	r1, [sp, #148]
+ 517              		.loc 1 239 81 view .LVU105
+ 518 0200 189A     		ldr	r2, [sp, #96]
+ 519 0202 199B     		ldr	r3, [sp, #100]
+ 520 0204 0E92     		str	r2, [sp, #56]
+ 521 0206 0F93     		str	r3, [sp, #60]
  239:Core/Src/stm32f0xx_it.c **** 
- 528              		.loc 1 239 69 view .LVU106
- 529 0210 209C     		ldr	r4, [sp, #128]
- 530 0212 219D     		ldr	r5, [sp, #132]
- 531              	.LVL34:
+ 522              		.loc 1 239 83 view .LVU106
+ 523 0208 3200     		movs	r2, r6
+ 524 020a 3B00     		movs	r3, r7
+ 525 020c 0E98     		ldr	r0, [sp, #56]
+ 526 020e 0F99     		ldr	r1, [sp, #60]
+ 527 0210 FFF7FEFF 		bl	__aeabi_dmul
+ 528              	.LVL31:
  239:Core/Src/stm32f0xx_it.c **** 
- 532              		.loc 1 239 81 view .LVU107
- 533 0214 1A9A     		ldr	r2, [sp, #104]
- 534 0216 1B9B     		ldr	r3, [sp, #108]
- 535 0218 0E92     		str	r2, [sp, #56]
- 536 021a 0F93     		str	r3, [sp, #60]
+ 529              		.loc 1 239 92 view .LVU107
+ 530 0214 0A9A     		ldr	r2, [sp, #40]
+ 531 0216 0B9B     		ldr	r3, [sp, #44]
+ 532 0218 FFF7FEFF 		bl	__aeabi_ddiv
+ 533              	.LVL32:
+ 534 021c 0200     		movs	r2, r0
+ 535 021e 0B00     		movs	r3, r1
  239:Core/Src/stm32f0xx_it.c **** 
- 537              		.loc 1 239 83 view .LVU108
- 538 021c 3200     		movs	r2, r6
- 539 021e 3B00     		movs	r3, r7
- 540 0220 0E98     		ldr	r0, [sp, #56]
-ARM GAS  /tmp/cc8qSLgG.s 			page 30
+ 536              		.loc 1 239 72 view .LVU108
+ 537 0220 2000     		movs	r0, r4
+ 538 0222 2900     		movs	r1, r5
+ 539 0224 FFF7FEFF 		bl	__aeabi_dsub
+ 540              	.LVL33:
+ARM GAS  /tmp/ccMsiaRR.s 			page 30
 
 
- 541 0222 0F99     		ldr	r1, [sp, #60]
- 542 0224 FFF7FEFF 		bl	__aeabi_dmul
- 543              	.LVL35:
  239:Core/Src/stm32f0xx_it.c **** 
- 544              		.loc 1 239 92 view .LVU109
- 545 0228 0A9A     		ldr	r2, [sp, #40]
- 546 022a 0B9B     		ldr	r3, [sp, #44]
- 547 022c FFF7FEFF 		bl	__aeabi_ddiv
- 548              	.LVL36:
- 549 0230 0200     		movs	r2, r0
- 550 0232 0B00     		movs	r3, r1
+ 541              		.loc 1 239 12 view .LVU109
+ 542 0228 2490     		str	r0, [sp, #144]
+ 543 022a 2591     		str	r1, [sp, #148]
  239:Core/Src/stm32f0xx_it.c **** 
- 551              		.loc 1 239 72 view .LVU110
- 552 0234 2000     		movs	r0, r4
- 553 0236 2900     		movs	r1, r5
- 554 0238 FFF7FEFF 		bl	__aeabi_dsub
- 555              	.LVL37:
+ 544              		.loc 1 239 107 view .LVU110
+ 545 022c 209C     		ldr	r4, [sp, #128]
+ 546 022e 219D     		ldr	r5, [sp, #132]
  239:Core/Src/stm32f0xx_it.c **** 
- 556              		.loc 1 239 12 view .LVU111
- 557 023c 2690     		str	r0, [sp, #152]
- 558 023e 2791     		str	r1, [sp, #156]
+ 547              		.loc 1 239 119 view .LVU111
+ 548 0230 1A98     		ldr	r0, [sp, #104]
+ 549 0232 1B99     		ldr	r1, [sp, #108]
  239:Core/Src/stm32f0xx_it.c **** 
- 559              		.loc 1 239 107 view .LVU112
- 560 0240 229C     		ldr	r4, [sp, #136]
- 561 0242 239D     		ldr	r5, [sp, #140]
+ 550              		.loc 1 239 121 view .LVU112
+ 551 0234 3200     		movs	r2, r6
+ 552 0236 3B00     		movs	r3, r7
+ 553 0238 FFF7FEFF 		bl	__aeabi_dmul
+ 554              	.LVL34:
  239:Core/Src/stm32f0xx_it.c **** 
- 562              		.loc 1 239 119 view .LVU113
- 563 0244 1C98     		ldr	r0, [sp, #112]
- 564 0246 1D99     		ldr	r1, [sp, #116]
+ 555              		.loc 1 239 130 view .LVU113
+ 556 023c 0A9A     		ldr	r2, [sp, #40]
+ 557 023e 0B9B     		ldr	r3, [sp, #44]
+ 558 0240 FFF7FEFF 		bl	__aeabi_ddiv
+ 559              	.LVL35:
+ 560 0244 0200     		movs	r2, r0
+ 561 0246 0B00     		movs	r3, r1
  239:Core/Src/stm32f0xx_it.c **** 
- 565              		.loc 1 239 121 view .LVU114
- 566 0248 3200     		movs	r2, r6
- 567 024a 3B00     		movs	r3, r7
- 568 024c FFF7FEFF 		bl	__aeabi_dmul
- 569              	.LVL38:
+ 562              		.loc 1 239 110 view .LVU114
+ 563 0248 2000     		movs	r0, r4
+ 564 024a 2900     		movs	r1, r5
+ 565 024c FFF7FEFF 		bl	__aeabi_dsub
+ 566              	.LVL36:
  239:Core/Src/stm32f0xx_it.c **** 
- 570              		.loc 1 239 130 view .LVU115
- 571 0250 0A9A     		ldr	r2, [sp, #40]
- 572 0252 0B9B     		ldr	r3, [sp, #44]
- 573 0254 FFF7FEFF 		bl	__aeabi_ddiv
- 574              	.LVL39:
- 575 0258 0200     		movs	r2, r0
- 576 025a 0B00     		movs	r3, r1
- 239:Core/Src/stm32f0xx_it.c **** 
- 577              		.loc 1 239 110 view .LVU116
- 578 025c 2000     		movs	r0, r4
- 579 025e 2900     		movs	r1, r5
- 580 0260 FFF7FEFF 		bl	__aeabi_dsub
- 581              	.LVL40:
- 239:Core/Src/stm32f0xx_it.c **** 
- 582              		.loc 1 239 12 view .LVU117
- 583 0264 2890     		str	r0, [sp, #160]
- 584 0266 2991     		str	r1, [sp, #164]
+ 567              		.loc 1 239 12 view .LVU115
+ 568 0250 2690     		str	r0, [sp, #152]
+ 569 0252 2791     		str	r1, [sp, #156]
  241:Core/Src/stm32f0xx_it.c **** 
- 585              		.loc 1 241 5 is_stmt 1 view .LVU118
+ 570              		.loc 1 241 5 is_stmt 1 view .LVU116
  241:Core/Src/stm32f0xx_it.c **** 
- 586              		.loc 1 241 21 is_stmt 0 view .LVU119
-ARM GAS  /tmp/cc8qSLgG.s 			page 31
-
-
- 587 0268 24A9     		add	r1, sp, #144
- 588 026a 0800     		movs	r0, r1
- 589 026c FFF7FEFF 		bl	Vector_Scalar_Mul
- 590              	.LVL41:
- 591 0270 0600     		movs	r6, r0
- 592              	.LVL42:
+ 571              		.loc 1 241 21 is_stmt 0 view .LVU117
+ 572 0254 22A9     		add	r1, sp, #136
+ 573 0256 0800     		movs	r0, r1
+ 574 0258 FFF7FEFF 		bl	Vector_Scalar_Mul
+ 575              	.LVL37:
+ 576 025c 0600     		movs	r6, r0
+ 577              	.LVL38:
  241:Core/Src/stm32f0xx_it.c **** 
- 593              		.loc 1 241 21 view .LVU120
- 594 0272 0F00     		movs	r7, r1
- 595              	.LVL43:
+ 578              		.loc 1 241 21 view .LVU118
+ 579 025e 0F00     		movs	r7, r1
+ 580              	.LVL39:
  243:Core/Src/stm32f0xx_it.c **** 
- 596              		.loc 1 243 5 is_stmt 1 view .LVU121
+ 581              		.loc 1 243 5 is_stmt 1 view .LVU119
  243:Core/Src/stm32f0xx_it.c **** 
- 597              		.loc 1 243 24 is_stmt 0 view .LVU122
- 598 0274 4B46     		mov	r3, r9
- 599 0276 1C69     		ldr	r4, [r3, #16]
- 600 0278 5D69     		ldr	r5, [r3, #20]
- 243:Core/Src/stm32f0xx_it.c **** 
- 601              		.loc 1 243 27 view .LVU123
- 602 027a 2000     		movs	r0, r4
- 603 027c 2900     		movs	r1, r5
- 604 027e FFF7FEFF 		bl	__aeabi_d2iz
- 605              	.LVL44:
- 606 0282 C317     		asrs	r3, r0, #31
- 607 0284 C018     		adds	r0, r0, r3
- 608 0286 5840     		eors	r0, r3
- 243:Core/Src/stm32f0xx_it.c **** 
- 609              		.loc 1 243 26 view .LVU124
- 610 0288 FFF7FEFF 		bl	__aeabi_i2d
- 611              	.LVL45:
- 612 028c 0200     		movs	r2, r0
- 613 028e 0B00     		movs	r3, r1
- 614 0290 2000     		movs	r0, r4
- 615 0292 2900     		movs	r1, r5
- 616 0294 FFF7FEFF 		bl	__aeabi_ddiv
- 617              	.LVL46:
- 618 0298 0400     		movs	r4, r0
- 619 029a 0D00     		movs	r5, r1
- 243:Core/Src/stm32f0xx_it.c **** 
- 620              		.loc 1 243 41 view .LVU125
- 621 029c 3000     		movs	r0, r6
- 622 029e 3900     		movs	r1, r7
- 623 02a0 FFF7FEFF 		bl	sqrt
- 624              	.LVL47:
- 625 02a4 FFF7FEFF 		bl	acos
- 626              	.LVL48:
- 627 02a8 0200     		movs	r2, r0
- 628 02aa 0B00     		movs	r3, r1
- 243:Core/Src/stm32f0xx_it.c **** 
- 629              		.loc 1 243 16 view .LVU126
- 630 02ac 2000     		movs	r0, r4
- 631 02ae 2900     		movs	r1, r5
- 632 02b0 FFF7FEFF 		bl	__aeabi_dmul
- 633              	.LVL49:
- 634 02b4 0400     		movs	r4, r0
- 635 02b6 0D00     		movs	r5, r1
- 636              	.LVL50:
-ARM GAS  /tmp/cc8qSLgG.s 			page 32
+ 582              		.loc 1 243 24 is_stmt 0 view .LVU120
+ 583 0260 4346     		mov	r3, r8
+ 584 0262 1C69     		ldr	r4, [r3, #16]
+ 585 0264 5D69     		ldr	r5, [r3, #20]
+ARM GAS  /tmp/ccMsiaRR.s 			page 31
 
 
+ 243:Core/Src/stm32f0xx_it.c **** 
+ 586              		.loc 1 243 27 view .LVU121
+ 587 0266 2000     		movs	r0, r4
+ 588 0268 2900     		movs	r1, r5
+ 589 026a FFF7FEFF 		bl	__aeabi_d2iz
+ 590              	.LVL40:
+ 591 026e C317     		asrs	r3, r0, #31
+ 592 0270 C018     		adds	r0, r0, r3
+ 593 0272 5840     		eors	r0, r3
+ 243:Core/Src/stm32f0xx_it.c **** 
+ 594              		.loc 1 243 26 view .LVU122
+ 595 0274 FFF7FEFF 		bl	__aeabi_i2d
+ 596              	.LVL41:
+ 597 0278 0200     		movs	r2, r0
+ 598 027a 0B00     		movs	r3, r1
+ 599 027c 2000     		movs	r0, r4
+ 600 027e 2900     		movs	r1, r5
+ 601 0280 FFF7FEFF 		bl	__aeabi_ddiv
+ 602              	.LVL42:
+ 603 0284 0400     		movs	r4, r0
+ 604 0286 0D00     		movs	r5, r1
+ 243:Core/Src/stm32f0xx_it.c **** 
+ 605              		.loc 1 243 41 view .LVU123
+ 606 0288 3000     		movs	r0, r6
+ 607 028a 3900     		movs	r1, r7
+ 608 028c FFF7FEFF 		bl	sqrt
+ 609              	.LVL43:
+ 610 0290 FFF7FEFF 		bl	acos
+ 611              	.LVL44:
+ 612 0294 0200     		movs	r2, r0
+ 613 0296 0B00     		movs	r3, r1
+ 243:Core/Src/stm32f0xx_it.c **** 
+ 614              		.loc 1 243 16 view .LVU124
+ 615 0298 2000     		movs	r0, r4
+ 616 029a 2900     		movs	r1, r5
+ 617 029c FFF7FEFF 		bl	__aeabi_dmul
+ 618              	.LVL45:
  246:Core/Src/stm32f0xx_it.c **** 
- 637              		.loc 1 246 5 is_stmt 1 view .LVU127
- 638 02b8 2A4A     		ldr	r2, .L24+48
- 639 02ba 2B4B     		ldr	r3, .L24+52
- 640 02bc 1098     		ldr	r0, [sp, #64]
- 641 02be 1199     		ldr	r1, [sp, #68]
- 642 02c0 FFF7FEFF 		bl	__aeabi_dadd
- 643              	.LVL51:
- 644 02c4 0600     		movs	r6, r0
- 645              	.LVL52:
+ 619              		.loc 1 246 5 is_stmt 1 view .LVU125
+ 620 02a0 1F4A     		ldr	r2, .L24+48
+ 621 02a2 204B     		ldr	r3, .L24+52
+ 622 02a4 0290     		str	r0, [sp, #8]
+ 623 02a6 0391     		str	r1, [sp, #12]
+ 624 02a8 0092     		str	r2, [sp]
+ 625 02aa 0193     		str	r3, [sp, #4]
+ 626 02ac 1E48     		ldr	r0, .L24+56
+ 627              	.LVL46:
  246:Core/Src/stm32f0xx_it.c **** 
- 646              		.loc 1 246 5 is_stmt 0 view .LVU128
- 647 02c6 0F00     		movs	r7, r1
- 648 02c8 264A     		ldr	r2, .L24+48
- 649 02ca 274B     		ldr	r3, .L24+52
- 650 02cc 2000     		movs	r0, r4
- 651 02ce 2900     		movs	r1, r5
- 652 02d0 FFF7FEFF 		bl	__aeabi_dadd
- 653              	.LVL53:
- 654 02d4 0290     		str	r0, [sp, #8]
- 655 02d6 0391     		str	r1, [sp, #12]
- 656 02d8 224A     		ldr	r2, .L24+48
- 657 02da 234B     		ldr	r3, .L24+52
- 658 02dc 0C9C     		ldr	r4, [sp, #48]
- 659 02de 0D9D     		ldr	r5, [sp, #52]
- 660              	.LVL54:
- 246:Core/Src/stm32f0xx_it.c **** 
- 661              		.loc 1 246 5 view .LVU129
- 662 02e0 2000     		movs	r0, r4
- 663 02e2 2900     		movs	r1, r5
- 664 02e4 FFF7FEFF 		bl	__aeabi_dadd
- 665              	.LVL55:
- 666 02e8 0090     		str	r0, [sp]
- 667 02ea 0191     		str	r1, [sp, #4]
- 668 02ec 3200     		movs	r2, r6
- 669 02ee 3B00     		movs	r3, r7
- 670 02f0 1E48     		ldr	r0, .L24+56
- 671 02f2 FFF7FEFF 		bl	set_3_servo
- 672              	.LVL56:
+ 628              		.loc 1 246 5 is_stmt 0 view .LVU126
+ 629 02ae FFF7FEFF 		bl	set_3_servo
+ 630              	.LVL47:
  248:Core/Src/stm32f0xx_it.c **** 		{
- 673              		.loc 1 248 5 is_stmt 1 view .LVU130
+ 631              		.loc 1 248 5 is_stmt 1 view .LVU127
  248:Core/Src/stm32f0xx_it.c **** 		{
- 674              		.loc 1 248 7 is_stmt 0 view .LVU131
- 675 02f6 0022     		movs	r2, #0
- 676 02f8 0023     		movs	r3, #0
- 677 02fa 2000     		movs	r0, r4
- 678 02fc 2900     		movs	r1, r5
- 679 02fe FFF7FEFF 		bl	__aeabi_dcmpgt
- 680              	.LVL57:
- 681 0302 0028     		cmp	r0, #0
- 682 0304 08D0     		beq	.L21
- 250:Core/Src/stm32f0xx_it.c **** 		}
- 683              		.loc 1 250 4 is_stmt 1 view .LVU132
- 250:Core/Src/stm32f0xx_it.c **** 		}
- 684              		.loc 1 250 13 is_stmt 0 view .LVU133
- 685 0306 8023     		movs	r3, #128
- 686 0308 5B00     		lsls	r3, r3, #1
-ARM GAS  /tmp/cc8qSLgG.s 			page 33
+ 632              		.loc 1 248 7 is_stmt 0 view .LVU128
+ 633 02b2 0022     		movs	r2, #0
+ 634 02b4 0023     		movs	r3, #0
+ARM GAS  /tmp/ccMsiaRR.s 			page 32
 
 
- 687 030a 5246     		mov	r2, r10
- 688 030c 1A43     		orrs	r2, r3
- 689 030e 9246     		mov	r10, r2
- 690              	.LVL58:
- 691              	.L16:
+ 635 02b6 0C98     		ldr	r0, [sp, #48]
+ 636 02b8 0D99     		ldr	r1, [sp, #52]
+ 637 02ba FFF7FEFF 		bl	__aeabi_dcmpgt
+ 638              	.LVL48:
+ 639 02be 0028     		cmp	r0, #0
+ 640 02c0 08D0     		beq	.L21
+ 250:Core/Src/stm32f0xx_it.c **** 		}
+ 641              		.loc 1 250 4 is_stmt 1 view .LVU129
+ 250:Core/Src/stm32f0xx_it.c **** 		}
+ 642              		.loc 1 250 13 is_stmt 0 view .LVU130
+ 643 02c2 8023     		movs	r3, #128
+ 644 02c4 5B00     		lsls	r3, r3, #1
+ 645 02c6 5246     		mov	r2, r10
+ 646 02c8 1A43     		orrs	r2, r3
+ 647 02ca 9246     		mov	r10, r2
+ 648              	.LVL49:
+ 649              	.L16:
  256:Core/Src/stm32f0xx_it.c ****   }
- 692              		.loc 1 256 5 is_stmt 1 view .LVU134
- 693              	.LBB14:
- 694              	.LBI14:
+ 650              		.loc 1 256 5 is_stmt 1 view .LVU131
+ 651              	.LBB14:
+ 652              	.LBI14:
  770:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** {
- 695              		.loc 2 770 22 view .LVU135
- 696              	.LBB15:
+ 653              		.loc 2 770 22 view .LVU132
+ 654              	.LBB15:
  772:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
- 697              		.loc 2 772 3 view .LVU136
- 698 0310 0E4B     		ldr	r3, .L24+24
- 699 0312 5246     		mov	r2, r10
- 700 0314 5A61     		str	r2, [r3, #20]
- 701              	.LVL59:
+ 655              		.loc 2 772 3 view .LVU133
+ 656 02cc 0E4B     		ldr	r3, .L24+24
+ 657 02ce 5246     		mov	r2, r10
+ 658 02d0 5A61     		str	r2, [r3, #20]
+ 659              	.LVL50:
  772:Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_gpio.h **** }
- 702              		.loc 2 772 3 is_stmt 0 view .LVU137
- 703              	.LBE15:
- 704              	.LBE14:
- 705              	.LBE11:
- 706 0316 9EE6     		b	.L18
- 707              	.LVL60:
- 708              	.L21:
- 709              	.LBB16:
+ 660              		.loc 2 772 3 is_stmt 0 view .LVU134
+ 661              	.LBE15:
+ 662              	.LBE14:
+ 663              	.LBE11:
+ 664 02d2 C0E6     		b	.L18
+ 665              	.LVL51:
+ 666              	.L21:
+ 667              	.LBB16:
  252:Core/Src/stm32f0xx_it.c **** 		{
- 710              		.loc 1 252 8 is_stmt 1 view .LVU138
+ 668              		.loc 1 252 8 is_stmt 1 view .LVU135
  252:Core/Src/stm32f0xx_it.c **** 		{
- 711              		.loc 1 252 11 is_stmt 0 view .LVU139
- 712 0318 0022     		movs	r2, #0
- 713 031a 0023     		movs	r3, #0
- 714 031c 0C98     		ldr	r0, [sp, #48]
- 715 031e 0D99     		ldr	r1, [sp, #52]
- 716 0320 FFF7FEFF 		bl	__aeabi_dcmplt
- 717              	.LVL61:
- 718 0324 0028     		cmp	r0, #0
- 719 0326 F3D0     		beq	.L16
+ 669              		.loc 1 252 11 is_stmt 0 view .LVU136
+ 670 02d4 0022     		movs	r2, #0
+ 671 02d6 0023     		movs	r3, #0
+ 672 02d8 0C98     		ldr	r0, [sp, #48]
+ 673 02da 0D99     		ldr	r1, [sp, #52]
+ 674 02dc FFF7FEFF 		bl	__aeabi_dcmplt
+ 675              	.LVL52:
+ 676 02e0 0028     		cmp	r0, #0
+ 677 02e2 F3D0     		beq	.L16
  254:Core/Src/stm32f0xx_it.c **** 		}
- 720              		.loc 1 254 4 is_stmt 1 view .LVU140
+ 678              		.loc 1 254 4 is_stmt 1 view .LVU137
  254:Core/Src/stm32f0xx_it.c **** 		}
- 721              		.loc 1 254 13 is_stmt 0 view .LVU141
- 722 0328 8023     		movs	r3, #128
- 723 032a 9B00     		lsls	r3, r3, #2
- 724 032c 5246     		mov	r2, r10
- 725 032e 1A43     		orrs	r2, r3
- 726 0330 9246     		mov	r10, r2
- 727              	.LVL62:
- 254:Core/Src/stm32f0xx_it.c **** 		}
- 728              		.loc 1 254 13 view .LVU142
- 729 0332 EDE7     		b	.L16
- 730              	.L25:
- 731              		.align	2
- 732              	.L24:
- 733 0334 00000000 		.word	button_status
- 734 0338 00000000 		.word	button_delay_counter
-ARM GAS  /tmp/cc8qSLgG.s 			page 34
+ 679              		.loc 1 254 13 is_stmt 0 view .LVU138
+ 680 02e4 8023     		movs	r3, #128
+ 681 02e6 9B00     		lsls	r3, r3, #2
+ARM GAS  /tmp/ccMsiaRR.s 			page 33
 
 
- 735 033c 00000000 		.word	.LANCHOR0
- 736 0340 00000000 		.word	htim1
- 737 0344 00000000 		.word	hi2c1
- 738 0348 0094C140 		.word	1086428160
- 739 034c 00080048 		.word	1207961600
- 740 0350 FFFCFFFF 		.word	-769
- 741 0354 7B14AE47 		.word	1202590843
- 742 0358 E17A743F 		.word	1064598241
- 743 035c 00000000 		.word	.LANCHOR1
- 744 0360 00000000 		.word	.LANCHOR2
- 745 0364 1F85EB51 		.word	1374389535
- 746 0368 B81EF93F 		.word	1073290936
- 747 036c 00000000 		.word	htim2
- 748              	.LBE16:
- 749              		.cfi_endproc
- 750              	.LFE251:
- 752              		.section	.text.EXTI2_3_IRQHandler,"ax",%progbits
- 753              		.align	1
- 754              		.global	EXTI2_3_IRQHandler
- 755              		.syntax unified
- 756              		.code	16
- 757              		.thumb_func
- 759              	EXTI2_3_IRQHandler:
- 760              	.LFB252:
+ 682 02e8 5246     		mov	r2, r10
+ 683 02ea 1A43     		orrs	r2, r3
+ 684 02ec 9246     		mov	r10, r2
+ 685              	.LVL53:
+ 254:Core/Src/stm32f0xx_it.c **** 		}
+ 686              		.loc 1 254 13 view .LVU139
+ 687 02ee EDE7     		b	.L16
+ 688              	.L25:
+ 689              		.align	2
+ 690              	.L24:
+ 691 02f0 00000000 		.word	button_status
+ 692 02f4 00000000 		.word	button_delay_counter
+ 693 02f8 00000000 		.word	.LANCHOR0
+ 694 02fc 00000000 		.word	htim1
+ 695 0300 00000000 		.word	hi2c1
+ 696 0304 0094C140 		.word	1086428160
+ 697 0308 00080048 		.word	1207961600
+ 698 030c FFFCFFFF 		.word	-769
+ 699 0310 7B14AE47 		.word	1202590843
+ 700 0314 E17A743F 		.word	1064598241
+ 701 0318 00000000 		.word	.LANCHOR1
+ 702 031c 00000000 		.word	.LANCHOR2
+ 703 0320 1F85EB51 		.word	1374389535
+ 704 0324 B81EF93F 		.word	1073290936
+ 705 0328 00000000 		.word	htim2
+ 706              	.LBE16:
+ 707              		.cfi_endproc
+ 708              	.LFE251:
+ 710              		.section	.text.EXTI2_3_IRQHandler,"ax",%progbits
+ 711              		.align	1
+ 712              		.global	EXTI2_3_IRQHandler
+ 713              		.syntax unified
+ 714              		.code	16
+ 715              		.thumb_func
+ 717              	EXTI2_3_IRQHandler:
+ 718              	.LFB252:
  270:Core/Src/stm32f0xx_it.c **** 
  271:Core/Src/stm32f0xx_it.c **** /******************************************************************************/
  272:Core/Src/stm32f0xx_it.c **** /* STM32F0xx Peripheral Interrupt Handlers                                    */
@@ -2018,127 +1970,127 @@ ARM GAS  /tmp/cc8qSLgG.s 			page 1
  280:Core/Src/stm32f0xx_it.c ****   */
  281:Core/Src/stm32f0xx_it.c **** void EXTI2_3_IRQHandler(void)
  282:Core/Src/stm32f0xx_it.c **** {
- 761              		.loc 1 282 1 is_stmt 1 view -0
- 762              		.cfi_startproc
- 763              		@ args = 0, pretend = 0, frame = 0
- 764              		@ frame_needed = 0, uses_anonymous_args = 0
- 765 0000 10B5     		push	{r4, lr}
- 766              	.LCFI3:
- 767              		.cfi_def_cfa_offset 8
- 768              		.cfi_offset 4, -8
- 769              		.cfi_offset 14, -4
+ 719              		.loc 1 282 1 is_stmt 1 view -0
+ 720              		.cfi_startproc
+ 721              		@ args = 0, pretend = 0, frame = 0
+ 722              		@ frame_needed = 0, uses_anonymous_args = 0
+ 723 0000 10B5     		push	{r4, lr}
+ 724              	.LCFI3:
+ 725              		.cfi_def_cfa_offset 8
+ 726              		.cfi_offset 4, -8
+ARM GAS  /tmp/ccMsiaRR.s 			page 34
+
+
+ 727              		.cfi_offset 14, -4
  283:Core/Src/stm32f0xx_it.c ****   /* USER CODE BEGIN EXTI2_3_IRQn 0 */
  284:Core/Src/stm32f0xx_it.c ****   if(!(button_status & BUTTON_PUSH))
- 770              		.loc 1 284 3 view .LVU144
- 771              		.loc 1 284 22 is_stmt 0 view .LVU145
- 772 0002 054B     		ldr	r3, .L28
- 773 0004 1B78     		ldrb	r3, [r3]
- 774              		.loc 1 284 5 view .LVU146
- 775 0006 DB07     		lsls	r3, r3, #31
- 776 0008 02D4     		bmi	.L27
+ 728              		.loc 1 284 3 view .LVU141
+ 729              		.loc 1 284 22 is_stmt 0 view .LVU142
+ 730 0002 054B     		ldr	r3, .L28
+ 731 0004 1B78     		ldrb	r3, [r3]
+ 732              		.loc 1 284 5 view .LVU143
+ 733 0006 DB07     		lsls	r3, r3, #31
+ 734 0008 02D4     		bmi	.L27
  285:Core/Src/stm32f0xx_it.c ****     {
  286:Core/Src/stm32f0xx_it.c ****         button_status = BUTTON_PUSH;
-ARM GAS  /tmp/cc8qSLgG.s 			page 35
-
-
- 777              		.loc 1 286 9 is_stmt 1 view .LVU147
- 778              		.loc 1 286 23 is_stmt 0 view .LVU148
- 779 000a 034B     		ldr	r3, .L28
- 780 000c 0122     		movs	r2, #1
- 781 000e 1A70     		strb	r2, [r3]
- 782              	.L27:
+ 735              		.loc 1 286 9 is_stmt 1 view .LVU144
+ 736              		.loc 1 286 23 is_stmt 0 view .LVU145
+ 737 000a 034B     		ldr	r3, .L28
+ 738 000c 0122     		movs	r2, #1
+ 739 000e 1A70     		strb	r2, [r3]
+ 740              	.L27:
  287:Core/Src/stm32f0xx_it.c ****     } 
  288:Core/Src/stm32f0xx_it.c ****   /* USER CODE END EXTI2_3_IRQn 0 */
  289:Core/Src/stm32f0xx_it.c ****   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
- 783              		.loc 1 289 3 is_stmt 1 view .LVU149
- 784 0010 0820     		movs	r0, #8
- 785 0012 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 786              	.LVL63:
+ 741              		.loc 1 289 3 is_stmt 1 view .LVU146
+ 742 0010 0820     		movs	r0, #8
+ 743 0012 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 744              	.LVL54:
  290:Core/Src/stm32f0xx_it.c ****   /* USER CODE BEGIN EXTI2_3_IRQn 1 */
  291:Core/Src/stm32f0xx_it.c **** 
  292:Core/Src/stm32f0xx_it.c ****   /* USER CODE END EXTI2_3_IRQn 1 */
  293:Core/Src/stm32f0xx_it.c **** }
- 787              		.loc 1 293 1 is_stmt 0 view .LVU150
- 788              		@ sp needed
- 789 0016 10BD     		pop	{r4, pc}
- 790              	.L29:
- 791              		.align	2
- 792              	.L28:
- 793 0018 00000000 		.word	button_status
- 794              		.cfi_endproc
- 795              	.LFE252:
- 797              		.global	mode
- 798              		.global	right
- 799              		.global	front
- 800              		.section	.data.front,"aw"
- 801              		.align	3
- 802              		.set	.LANCHOR1,. + 0
- 805              	front:
- 806 0000 00000000 		.word	0
- 807 0004 0000F03F 		.word	1072693248
- 808 0008 00000000 		.word	0
- 809 000c 00000000 		.word	0
- 810 0010 00000000 		.word	0
- 811 0014 00000000 		.word	0
- 812              		.section	.data.mode,"aw"
- 813              		.set	.LANCHOR0,. + 0
- 816              	mode:
- 817 0000 01       		.byte	1
- 818              		.section	.data.right,"aw"
- 819              		.align	3
- 820              		.set	.LANCHOR2,. + 0
- 823              	right:
- 824 0000 00000000 		.word	0
- 825 0004 00000000 		.word	0
- 826 0008 00000000 		.word	0
- 827 000c 0000F03F 		.word	1072693248
- 828 0010 00000000 		.word	0
- 829 0014 00000000 		.word	0
- 830              		.text
- 831              	.Letext0:
- 832              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
- 833              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
-ARM GAS  /tmp/cc8qSLgG.s 			page 36
+ 745              		.loc 1 293 1 is_stmt 0 view .LVU147
+ 746              		@ sp needed
+ 747 0016 10BD     		pop	{r4, pc}
+ 748              	.L29:
+ 749              		.align	2
+ 750              	.L28:
+ 751 0018 00000000 		.word	button_status
+ 752              		.cfi_endproc
+ 753              	.LFE252:
+ 755              		.global	mode
+ 756              		.global	right
+ 757              		.global	front
+ 758              		.section	.data.front,"aw"
+ 759              		.align	3
+ 760              		.set	.LANCHOR1,. + 0
+ 763              	front:
+ 764 0000 00000000 		.word	0
+ 765 0004 0000F03F 		.word	1072693248
+ 766 0008 00000000 		.word	0
+ 767 000c 00000000 		.word	0
+ 768 0010 00000000 		.word	0
+ 769 0014 00000000 		.word	0
+ 770              		.section	.data.mode,"aw"
+ 771              		.set	.LANCHOR0,. + 0
+ 774              	mode:
+ 775 0000 01       		.byte	1
+ 776              		.section	.data.right,"aw"
+ 777              		.align	3
+ARM GAS  /tmp/ccMsiaRR.s 			page 35
 
 
- 834              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
- 835              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
- 836              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
- 837              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
- 838              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h"
- 839              		.file 10 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h"
- 840              		.file 11 "Drivers/quaternion_lib/Inc/quaternion_lib.h"
- 841              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
- 842              		.file 13 "Drivers/Giro/Inc/giro_driver.h"
- 843              		.file 14 "Drivers/Squeaker/Inc/squeaker.h"
- 844              		.file 15 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
- 845              		.file 16 "Drivers/Servo/Inc/servo.h"
- 846              		.file 17 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
- 847              		.file 18 "<built-in>"
-ARM GAS  /tmp/cc8qSLgG.s 			page 37
+ 778              		.set	.LANCHOR2,. + 0
+ 781              	right:
+ 782 0000 00000000 		.word	0
+ 783 0004 00000000 		.word	0
+ 784 0008 00000000 		.word	0
+ 785 000c 0000F03F 		.word	1072693248
+ 786 0010 00000000 		.word	0
+ 787 0014 00000000 		.word	0
+ 788              		.text
+ 789              	.Letext0:
+ 790              		.file 3 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h"
+ 791              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h"
+ 792              		.file 5 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f051x8.h"
+ 793              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
+ 794              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
+ 795              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
+ 796              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_tim.h"
+ 797              		.file 10 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/types.h"
+ 798              		.file 11 "Drivers/quaternion_lib/Inc/quaternion_lib.h"
+ 799              		.file 12 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
+ 800              		.file 13 "Drivers/Giro/Inc/giro_driver.h"
+ 801              		.file 14 "Drivers/Squeaker/Inc/squeaker.h"
+ 802              		.file 15 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
+ 803              		.file 16 "Drivers/Servo/Inc/servo.h"
+ 804              		.file 17 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
+ 805              		.file 18 "<built-in>"
+ARM GAS  /tmp/ccMsiaRR.s 			page 36
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f0xx_it.c
-     /tmp/cc8qSLgG.s:18     .text.NMI_Handler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:24     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/cc8qSLgG.s:42     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:48     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/cc8qSLgG.s:65     .text.SVC_Handler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:71     .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/cc8qSLgG.s:85     .text.PendSV_Handler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:91     .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/cc8qSLgG.s:113    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:119    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/cc8qSLgG.s:733    .text.SysTick_Handler:0000000000000334 $d
-     /tmp/cc8qSLgG.s:753    .text.EXTI2_3_IRQHandler:0000000000000000 $t
-     /tmp/cc8qSLgG.s:759    .text.EXTI2_3_IRQHandler:0000000000000000 EXTI2_3_IRQHandler
-     /tmp/cc8qSLgG.s:793    .text.EXTI2_3_IRQHandler:0000000000000018 $d
-     /tmp/cc8qSLgG.s:816    .data.mode:0000000000000000 mode
-     /tmp/cc8qSLgG.s:823    .data.right:0000000000000000 right
-     /tmp/cc8qSLgG.s:805    .data.front:0000000000000000 front
-     /tmp/cc8qSLgG.s:801    .data.front:0000000000000000 $d
-     /tmp/cc8qSLgG.s:819    .data.right:0000000000000000 $d
+     /tmp/ccMsiaRR.s:18     .text.NMI_Handler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:24     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/ccMsiaRR.s:42     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:48     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/ccMsiaRR.s:65     .text.SVC_Handler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:71     .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/ccMsiaRR.s:85     .text.PendSV_Handler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:91     .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/ccMsiaRR.s:112    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:118    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/ccMsiaRR.s:691    .text.SysTick_Handler:00000000000002f0 $d
+     /tmp/ccMsiaRR.s:711    .text.EXTI2_3_IRQHandler:0000000000000000 $t
+     /tmp/ccMsiaRR.s:717    .text.EXTI2_3_IRQHandler:0000000000000000 EXTI2_3_IRQHandler
+     /tmp/ccMsiaRR.s:751    .text.EXTI2_3_IRQHandler:0000000000000018 $d
+     /tmp/ccMsiaRR.s:774    .data.mode:0000000000000000 mode
+     /tmp/ccMsiaRR.s:781    .data.right:0000000000000000 right
+     /tmp/ccMsiaRR.s:763    .data.front:0000000000000000 front
+     /tmp/ccMsiaRR.s:759    .data.front:0000000000000000 $d
+     /tmp/ccMsiaRR.s:777    .data.right:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 __aeabi_dmul
@@ -2146,7 +2098,6 @@ __aeabi_ddiv
 __aeabi_dsub
 __aeabi_d2iz
 __aeabi_i2d
-__aeabi_dadd
 __aeabi_dcmpgt
 __aeabi_dcmplt
 off_squeaker
@@ -2155,7 +2106,6 @@ giro_read_angls
 squeaker_set_frik
 memcpy
 Rotate
-atan
 asin
 Vector_Scalar_Mul
 sqrt

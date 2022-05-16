@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccc0MzYR.s 			page 1
+ARM GAS  /tmp/ccnijmLd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
   49              		.loc 1 7 16 is_stmt 0 view .LVU3
   50 000c 2022     		movs	r2, #32
   51 000e 0021     		movs	r1, #0
-ARM GAS  /tmp/ccc0MzYR.s 			page 2
+ARM GAS  /tmp/ccnijmLd.s 			page 2
 
 
   52 0010 FFF7FEFF 		bl	memset
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  101              	.LVL5:
  102              		.loc 1 12 14 view .LVU18
  103 0058 A061     		str	r0, [r4, #24]
-ARM GAS  /tmp/ccc0MzYR.s 			page 3
+ARM GAS  /tmp/ccnijmLd.s 			page 3
 
 
  104 005a E161     		str	r1, [r4, #28]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  153 0010 FFF7FEFF 		bl	memset
  154              	.LVL8:
   20:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
-ARM GAS  /tmp/ccc0MzYR.s 			page 4
+ARM GAS  /tmp/ccnijmLd.s 			page 4
 
 
   21:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.a = a.a - b.a;
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  205 005a E161     		str	r1, [r4, #28]
   25:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
   26:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
-ARM GAS  /tmp/ccc0MzYR.s 			page 5
+ARM GAS  /tmp/ccnijmLd.s 			page 5
 
 
  206              		.loc 1 26 5 is_stmt 1 view .LVU41
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
   31:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = {0};
  258              		.loc 1 31 5 is_stmt 1 view .LVU46
  259              		.loc 1 31 16 is_stmt 0 view .LVU47
-ARM GAS  /tmp/ccc0MzYR.s 			page 6
+ARM GAS  /tmp/ccnijmLd.s 			page 6
 
 
  260 0010 2022     		movs	r2, #32
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  312 0064 209E     		ldr	r6, [sp, #128]
  313 0066 219F     		ldr	r7, [sp, #132]
  314              		.loc 1 33 44 view .LVU58
-ARM GAS  /tmp/ccc0MzYR.s 			page 7
+ARM GAS  /tmp/ccnijmLd.s 			page 7
 
 
  315 0068 0A96     		str	r6, [sp, #40]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  368              		.loc 1 34 32 view .LVU67
  369 00c2 049A     		ldr	r2, [sp, #16]
  370 00c4 059B     		ldr	r3, [sp, #20]
-ARM GAS  /tmp/ccc0MzYR.s 			page 8
+ARM GAS  /tmp/ccnijmLd.s 			page 8
 
 
  371 00c6 0298     		ldr	r0, [sp, #8]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  424 0120 FFF7FEFF 		bl	__aeabi_dmul
  425              	.LVL30:
  426 0124 0400     		movs	r4, r0
-ARM GAS  /tmp/ccc0MzYR.s 			page 9
+ARM GAS  /tmp/ccnijmLd.s 			page 9
 
 
  427 0126 0D00     		movs	r5, r1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  480 017e 3200     		movs	r2, r6
  481 0180 3B00     		movs	r3, r7
  482 0182 0098     		ldr	r0, [sp]
-ARM GAS  /tmp/ccc0MzYR.s 			page 10
+ARM GAS  /tmp/ccnijmLd.s 			page 10
 
 
  483 0184 0199     		ldr	r1, [sp, #4]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  537 01e2 D961     		str	r1, [r3, #28]
   37:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
   38:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
-ARM GAS  /tmp/ccc0MzYR.s 			page 11
+ARM GAS  /tmp/ccnijmLd.s 			page 11
 
 
  538              		.loc 1 38 5 is_stmt 1 view .LVU92
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  585              		.loc 1 43 5 view .LVU96
  586 000e 0E9A     		ldr	r2, [sp, #56]
  587 0010 0F9B     		ldr	r3, [sp, #60]
-ARM GAS  /tmp/ccc0MzYR.s 			page 12
+ARM GAS  /tmp/ccnijmLd.s 			page 12
 
 
  588 0012 0492     		str	r2, [sp, #16]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  639 0004 C168     		ldr	r1, [r0, #12]
  640 0006 8024     		movs	r4, #128
  641 0008 2406     		lsls	r4, r4, #24
-ARM GAS  /tmp/ccc0MzYR.s 			page 13
+ARM GAS  /tmp/ccnijmLd.s 			page 13
 
 
  642 000a A446     		mov	ip, r4
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  681              		@ args = 0, pretend = 0, frame = 0
  682              		@ frame_needed = 0, uses_anonymous_args = 0
  683              		.loc 1 65 1 is_stmt 0 view .LVU108
-ARM GAS  /tmp/ccc0MzYR.s 			page 14
+ARM GAS  /tmp/ccnijmLd.s 			page 14
 
 
  684 0000 D0B5     		push	{r4, r6, r7, lr}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  737 004c A069     		ldr	r0, [r4, #24]
  738 004e E169     		ldr	r1, [r4, #28]
  739              		.loc 1 66 59 view .LVU117
-ARM GAS  /tmp/ccc0MzYR.s 			page 15
+ARM GAS  /tmp/ccnijmLd.s 			page 15
 
 
  740 0050 0200     		movs	r2, r0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
   56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
  792              		.loc 1 56 5 view .LVU124
   56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
-ARM GAS  /tmp/ccc0MzYR.s 			page 16
+ARM GAS  /tmp/ccnijmLd.s 			page 16
 
 
  793              		.loc 1 56 19 is_stmt 0 view .LVU125
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  839 0058 0B91     		str	r1, [sp, #44]
   61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
  840              		.loc 1 61 5 is_stmt 1 view .LVU134
-ARM GAS  /tmp/ccc0MzYR.s 			page 17
+ARM GAS  /tmp/ccnijmLd.s 			page 17
 
 
   61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  886              		.cfi_def_cfa_offset 40
  887 0006 0690     		str	r0, [sp, #24]
  888 0008 0791     		str	r1, [sp, #28]
-ARM GAS  /tmp/ccc0MzYR.s 			page 18
+ARM GAS  /tmp/ccnijmLd.s 			page 18
 
 
  889 000a 0892     		str	r2, [sp, #32]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  940              		.cfi_offset 7, -8
  941              		.cfi_offset 14, -4
  942 0002 0700     		movs	r7, r0
-ARM GAS  /tmp/ccc0MzYR.s 			page 19
+ARM GAS  /tmp/ccnijmLd.s 			page 19
 
 
  943 0004 0E00     		movs	r6, r1
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  994              		.loc 1 79 1 view .LVU155
  995 004a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  996              		.cfi_endproc
-ARM GAS  /tmp/ccc0MzYR.s 			page 20
+ARM GAS  /tmp/ccnijmLd.s 			page 20
 
 
  997              	.LFE11:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1048 001a E168     		ldr	r1, [r4, #12]
  1049              		.loc 1 84 24 view .LVU164
  1050 001c 4B46     		mov	r3, r9
-ARM GAS  /tmp/ccc0MzYR.s 			page 21
+ARM GAS  /tmp/ccnijmLd.s 			page 21
 
 
  1051 001e 1E69     		ldr	r6, [r3, #16]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1104 0072 4B46     		mov	r3, r9
  1105 0074 1E68     		ldr	r6, [r3]
  1106 0076 5F68     		ldr	r7, [r3, #4]
-ARM GAS  /tmp/ccc0MzYR.s 			page 22
+ARM GAS  /tmp/ccnijmLd.s 			page 22
 
 
  1107              		.loc 1 85 37 view .LVU175
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
   87:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
  1160              		.loc 1 87 5 is_stmt 1 view .LVU183
   88:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
-ARM GAS  /tmp/ccc0MzYR.s 			page 23
+ARM GAS  /tmp/ccnijmLd.s 			page 23
 
 
  1161              		.loc 1 88 1 is_stmt 0 view .LVU184
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1213 0014 6160     		str	r1, [r4, #4]
  1214              		.loc 1 92 39 view .LVU192
  1215 0016 3200     		movs	r2, r6
-ARM GAS  /tmp/ccc0MzYR.s 			page 24
+ARM GAS  /tmp/ccnijmLd.s 			page 24
 
 
  1216 0018 3B00     		movs	r3, r7
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1267              		.cfi_offset 6, -12
  1268              		.cfi_offset 7, -8
  1269              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccc0MzYR.s 			page 25
+ARM GAS  /tmp/ccnijmLd.s 			page 25
 
 
  1270 0002 0400     		movs	r4, r0
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1323              	.LVL109:
  1324              		.loc 1 98 12 view .LVU216
  1325 004e 2061     		str	r0, [r4, #16]
-ARM GAS  /tmp/ccc0MzYR.s 			page 26
+ARM GAS  /tmp/ccnijmLd.s 			page 26
 
 
  1326 0050 6161     		str	r1, [r4, #20]
@@ -1530,9 +1530,9 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  103:Drivers/quaternion_lib/Src/quaternion_lib.c **** vector Rotate (vector vec, double phi, double psi, double theta)
  104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
  105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
- 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {1, 0, 0};
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {0, cos(phi), sin(phi)};
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
  109:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
  110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
  111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1357              		.cfi_def_cfa_offset 8
  1358 0002 30B5     		push	{r4, r5, lr}
  1359              	.LCFI27:
-ARM GAS  /tmp/ccc0MzYR.s 			page 27
+ARM GAS  /tmp/ccnijmLd.s 			page 27
 
 
  1360              		.cfi_def_cfa_offset 20
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1412 004e 20A8     		add	r0, sp, #128
  1413 0050 FFF7FEFF 		bl	Quaternion_Mul
  1414              	.LVL117:
-ARM GAS  /tmp/ccc0MzYR.s 			page 28
+ARM GAS  /tmp/ccnijmLd.s 			page 28
 
 
  126:Drivers/quaternion_lib/Src/quaternion_lib.c ****                result = Quaternion_Mul (result, Quaternion_Inverse(rotate));
@@ -1678,11 +1678,11 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1467 00ac 2261     		str	r2, [r4, #16]
  1468 00ae 6361     		str	r3, [r4, #20]
  128:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return out;
-ARM GAS  /tmp/ccc0MzYR.s 			page 29
+ARM GAS  /tmp/ccnijmLd.s 			page 29
 
 
  1469              		.loc 1 128 5 is_stmt 1 view .LVU239
- 129:Drivers/quaternion_lib/Src/quaternion_lib.c **** }...
+ 129:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
  1470              		.loc 1 129 1 is_stmt 0 view .LVU240
  1471 00b0 2000     		movs	r0, r4
  1472 00b2 31B0     		add	sp, sp, #196
@@ -1704,12 +1704,12 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1490              	Rotate:
  1491              	.LVL125:
  1492              	.LFB15:
- 104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 104:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
  1493              		.loc 1 104 1 is_stmt 1 view -0
  1494              		.cfi_startproc
  1495              		@ args = 48, pretend = 8, frame = 272
  1496              		@ frame_needed = 0, uses_anonymous_args = 0
- 104:Drivers/quaternion_lib/Src/quaternion_lib.c **** {
+ 104:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
  1497              		.loc 1 104 1 is_stmt 0 view .LVU243
  1498 0000 82B0     		sub	sp, sp, #8
  1499              	.LCFI29:
@@ -1733,431 +1733,431 @@ ARM GAS  /tmp/ccc0MzYR.s 			page 1
  1517 000a 8046     		mov	r8, r0
  1518 000c 5892     		str	r2, [sp, #352]
  1519 000e 5993     		str	r3, [sp, #356]
- 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
+ 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {1, 0, 0};
  1520              		.loc 1 105 5 is_stmt 1 view .LVU244
- 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector result = {0};    
+ 105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {1, 0, 0};
  1521              		.loc 1 105 12 is_stmt 0 view .LVU245
  1522 0010 1822     		movs	r2, #24
-ARM GAS  /tmp/ccc0MzYR.s 			page 30
+ARM GAS  /tmp/ccnijmLd.s 			page 30
 
 
  1523 0012 0021     		movs	r1, #0
  1524 0014 FFF7FEFF 		bl	memset
  1525              	.LVL126:
- 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {0, cos(phi), sin(phi)};
  1526              		.loc 1 106 5 is_stmt 1 view .LVU246
- 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {0, 0, 1};
+ 106:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {0, cos(phi), sin(phi)};
  1527              		.loc 1 106 12 is_stmt 0 view .LVU247
- 1528 0018 0026     		movs	r6, #0
- 1529 001a 0027     		movs	r7, #0
- 1530 001c 4C96     		str	r6, [sp, #304]
- 1531 001e 4D97     		str	r7, [sp, #308]
- 1532 0020 4E96     		str	r6, [sp, #312]
- 1533 0022 4F97     		str	r7, [sp, #316]
- 1534 0024 0022     		movs	r2, #0
- 1535 0026 764B     		ldr	r3, .L19
- 1536 0028 5092     		str	r2, [sp, #320]
- 1537 002a 5193     		str	r3, [sp, #324]
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
+ 1528 0018 0022     		movs	r2, #0
+ 1529 001a 774B     		ldr	r3, .L19
+ 1530 001c 4C92     		str	r2, [sp, #304]
+ 1531 001e 4D93     		str	r3, [sp, #308]
+ 1532 0020 0026     		movs	r6, #0
+ 1533 0022 0027     		movs	r7, #0
+ 1534 0024 4E96     		str	r6, [sp, #312]
+ 1535 0026 4F97     		str	r7, [sp, #316]
+ 1536 0028 5096     		str	r6, [sp, #320]
+ 1537 002a 5197     		str	r7, [sp, #324]
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
  1538              		.loc 1 107 5 is_stmt 1 view .LVU248
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
- 1539              		.loc 1 107 32 is_stmt 0 view .LVU249
- 1540 002c 5E98     		ldr	r0, [sp, #376]
- 1541 002e 5F99     		ldr	r1, [sp, #380]
- 1542 0030 FFF7FEFF 		bl	cos
- 1543              	.LVL127:
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
- 1544              		.loc 1 107 12 view .LVU250
- 1545 0034 0E90     		str	r0, [sp, #56]
- 1546 0036 0F91     		str	r1, [sp, #60]
- 1547 0038 0300     		movs	r3, r0
- 1548 003a 0C00     		movs	r4, r1
- 1549 003c 4693     		str	r3, [sp, #280]
- 1550 003e 4794     		str	r4, [sp, #284]
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
- 1551              		.loc 1 107 42 view .LVU251
- 1552 0040 5E98     		ldr	r0, [sp, #376]
- 1553 0042 5F99     		ldr	r1, [sp, #380]
- 1554 0044 FFF7FEFF 		bl	sin
- 1555              	.LVL128:
- 1556 0048 0200     		movs	r2, r0
- 1557 004a 0B00     		movs	r3, r1
- 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector second_direction = {cos(phi), sin(phi), 0};
- 1558              		.loc 1 107 12 view .LVU252
- 1559 004c 1092     		str	r2, [sp, #64]
- 1560 004e 1193     		str	r3, [sp, #68]
- 1561 0050 4892     		str	r2, [sp, #288]
- 1562 0052 4993     		str	r3, [sp, #292]
- 1563 0054 4A96     		str	r6, [sp, #296]
- 1564 0056 4B97     		str	r7, [sp, #300]
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1565              		.loc 1 108 5 is_stmt 1 view .LVU253
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1566              		.loc 1 108 31 is_stmt 0 view .LVU254
- 1567 0058 6098     		ldr	r0, [sp, #384]
- 1568 005a 6199     		ldr	r1, [sp, #388]
- 1569 005c FFF7FEFF 		bl	sin
- 1570              	.LVL129:
-ARM GAS  /tmp/ccc0MzYR.s 			page 31
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
+ 1539              		.loc 1 107 12 is_stmt 0 view .LVU249
+ 1540 002c 4696     		str	r6, [sp, #280]
+ 1541 002e 4797     		str	r7, [sp, #284]
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
+ 1542              		.loc 1 107 35 view .LVU250
+ 1543 0030 5E98     		ldr	r0, [sp, #376]
+ 1544 0032 5F99     		ldr	r1, [sp, #380]
+ 1545 0034 FFF7FEFF 		bl	cos
+ 1546              	.LVL127:
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
+ 1547              		.loc 1 107 12 view .LVU251
+ 1548 0038 1090     		str	r0, [sp, #64]
+ 1549 003a 1191     		str	r1, [sp, #68]
+ 1550 003c 0300     		movs	r3, r0
+ 1551 003e 0C00     		movs	r4, r1
+ 1552 0040 4893     		str	r3, [sp, #288]
+ 1553 0042 4994     		str	r4, [sp, #292]
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
+ 1554              		.loc 1 107 45 view .LVU252
+ 1555 0044 5E98     		ldr	r0, [sp, #376]
+ 1556 0046 5F99     		ldr	r1, [sp, #380]
+ 1557 0048 FFF7FEFF 		bl	sin
+ 1558              	.LVL128:
+ 1559 004c 0300     		movs	r3, r0
+ 1560 004e 0C00     		movs	r4, r1
+ 107:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi), cos(psi) * sin(phi), cos(psi) * cos(psi)};
+ 1561              		.loc 1 107 12 view .LVU253
+ 1562 0050 0E93     		str	r3, [sp, #56]
+ 1563 0052 0F94     		str	r4, [sp, #60]
+ 1564 0054 4A93     		str	r3, [sp, #296]
+ 1565 0056 4B94     		str	r4, [sp, #300]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1566              		.loc 1 108 5 is_stmt 1 view .LVU254
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1567              		.loc 1 108 31 is_stmt 0 view .LVU255
+ 1568 0058 6098     		ldr	r0, [sp, #384]
+ 1569 005a 6199     		ldr	r1, [sp, #388]
+ARM GAS  /tmp/ccnijmLd.s 			page 31
 
 
- 1571 0060 0400     		movs	r4, r0
- 1572 0062 0D00     		movs	r5, r1
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1573              		.loc 1 108 40 view .LVU255
- 1574 0064 0200     		movs	r2, r0
- 1575 0066 0B00     		movs	r3, r1
- 1576 0068 1098     		ldr	r0, [sp, #64]
- 1577 006a 1199     		ldr	r1, [sp, #68]
- 1578 006c FFF7FEFF 		bl	__aeabi_dmul
- 1579              	.LVL130:
- 1580 0070 0A00     		movs	r2, r1
- 1581 0072 0100     		movs	r1, r0
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1582              		.loc 1 108 12 view .LVU256
- 1583 0074 1491     		str	r1, [sp, #80]
- 1584 0076 1592     		str	r2, [sp, #84]
- 1585 0078 4091     		str	r1, [sp, #256]
- 1586 007a 4192     		str	r2, [sp, #260]
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1587              		.loc 1 108 61 view .LVU257
- 1588 007c 2200     		movs	r2, r4
- 1589 007e 2B00     		movs	r3, r5
- 1590 0080 0E98     		ldr	r0, [sp, #56]
- 1591 0082 0F99     		ldr	r1, [sp, #60]
- 1592 0084 FFF7FEFF 		bl	__aeabi_dmul
- 1593              	.LVL131:
- 1594 0088 0400     		movs	r4, r0
- 1595 008a 0D00     		movs	r5, r1
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1596              		.loc 1 108 12 view .LVU258
- 1597 008c 1694     		str	r4, [sp, #88]
- 1598 008e 1795     		str	r5, [sp, #92]
- 1599 0090 4294     		str	r4, [sp, #264]
- 1600 0092 4395     		str	r5, [sp, #268]
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1601              		.loc 1 108 73 view .LVU259
- 1602 0094 6098     		ldr	r0, [sp, #384]
- 1603 0096 6199     		ldr	r1, [sp, #388]
- 1604 0098 FFF7FEFF 		bl	cos
- 1605              	.LVL132:
- 1606 009c 0300     		movs	r3, r0
- 1607 009e 0C00     		movs	r4, r1
- 108:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector third_direction = {sin(psi) * sin(phi), sin(psi) * cos(phi), cos(psi)};
- 1608              		.loc 1 108 12 view .LVU260
- 1609 00a0 1293     		str	r3, [sp, #72]
- 1610 00a2 1394     		str	r4, [sp, #76]
- 1611 00a4 4493     		str	r3, [sp, #272]
- 1612 00a6 4594     		str	r4, [sp, #276]
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1613              		.loc 1 110 5 is_stmt 1 view .LVU261
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1614              		.loc 1 110 32 is_stmt 0 view .LVU262
- 1615 00a8 0022     		movs	r2, #0
- 1616 00aa 564B     		ldr	r3, .L19+4
- 1617 00ac 5E98     		ldr	r0, [sp, #376]
- 1618 00ae 5F99     		ldr	r1, [sp, #380]
- 1619 00b0 FFF7FEFF 		bl	__aeabi_dmul
-ARM GAS  /tmp/ccc0MzYR.s 			page 32
+ 1570 005c FFF7FEFF 		bl	sin
+ 1571              	.LVL129:
+ 1572 0060 0200     		movs	r2, r0
+ 1573 0062 0B00     		movs	r3, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1574              		.loc 1 108 12 view .LVU256
+ 1575 0064 1292     		str	r2, [sp, #72]
+ 1576 0066 1393     		str	r3, [sp, #76]
+ 1577 0068 4092     		str	r2, [sp, #256]
+ 1578 006a 4193     		str	r3, [sp, #260]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1579              		.loc 1 108 41 view .LVU257
+ 1580 006c 6098     		ldr	r0, [sp, #384]
+ 1581 006e 6199     		ldr	r1, [sp, #388]
+ 1582 0070 FFF7FEFF 		bl	cos
+ 1583              	.LVL130:
+ 1584 0074 0400     		movs	r4, r0
+ 1585 0076 0D00     		movs	r5, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1586              		.loc 1 108 50 view .LVU258
+ 1587 0078 0200     		movs	r2, r0
+ 1588 007a 0B00     		movs	r3, r1
+ 1589 007c 0E98     		ldr	r0, [sp, #56]
+ 1590 007e 0F99     		ldr	r1, [sp, #60]
+ 1591 0080 FFF7FEFF 		bl	__aeabi_dmul
+ 1592              	.LVL131:
+ 1593 0084 0A00     		movs	r2, r1
+ 1594 0086 0100     		movs	r1, r0
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1595              		.loc 1 108 12 view .LVU259
+ 1596 0088 1491     		str	r1, [sp, #80]
+ 1597 008a 1592     		str	r2, [sp, #84]
+ 1598 008c 4291     		str	r1, [sp, #264]
+ 1599 008e 4392     		str	r2, [sp, #268]
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1600              		.loc 1 108 71 view .LVU260
+ 1601 0090 2200     		movs	r2, r4
+ 1602 0092 2B00     		movs	r3, r5
+ 1603 0094 2000     		movs	r0, r4
+ 1604 0096 2900     		movs	r1, r5
+ 1605 0098 FFF7FEFF 		bl	__aeabi_dmul
+ 1606              	.LVL132:
+ 1607 009c 0400     		movs	r4, r0
+ 1608 009e 0D00     		movs	r5, r1
+ 108:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1609              		.loc 1 108 12 view .LVU261
+ 1610 00a0 1694     		str	r4, [sp, #88]
+ 1611 00a2 1795     		str	r5, [sp, #92]
+ 1612 00a4 4494     		str	r4, [sp, #272]
+ 1613 00a6 4595     		str	r5, [sp, #276]
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1614              		.loc 1 110 5 is_stmt 1 view .LVU262
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1615              		.loc 1 110 32 is_stmt 0 view .LVU263
+ 1616 00a8 0022     		movs	r2, #0
+ 1617 00aa 544B     		ldr	r3, .L19+4
+ 1618 00ac 5E98     		ldr	r0, [sp, #376]
+ARM GAS  /tmp/ccnijmLd.s 			page 32
 
 
- 1620              	.LVL133:
- 1621 00b4 0400     		movs	r4, r0
- 1622 00b6 0D00     		movs	r5, r1
- 1623 00b8 FFF7FEFF 		bl	cos
- 1624              	.LVL134:
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1625              		.loc 1 110 16 view .LVU263
- 1626 00bc 3890     		str	r0, [sp, #224]
- 1627 00be 3991     		str	r1, [sp, #228]
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1628              		.loc 1 110 46 view .LVU264
- 1629 00c0 2000     		movs	r0, r4
- 1630 00c2 2900     		movs	r1, r5
- 1631 00c4 FFF7FEFF 		bl	sin
- 1632              	.LVL135:
- 1633 00c8 0400     		movs	r4, r0
- 1634 00ca 0D00     		movs	r5, r1
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1635              		.loc 1 110 59 view .LVU265
- 1636 00cc 3200     		movs	r2, r6
- 1637 00ce 3B00     		movs	r3, r7
- 1638 00d0 FFF7FEFF 		bl	__aeabi_dmul
- 1639              	.LVL136:
- 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion first_rotate = {cos(phi / 2), sin(phi / 2) * first_direction.x, sin(phi / 2) * first
- 1640              		.loc 1 110 16 view .LVU266
- 1641 00d4 3A90     		str	r0, [sp, #232]
- 1642 00d6 3B91     		str	r1, [sp, #236]
- 1643 00d8 3C90     		str	r0, [sp, #240]
- 1644 00da 3D91     		str	r1, [sp, #244]
- 1645 00dc 3E94     		str	r4, [sp, #248]
- 1646 00de 3F95     		str	r5, [sp, #252]
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1647              		.loc 1 111 5 is_stmt 1 view .LVU267
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1648              		.loc 1 111 33 is_stmt 0 view .LVU268
- 1649 00e0 0022     		movs	r2, #0
- 1650 00e2 484B     		ldr	r3, .L19+4
- 1651 00e4 6098     		ldr	r0, [sp, #384]
- 1652 00e6 6199     		ldr	r1, [sp, #388]
- 1653 00e8 FFF7FEFF 		bl	__aeabi_dmul
+ 1619 00ae 5F99     		ldr	r1, [sp, #380]
+ 1620 00b0 FFF7FEFF 		bl	__aeabi_dmul
+ 1621              	.LVL133:
+ 1622 00b4 0400     		movs	r4, r0
+ 1623 00b6 0D00     		movs	r5, r1
+ 1624 00b8 FFF7FEFF 		bl	cos
+ 1625              	.LVL134:
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1626              		.loc 1 110 16 view .LVU264
+ 1627 00bc 3890     		str	r0, [sp, #224]
+ 1628 00be 3991     		str	r1, [sp, #228]
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1629              		.loc 1 110 46 view .LVU265
+ 1630 00c0 2000     		movs	r0, r4
+ 1631 00c2 2900     		movs	r1, r5
+ 1632 00c4 FFF7FEFF 		bl	sin
+ 1633              	.LVL135:
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1634              		.loc 1 110 16 view .LVU266
+ 1635 00c8 3A90     		str	r0, [sp, #232]
+ 1636 00ca 3B91     		str	r1, [sp, #236]
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1637              		.loc 1 110 93 view .LVU267
+ 1638 00cc 3200     		movs	r2, r6
+ 1639 00ce 3B00     		movs	r3, r7
+ 1640 00d0 FFF7FEFF 		bl	__aeabi_dmul
+ 1641              	.LVL136:
+ 110:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
+ 1642              		.loc 1 110 16 view .LVU268
+ 1643 00d4 3C90     		str	r0, [sp, #240]
+ 1644 00d6 3D91     		str	r1, [sp, #244]
+ 1645 00d8 3E90     		str	r0, [sp, #248]
+ 1646 00da 3F91     		str	r1, [sp, #252]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1647              		.loc 1 111 5 is_stmt 1 view .LVU269
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1648              		.loc 1 111 33 is_stmt 0 view .LVU270
+ 1649 00dc 0022     		movs	r2, #0
+ 1650 00de 474B     		ldr	r3, .L19+4
+ 1651 00e0 6098     		ldr	r0, [sp, #384]
+ 1652 00e2 6199     		ldr	r1, [sp, #388]
+ 1653 00e4 FFF7FEFF 		bl	__aeabi_dmul
  1654              	.LVL137:
- 1655 00ec 0400     		movs	r4, r0
- 1656 00ee 0D00     		movs	r5, r1
- 1657 00f0 FFF7FEFF 		bl	cos
+ 1655 00e8 0400     		movs	r4, r0
+ 1656 00ea 0D00     		movs	r5, r1
+ 1657 00ec FFF7FEFF 		bl	cos
  1658              	.LVL138:
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1659              		.loc 1 111 16 view .LVU269
- 1660 00f4 3090     		str	r0, [sp, #192]
- 1661 00f6 3191     		str	r1, [sp, #196]
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1662              		.loc 1 111 47 view .LVU270
- 1663 00f8 2000     		movs	r0, r4
- 1664 00fa 2900     		movs	r1, r5
- 1665 00fc FFF7FEFF 		bl	sin
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1659              		.loc 1 111 16 view .LVU271
+ 1660 00f0 3090     		str	r0, [sp, #192]
+ 1661 00f2 3191     		str	r1, [sp, #196]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1662              		.loc 1 111 47 view .LVU272
+ 1663 00f4 2000     		movs	r0, r4
+ 1664 00f6 2900     		movs	r1, r5
+ 1665 00f8 FFF7FEFF 		bl	sin
  1666              	.LVL139:
- 1667 0100 0400     		movs	r4, r0
- 1668 0102 0D00     		movs	r5, r1
-ARM GAS  /tmp/ccc0MzYR.s 			page 33
+ARM GAS  /tmp/ccnijmLd.s 			page 33
 
 
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1669              		.loc 1 111 60 view .LVU271
- 1670 0104 0200     		movs	r2, r0
- 1671 0106 0B00     		movs	r3, r1
- 1672 0108 0E98     		ldr	r0, [sp, #56]
- 1673 010a 0F99     		ldr	r1, [sp, #60]
- 1674 010c FFF7FEFF 		bl	__aeabi_dmul
- 1675              	.LVL140:
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1676              		.loc 1 111 16 view .LVU272
- 1677 0110 3290     		str	r0, [sp, #200]
- 1678 0112 3391     		str	r1, [sp, #204]
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1679              		.loc 1 111 95 view .LVU273
- 1680 0114 2200     		movs	r2, r4
- 1681 0116 2B00     		movs	r3, r5
- 1682 0118 1098     		ldr	r0, [sp, #64]
- 1683 011a 1199     		ldr	r1, [sp, #68]
- 1684 011c FFF7FEFF 		bl	__aeabi_dmul
- 1685              	.LVL141:
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1686              		.loc 1 111 16 view .LVU274
- 1687 0120 3490     		str	r0, [sp, #208]
- 1688 0122 3591     		str	r1, [sp, #212]
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1689              		.loc 1 111 130 view .LVU275
- 1690 0124 3200     		movs	r2, r6
- 1691 0126 3B00     		movs	r3, r7
- 1692 0128 2000     		movs	r0, r4
- 1693 012a 2900     		movs	r1, r5
- 1694 012c FFF7FEFF 		bl	__aeabi_dmul
- 1695              	.LVL142:
- 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion second_rotate = {cos(psi / 2), sin(psi / 2) * second_direction.x, sin(psi / 2) * sec
- 1696              		.loc 1 111 16 view .LVU276
- 1697 0130 3690     		str	r0, [sp, #216]
- 1698 0132 3791     		str	r1, [sp, #220]
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1699              		.loc 1 112 5 is_stmt 1 view .LVU277
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1700              		.loc 1 112 32 is_stmt 0 view .LVU278
- 1701 0134 0022     		movs	r2, #0
- 1702 0136 334B     		ldr	r3, .L19+4
- 1703 0138 6298     		ldr	r0, [sp, #392]
- 1704 013a 6399     		ldr	r1, [sp, #396]
- 1705 013c FFF7FEFF 		bl	__aeabi_dmul
- 1706              	.LVL143:
- 1707 0140 0400     		movs	r4, r0
- 1708 0142 0D00     		movs	r5, r1
- 1709 0144 FFF7FEFF 		bl	cos
- 1710              	.LVL144:
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1711              		.loc 1 112 16 view .LVU279
- 1712 0148 2890     		str	r0, [sp, #160]
- 1713 014a 2991     		str	r1, [sp, #164]
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1714              		.loc 1 112 48 view .LVU280
- 1715 014c 2000     		movs	r0, r4
-ARM GAS  /tmp/ccc0MzYR.s 			page 34
+ 1667 00fc 0400     		movs	r4, r0
+ 1668 00fe 0D00     		movs	r5, r1
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1669              		.loc 1 111 60 view .LVU273
+ 1670 0100 3200     		movs	r2, r6
+ 1671 0102 3B00     		movs	r3, r7
+ 1672 0104 FFF7FEFF 		bl	__aeabi_dmul
+ 1673              	.LVL140:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1674              		.loc 1 111 16 view .LVU274
+ 1675 0108 3290     		str	r0, [sp, #200]
+ 1676 010a 3391     		str	r1, [sp, #204]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1677              		.loc 1 111 95 view .LVU275
+ 1678 010c 2200     		movs	r2, r4
+ 1679 010e 2B00     		movs	r3, r5
+ 1680 0110 1098     		ldr	r0, [sp, #64]
+ 1681 0112 1199     		ldr	r1, [sp, #68]
+ 1682 0114 FFF7FEFF 		bl	__aeabi_dmul
+ 1683              	.LVL141:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1684              		.loc 1 111 16 view .LVU276
+ 1685 0118 3490     		str	r0, [sp, #208]
+ 1686 011a 3591     		str	r1, [sp, #212]
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1687              		.loc 1 111 130 view .LVU277
+ 1688 011c 2200     		movs	r2, r4
+ 1689 011e 2B00     		movs	r3, r5
+ 1690 0120 0E98     		ldr	r0, [sp, #56]
+ 1691 0122 0F99     		ldr	r1, [sp, #60]
+ 1692 0124 FFF7FEFF 		bl	__aeabi_dmul
+ 1693              	.LVL142:
+ 111:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
+ 1694              		.loc 1 111 16 view .LVU278
+ 1695 0128 3690     		str	r0, [sp, #216]
+ 1696 012a 3791     		str	r1, [sp, #220]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1697              		.loc 1 112 5 is_stmt 1 view .LVU279
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1698              		.loc 1 112 32 is_stmt 0 view .LVU280
+ 1699 012c 0022     		movs	r2, #0
+ 1700 012e 334B     		ldr	r3, .L19+4
+ 1701 0130 6298     		ldr	r0, [sp, #392]
+ 1702 0132 6399     		ldr	r1, [sp, #396]
+ 1703 0134 FFF7FEFF 		bl	__aeabi_dmul
+ 1704              	.LVL143:
+ 1705 0138 0400     		movs	r4, r0
+ 1706 013a 0D00     		movs	r5, r1
+ 1707 013c FFF7FEFF 		bl	cos
+ 1708              	.LVL144:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1709              		.loc 1 112 16 view .LVU281
+ 1710 0140 2890     		str	r0, [sp, #160]
+ 1711 0142 2991     		str	r1, [sp, #164]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1712              		.loc 1 112 48 view .LVU282
+ 1713 0144 2000     		movs	r0, r4
+ARM GAS  /tmp/ccnijmLd.s 			page 34
 
 
- 1716 014e 2900     		movs	r1, r5
- 1717 0150 FFF7FEFF 		bl	sin
- 1718              	.LVL145:
- 1719 0154 0400     		movs	r4, r0
- 1720 0156 0D00     		movs	r5, r1
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1721              		.loc 1 112 63 view .LVU281
- 1722 0158 0200     		movs	r2, r0
- 1723 015a 0B00     		movs	r3, r1
- 1724 015c 1498     		ldr	r0, [sp, #80]
- 1725 015e 1599     		ldr	r1, [sp, #84]
- 1726 0160 FFF7FEFF 		bl	__aeabi_dmul
- 1727              	.LVL146:
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1728              		.loc 1 112 16 view .LVU282
- 1729 0164 2A90     		str	r0, [sp, #168]
- 1730 0166 2B91     		str	r1, [sp, #172]
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1731              		.loc 1 112 99 view .LVU283
- 1732 0168 2200     		movs	r2, r4
- 1733 016a 2B00     		movs	r3, r5
- 1734 016c 1698     		ldr	r0, [sp, #88]
- 1735 016e 1799     		ldr	r1, [sp, #92]
- 1736 0170 FFF7FEFF 		bl	__aeabi_dmul
- 1737              	.LVL147:
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1738              		.loc 1 112 16 view .LVU284
- 1739 0174 2C90     		str	r0, [sp, #176]
- 1740 0176 2D91     		str	r1, [sp, #180]
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1741              		.loc 1 112 135 view .LVU285
- 1742 0178 2200     		movs	r2, r4
- 1743 017a 2B00     		movs	r3, r5
- 1744 017c 1298     		ldr	r0, [sp, #72]
- 1745 017e 1399     		ldr	r1, [sp, #76]
- 1746 0180 FFF7FEFF 		bl	__aeabi_dmul
- 1747              	.LVL148:
- 112:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion third_rotate = {cos(theta / 2), sin(theta / 2) * third_direction.x, sin(theta / 2) *
- 1748              		.loc 1 112 16 view .LVU286
- 1749 0184 2E90     		str	r0, [sp, #184]
- 1750 0186 2F91     		str	r1, [sp, #188]
- 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
- 1751              		.loc 1 114 5 is_stmt 1 view .LVU287
- 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion rotate = Quaternion_Mul (third_rotate, second_rotate);
- 1752              		.loc 1 114 25 is_stmt 0 view .LVU288
- 1753 0188 06AC     		add	r4, sp, #24
- 1754 018a 2022     		movs	r2, #32
- 1755 018c 30A9     		add	r1, sp, #192
- 1756 018e 2000     		movs	r0, r4
- 1757 0190 FFF7FEFF 		bl	memcpy
- 1758              	.LVL149:
- 1759 0194 1822     		movs	r2, #24
- 1760 0196 2AA9     		add	r1, sp, #168
- 1761 0198 6846     		mov	r0, sp
- 1762 019a FFF7FEFF 		bl	memcpy
- 1763              	.LVL150:
- 1764 019e 289A     		ldr	r2, [sp, #160]
-ARM GAS  /tmp/ccc0MzYR.s 			page 35
+ 1714 0146 2900     		movs	r1, r5
+ 1715 0148 FFF7FEFF 		bl	sin
+ 1716              	.LVL145:
+ 1717 014c 0400     		movs	r4, r0
+ 1718 014e 0D00     		movs	r5, r1
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1719              		.loc 1 112 63 view .LVU283
+ 1720 0150 0200     		movs	r2, r0
+ 1721 0152 0B00     		movs	r3, r1
+ 1722 0154 1298     		ldr	r0, [sp, #72]
+ 1723 0156 1399     		ldr	r1, [sp, #76]
+ 1724 0158 FFF7FEFF 		bl	__aeabi_dmul
+ 1725              	.LVL146:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1726              		.loc 1 112 16 view .LVU284
+ 1727 015c 2A90     		str	r0, [sp, #168]
+ 1728 015e 2B91     		str	r1, [sp, #172]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1729              		.loc 1 112 99 view .LVU285
+ 1730 0160 2200     		movs	r2, r4
+ 1731 0162 2B00     		movs	r3, r5
+ 1732 0164 1498     		ldr	r0, [sp, #80]
+ 1733 0166 1599     		ldr	r1, [sp, #84]
+ 1734 0168 FFF7FEFF 		bl	__aeabi_dmul
+ 1735              	.LVL147:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1736              		.loc 1 112 16 view .LVU286
+ 1737 016c 2C90     		str	r0, [sp, #176]
+ 1738 016e 2D91     		str	r1, [sp, #180]
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1739              		.loc 1 112 135 view .LVU287
+ 1740 0170 2200     		movs	r2, r4
+ 1741 0172 2B00     		movs	r3, r5
+ 1742 0174 1698     		ldr	r0, [sp, #88]
+ 1743 0176 1799     		ldr	r1, [sp, #92]
+ 1744 0178 FFF7FEFF 		bl	__aeabi_dmul
+ 1745              	.LVL148:
+ 112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1746              		.loc 1 112 16 view .LVU288
+ 1747 017c 2E90     		str	r0, [sp, #184]
+ 1748 017e 2F91     		str	r1, [sp, #188]
+ 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
+ 1749              		.loc 1 114 5 is_stmt 1 view .LVU289
+ 114:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
+ 1750              		.loc 1 114 25 is_stmt 0 view .LVU290
+ 1751 0180 06AC     		add	r4, sp, #24
+ 1752 0182 2022     		movs	r2, #32
+ 1753 0184 30A9     		add	r1, sp, #192
+ 1754 0186 2000     		movs	r0, r4
+ 1755 0188 FFF7FEFF 		bl	memcpy
+ 1756              	.LVL149:
+ 1757 018c 1822     		movs	r2, #24
+ 1758 018e 2AA9     		add	r1, sp, #168
+ 1759 0190 6846     		mov	r0, sp
+ 1760 0192 FFF7FEFF 		bl	memcpy
+ 1761              	.LVL150:
+ 1762 0196 289A     		ldr	r2, [sp, #160]
+ARM GAS  /tmp/ccnijmLd.s 			page 35
 
 
- 1765 01a0 299B     		ldr	r3, [sp, #164]
- 1766 01a2 20A8     		add	r0, sp, #128
- 1767 01a4 FFF7FEFF 		bl	Quaternion_Mul
- 1768              	.LVL151:
- 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
- 1769              		.loc 1 115 16 is_stmt 1 view .LVU289
- 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****                rotate = Quaternion_Mul (rotate, first_rotate);
- 1770              		.loc 1 115 25 is_stmt 0 view .LVU290
- 1771 01a8 2022     		movs	r2, #32
- 1772 01aa 38A9     		add	r1, sp, #224
- 1773 01ac 2000     		movs	r0, r4
- 1774 01ae FFF7FEFF 		bl	memcpy
- 1775              	.LVL152:
- 1776 01b2 1822     		movs	r2, #24
- 1777 01b4 22A9     		add	r1, sp, #136
- 1778 01b6 6846     		mov	r0, sp
- 1779 01b8 FFF7FEFF 		bl	memcpy
- 1780              	.LVL153:
- 1781 01bc 209A     		ldr	r2, [sp, #128]
- 1782 01be 219B     		ldr	r3, [sp, #132]
- 1783 01c0 18A8     		add	r0, sp, #96
- 1784 01c2 FFF7FEFF 		bl	Quaternion_Mul
- 1785              	.LVL154:
- 1786 01c6 2022     		movs	r2, #32
- 1787 01c8 18A9     		add	r1, sp, #96
- 1788 01ca 20A8     		add	r0, sp, #128
- 1789 01cc FFF7FEFF 		bl	memcpy
- 1790              	.LVL155:
- 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result = RotateQuat (rotate, vec);
- 1791              		.loc 1 117 5 is_stmt 1 view .LVU291
- 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result = RotateQuat (rotate, vec);
- 1792              		.loc 1 117 14 is_stmt 0 view .LVU292
- 1793 01d0 1822     		movs	r2, #24
- 1794 01d2 58A9     		add	r1, sp, #352
- 1795 01d4 2000     		movs	r0, r4
- 1796 01d6 FFF7FEFF 		bl	memcpy
- 1797              	.LVL156:
- 1798 01da 1822     		movs	r2, #24
- 1799 01dc 22A9     		add	r1, sp, #136
- 1800 01de 6846     		mov	r0, sp
- 1801 01e0 FFF7FEFF 		bl	memcpy
- 1802              	.LVL157:
- 1803 01e4 209A     		ldr	r2, [sp, #128]
- 1804 01e6 219B     		ldr	r3, [sp, #132]
- 1805 01e8 4046     		mov	r0, r8
- 1806 01ea FFF7FEFF 		bl	RotateQuat
- 1807              	.LVL158:
- 118:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
- 1808              		.loc 1 118 5 is_stmt 1 view .LVU293
- 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
- 1809              		.loc 1 119 1 is_stmt 0 view .LVU294
- 1810 01ee 4046     		mov	r0, r8
- 1811 01f0 52B0     		add	sp, sp, #328
- 1812              		@ sp needed
- 1813              	.LVL159:
- 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
- 1814              		.loc 1 119 1 view .LVU295
-ARM GAS  /tmp/ccc0MzYR.s 			page 36
+ 1763 0198 299B     		ldr	r3, [sp, #164]
+ 1764 019a 20A8     		add	r0, sp, #128
+ 1765 019c FFF7FEFF 		bl	Quaternion_Mul
+ 1766              	.LVL151:
+ 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
+ 1767              		.loc 1 115 16 is_stmt 1 view .LVU291
+ 115:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
+ 1768              		.loc 1 115 25 is_stmt 0 view .LVU292
+ 1769 01a0 2022     		movs	r2, #32
+ 1770 01a2 38A9     		add	r1, sp, #224
+ 1771 01a4 2000     		movs	r0, r4
+ 1772 01a6 FFF7FEFF 		bl	memcpy
+ 1773              	.LVL152:
+ 1774 01aa 1822     		movs	r2, #24
+ 1775 01ac 22A9     		add	r1, sp, #136
+ 1776 01ae 6846     		mov	r0, sp
+ 1777 01b0 FFF7FEFF 		bl	memcpy
+ 1778              	.LVL153:
+ 1779 01b4 209A     		ldr	r2, [sp, #128]
+ 1780 01b6 219B     		ldr	r3, [sp, #132]
+ 1781 01b8 18A8     		add	r0, sp, #96
+ 1782 01ba FFF7FEFF 		bl	Quaternion_Mul
+ 1783              	.LVL154:
+ 1784 01be 2022     		movs	r2, #32
+ 1785 01c0 18A9     		add	r1, sp, #96
+ 1786 01c2 20A8     		add	r0, sp, #128
+ 1787 01c4 FFF7FEFF 		bl	memcpy
+ 1788              	.LVL155:
+ 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1789              		.loc 1 117 5 is_stmt 1 view .LVU293
+ 117:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
+ 1790              		.loc 1 117 14 is_stmt 0 view .LVU294
+ 1791 01c8 1822     		movs	r2, #24
+ 1792 01ca 58A9     		add	r1, sp, #352
+ 1793 01cc 2000     		movs	r0, r4
+ 1794 01ce FFF7FEFF 		bl	memcpy
+ 1795              	.LVL156:
+ 1796 01d2 1822     		movs	r2, #24
+ 1797 01d4 22A9     		add	r1, sp, #136
+ 1798 01d6 6846     		mov	r0, sp
+ 1799 01d8 FFF7FEFF 		bl	memcpy
+ 1800              	.LVL157:
+ 1801 01dc 209A     		ldr	r2, [sp, #128]
+ 1802 01de 219B     		ldr	r3, [sp, #132]
+ 1803 01e0 4046     		mov	r0, r8
+ 1804 01e2 FFF7FEFF 		bl	RotateQuat
+ 1805              	.LVL158:
+ 118:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
+ 1806              		.loc 1 118 5 is_stmt 1 view .LVU295
+ 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1807              		.loc 1 119 1 is_stmt 0 view .LVU296
+ 1808 01e6 4046     		mov	r0, r8
+ 1809 01e8 52B0     		add	sp, sp, #328
+ 1810              		@ sp needed
+ 1811              	.LVL159:
+ 119:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
+ 1812              		.loc 1 119 1 view .LVU297
+ARM GAS  /tmp/ccnijmLd.s 			page 36
 
 
- 1815 01f2 80BC     		pop	{r7}
- 1816 01f4 B846     		mov	r8, r7
- 1817 01f6 F0BC     		pop	{r4, r5, r6, r7}
- 1818 01f8 08BC     		pop	{r3}
- 1819 01fa 02B0     		add	sp, sp, #8
- 1820 01fc 1847     		bx	r3
- 1821              	.L20:
- 1822 01fe C046     		.align	2
- 1823              	.L19:
- 1824 0200 0000F03F 		.word	1072693248
- 1825 0204 0000E03F 		.word	1071644672
- 1826              		.cfi_endproc
- 1827              	.LFE15:
- 1829              		.text
- 1830              	.Letext0:
- 1831              		.file 2 "Drivers/quaternion_lib/Inc/quaternion_lib.h"
- 1832              		.file 3 "<built-in>"
- 1833              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
- 1834              		.file 5 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h"
-ARM GAS  /tmp/ccc0MzYR.s 			page 37
+ 1813 01ea 80BC     		pop	{r7}
+ 1814 01ec B846     		mov	r8, r7
+ 1815 01ee F0BC     		pop	{r4, r5, r6, r7}
+ 1816 01f0 08BC     		pop	{r3}
+ 1817 01f2 02B0     		add	sp, sp, #8
+ 1818 01f4 1847     		bx	r3
+ 1819              	.L20:
+ 1820 01f6 C046     		.align	2
+ 1821              	.L19:
+ 1822 01f8 0000F03F 		.word	1072693248
+ 1823 01fc 0000E03F 		.word	1071644672
+ 1824              		.cfi_endproc
+ 1825              	.LFE15:
+ 1827              		.text
+ 1828              	.Letext0:
+ 1829              		.file 2 "Drivers/quaternion_lib/Inc/quaternion_lib.h"
+ 1830              		.file 3 "<built-in>"
+ 1831              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
+ 1832              		.file 5 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h"
+ARM GAS  /tmp/ccnijmLd.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 quaternion_lib.c
-     /tmp/ccc0MzYR.s:19     .text.Quaternion_Add:0000000000000000 $t
-     /tmp/ccc0MzYR.s:25     .text.Quaternion_Add:0000000000000000 Quaternion_Add
-     /tmp/ccc0MzYR.s:121    .text.Quaternion_Sub:0000000000000000 $t
-     /tmp/ccc0MzYR.s:127    .text.Quaternion_Sub:0000000000000000 Quaternion_Sub
-     /tmp/ccc0MzYR.s:222    .text.Quaternion_Mul:0000000000000000 $t
-     /tmp/ccc0MzYR.s:228    .text.Quaternion_Mul:0000000000000000 Quaternion_Mul
-     /tmp/ccc0MzYR.s:555    .rodata.Quaternion_Print.str1.4:0000000000000000 $d
-     /tmp/ccc0MzYR.s:559    .text.Quaternion_Print:0000000000000000 $t
-     /tmp/ccc0MzYR.s:565    .text.Quaternion_Print:0000000000000000 Quaternion_Print
-     /tmp/ccc0MzYR.s:612    .text.Quaternion_Print:0000000000000038 $d
-     /tmp/ccc0MzYR.s:617    .text.Quaternion_Conjugate:0000000000000000 $t
-     /tmp/ccc0MzYR.s:623    .text.Quaternion_Conjugate:0000000000000000 Quaternion_Conjugate
-     /tmp/ccc0MzYR.s:670    .text.Quaternion_Norm:0000000000000000 $t
-     /tmp/ccc0MzYR.s:676    .text.Quaternion_Norm:0000000000000000 Quaternion_Norm
-     /tmp/ccc0MzYR.s:761    .text.Quaternion_Inverse:0000000000000000 $t
-     /tmp/ccc0MzYR.s:767    .text.Quaternion_Inverse:0000000000000000 Quaternion_Inverse
-     /tmp/ccc0MzYR.s:861    .rodata.Vector_Print.str1.4:0000000000000000 $d
-     /tmp/ccc0MzYR.s:865    .text.Vector_Print:0000000000000000 $t
-     /tmp/ccc0MzYR.s:871    .text.Vector_Print:0000000000000000 Vector_Print
-     /tmp/ccc0MzYR.s:914    .text.Vector_Print:0000000000000030 $d
-     /tmp/ccc0MzYR.s:919    .text.Vector_Scalar_Mul:0000000000000000 $t
-     /tmp/ccc0MzYR.s:925    .text.Vector_Scalar_Mul:0000000000000000 Vector_Scalar_Mul
-     /tmp/ccc0MzYR.s:1000   .text.Vector_Vector_Mul:0000000000000000 $t
-     /tmp/ccc0MzYR.s:1006   .text.Vector_Vector_Mul:0000000000000000 Vector_Vector_Mul
-     /tmp/ccc0MzYR.s:1176   .text.Vector_Number_Mul:0000000000000000 $t
-     /tmp/ccc0MzYR.s:1182   .text.Vector_Number_Mul:0000000000000000 Vector_Number_Mul
-     /tmp/ccc0MzYR.s:1247   .text.Vector_Multi_Sum:0000000000000000 $t
-     /tmp/ccc0MzYR.s:1253   .text.Vector_Multi_Sum:0000000000000000 Vector_Multi_Sum
-     /tmp/ccc0MzYR.s:1341   .text.RotateQuat:0000000000000000 $t
-     /tmp/ccc0MzYR.s:1347   .text.RotateQuat:0000000000000000 RotateQuat
-     /tmp/ccc0MzYR.s:1484   .text.Rotate:0000000000000000 $t
-     /tmp/ccc0MzYR.s:1490   .text.Rotate:0000000000000000 Rotate
-     /tmp/ccc0MzYR.s:1824   .text.Rotate:0000000000000200 $d
+     /tmp/ccnijmLd.s:19     .text.Quaternion_Add:0000000000000000 $t
+     /tmp/ccnijmLd.s:25     .text.Quaternion_Add:0000000000000000 Quaternion_Add
+     /tmp/ccnijmLd.s:121    .text.Quaternion_Sub:0000000000000000 $t
+     /tmp/ccnijmLd.s:127    .text.Quaternion_Sub:0000000000000000 Quaternion_Sub
+     /tmp/ccnijmLd.s:222    .text.Quaternion_Mul:0000000000000000 $t
+     /tmp/ccnijmLd.s:228    .text.Quaternion_Mul:0000000000000000 Quaternion_Mul
+     /tmp/ccnijmLd.s:555    .rodata.Quaternion_Print.str1.4:0000000000000000 $d
+     /tmp/ccnijmLd.s:559    .text.Quaternion_Print:0000000000000000 $t
+     /tmp/ccnijmLd.s:565    .text.Quaternion_Print:0000000000000000 Quaternion_Print
+     /tmp/ccnijmLd.s:612    .text.Quaternion_Print:0000000000000038 $d
+     /tmp/ccnijmLd.s:617    .text.Quaternion_Conjugate:0000000000000000 $t
+     /tmp/ccnijmLd.s:623    .text.Quaternion_Conjugate:0000000000000000 Quaternion_Conjugate
+     /tmp/ccnijmLd.s:670    .text.Quaternion_Norm:0000000000000000 $t
+     /tmp/ccnijmLd.s:676    .text.Quaternion_Norm:0000000000000000 Quaternion_Norm
+     /tmp/ccnijmLd.s:761    .text.Quaternion_Inverse:0000000000000000 $t
+     /tmp/ccnijmLd.s:767    .text.Quaternion_Inverse:0000000000000000 Quaternion_Inverse
+     /tmp/ccnijmLd.s:861    .rodata.Vector_Print.str1.4:0000000000000000 $d
+     /tmp/ccnijmLd.s:865    .text.Vector_Print:0000000000000000 $t
+     /tmp/ccnijmLd.s:871    .text.Vector_Print:0000000000000000 Vector_Print
+     /tmp/ccnijmLd.s:914    .text.Vector_Print:0000000000000030 $d
+     /tmp/ccnijmLd.s:919    .text.Vector_Scalar_Mul:0000000000000000 $t
+     /tmp/ccnijmLd.s:925    .text.Vector_Scalar_Mul:0000000000000000 Vector_Scalar_Mul
+     /tmp/ccnijmLd.s:1000   .text.Vector_Vector_Mul:0000000000000000 $t
+     /tmp/ccnijmLd.s:1006   .text.Vector_Vector_Mul:0000000000000000 Vector_Vector_Mul
+     /tmp/ccnijmLd.s:1176   .text.Vector_Number_Mul:0000000000000000 $t
+     /tmp/ccnijmLd.s:1182   .text.Vector_Number_Mul:0000000000000000 Vector_Number_Mul
+     /tmp/ccnijmLd.s:1247   .text.Vector_Multi_Sum:0000000000000000 $t
+     /tmp/ccnijmLd.s:1253   .text.Vector_Multi_Sum:0000000000000000 Vector_Multi_Sum
+     /tmp/ccnijmLd.s:1341   .text.RotateQuat:0000000000000000 $t
+     /tmp/ccnijmLd.s:1347   .text.RotateQuat:0000000000000000 RotateQuat
+     /tmp/ccnijmLd.s:1484   .text.Rotate:0000000000000000 $t
+     /tmp/ccnijmLd.s:1490   .text.Rotate:0000000000000000 Rotate
+     /tmp/ccnijmLd.s:1822   .text.Rotate:00000000000001f8 $d
 
 UNDEFINED SYMBOLS
 __aeabi_dadd
