@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccnijmLd.s 			page 1
+ARM GAS  /tmp/ccJGRXwb.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
   49              		.loc 1 7 16 is_stmt 0 view .LVU3
   50 000c 2022     		movs	r2, #32
   51 000e 0021     		movs	r1, #0
-ARM GAS  /tmp/ccnijmLd.s 			page 2
+ARM GAS  /tmp/ccJGRXwb.s 			page 2
 
 
   52 0010 FFF7FEFF 		bl	memset
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  101              	.LVL5:
  102              		.loc 1 12 14 view .LVU18
  103 0058 A061     		str	r0, [r4, #24]
-ARM GAS  /tmp/ccnijmLd.s 			page 3
+ARM GAS  /tmp/ccJGRXwb.s 			page 3
 
 
  104 005a E161     		str	r1, [r4, #28]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  153 0010 FFF7FEFF 		bl	memset
  154              	.LVL8:
   20:Drivers/quaternion_lib/Src/quaternion_lib.c ****     
-ARM GAS  /tmp/ccnijmLd.s 			page 4
+ARM GAS  /tmp/ccJGRXwb.s 			page 4
 
 
   21:Drivers/quaternion_lib/Src/quaternion_lib.c ****     result.a = a.a - b.a;
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  205 005a E161     		str	r1, [r4, #28]
   25:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
   26:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
-ARM GAS  /tmp/ccnijmLd.s 			page 5
+ARM GAS  /tmp/ccJGRXwb.s 			page 5
 
 
  206              		.loc 1 26 5 is_stmt 1 view .LVU41
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
   31:Drivers/quaternion_lib/Src/quaternion_lib.c ****     quaternion result = {0};
  258              		.loc 1 31 5 is_stmt 1 view .LVU46
  259              		.loc 1 31 16 is_stmt 0 view .LVU47
-ARM GAS  /tmp/ccnijmLd.s 			page 6
+ARM GAS  /tmp/ccJGRXwb.s 			page 6
 
 
  260 0010 2022     		movs	r2, #32
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  312 0064 209E     		ldr	r6, [sp, #128]
  313 0066 219F     		ldr	r7, [sp, #132]
  314              		.loc 1 33 44 view .LVU58
-ARM GAS  /tmp/ccnijmLd.s 			page 7
+ARM GAS  /tmp/ccJGRXwb.s 			page 7
 
 
  315 0068 0A96     		str	r6, [sp, #40]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  368              		.loc 1 34 32 view .LVU67
  369 00c2 049A     		ldr	r2, [sp, #16]
  370 00c4 059B     		ldr	r3, [sp, #20]
-ARM GAS  /tmp/ccnijmLd.s 			page 8
+ARM GAS  /tmp/ccJGRXwb.s 			page 8
 
 
  371 00c6 0298     		ldr	r0, [sp, #8]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  424 0120 FFF7FEFF 		bl	__aeabi_dmul
  425              	.LVL30:
  426 0124 0400     		movs	r4, r0
-ARM GAS  /tmp/ccnijmLd.s 			page 9
+ARM GAS  /tmp/ccJGRXwb.s 			page 9
 
 
  427 0126 0D00     		movs	r5, r1
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  480 017e 3200     		movs	r2, r6
  481 0180 3B00     		movs	r3, r7
  482 0182 0098     		ldr	r0, [sp]
-ARM GAS  /tmp/ccnijmLd.s 			page 10
+ARM GAS  /tmp/ccJGRXwb.s 			page 10
 
 
  483 0184 0199     		ldr	r1, [sp, #4]
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  537 01e2 D961     		str	r1, [r3, #28]
   37:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
   38:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
-ARM GAS  /tmp/ccnijmLd.s 			page 11
+ARM GAS  /tmp/ccJGRXwb.s 			page 11
 
 
  538              		.loc 1 38 5 is_stmt 1 view .LVU92
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  585              		.loc 1 43 5 view .LVU96
  586 000e 0E9A     		ldr	r2, [sp, #56]
  587 0010 0F9B     		ldr	r3, [sp, #60]
-ARM GAS  /tmp/ccnijmLd.s 			page 12
+ARM GAS  /tmp/ccJGRXwb.s 			page 12
 
 
  588 0012 0492     		str	r2, [sp, #16]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  639 0004 C168     		ldr	r1, [r0, #12]
  640 0006 8024     		movs	r4, #128
  641 0008 2406     		lsls	r4, r4, #24
-ARM GAS  /tmp/ccnijmLd.s 			page 13
+ARM GAS  /tmp/ccJGRXwb.s 			page 13
 
 
  642 000a A446     		mov	ip, r4
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  681              		@ args = 0, pretend = 0, frame = 0
  682              		@ frame_needed = 0, uses_anonymous_args = 0
  683              		.loc 1 65 1 is_stmt 0 view .LVU108
-ARM GAS  /tmp/ccnijmLd.s 			page 14
+ARM GAS  /tmp/ccJGRXwb.s 			page 14
 
 
  684 0000 D0B5     		push	{r4, r6, r7, lr}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  737 004c A069     		ldr	r0, [r4, #24]
  738 004e E169     		ldr	r1, [r4, #28]
  739              		.loc 1 66 59 view .LVU117
-ARM GAS  /tmp/ccnijmLd.s 			page 15
+ARM GAS  /tmp/ccJGRXwb.s 			page 15
 
 
  740 0050 0200     		movs	r2, r0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
   56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
  792              		.loc 1 56 5 view .LVU124
   56:Drivers/quaternion_lib/Src/quaternion_lib.c ****     a.a /= norm;
-ARM GAS  /tmp/ccnijmLd.s 			page 16
+ARM GAS  /tmp/ccJGRXwb.s 			page 16
 
 
  793              		.loc 1 56 19 is_stmt 0 view .LVU125
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  839 0058 0B91     		str	r1, [sp, #44]
   61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
  840              		.loc 1 61 5 is_stmt 1 view .LVU134
-ARM GAS  /tmp/ccnijmLd.s 			page 17
+ARM GAS  /tmp/ccJGRXwb.s 			page 17
 
 
   61:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  886              		.cfi_def_cfa_offset 40
  887 0006 0690     		str	r0, [sp, #24]
  888 0008 0791     		str	r1, [sp, #28]
-ARM GAS  /tmp/ccnijmLd.s 			page 18
+ARM GAS  /tmp/ccJGRXwb.s 			page 18
 
 
  889 000a 0892     		str	r2, [sp, #32]
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  940              		.cfi_offset 7, -8
  941              		.cfi_offset 14, -4
  942 0002 0700     		movs	r7, r0
-ARM GAS  /tmp/ccnijmLd.s 			page 19
+ARM GAS  /tmp/ccJGRXwb.s 			page 19
 
 
  943 0004 0E00     		movs	r6, r1
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  994              		.loc 1 79 1 view .LVU155
  995 004a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
  996              		.cfi_endproc
-ARM GAS  /tmp/ccnijmLd.s 			page 20
+ARM GAS  /tmp/ccJGRXwb.s 			page 20
 
 
  997              	.LFE11:
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1048 001a E168     		ldr	r1, [r4, #12]
  1049              		.loc 1 84 24 view .LVU164
  1050 001c 4B46     		mov	r3, r9
-ARM GAS  /tmp/ccnijmLd.s 			page 21
+ARM GAS  /tmp/ccJGRXwb.s 			page 21
 
 
  1051 001e 1E69     		ldr	r6, [r3, #16]
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1104 0072 4B46     		mov	r3, r9
  1105 0074 1E68     		ldr	r6, [r3]
  1106 0076 5F68     		ldr	r7, [r3, #4]
-ARM GAS  /tmp/ccnijmLd.s 			page 22
+ARM GAS  /tmp/ccJGRXwb.s 			page 22
 
 
  1107              		.loc 1 85 37 view .LVU175
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
   87:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return result;
  1160              		.loc 1 87 5 is_stmt 1 view .LVU183
   88:Drivers/quaternion_lib/Src/quaternion_lib.c **** }
-ARM GAS  /tmp/ccnijmLd.s 			page 23
+ARM GAS  /tmp/ccJGRXwb.s 			page 23
 
 
  1161              		.loc 1 88 1 is_stmt 0 view .LVU184
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1213 0014 6160     		str	r1, [r4, #4]
  1214              		.loc 1 92 39 view .LVU192
  1215 0016 3200     		movs	r2, r6
-ARM GAS  /tmp/ccnijmLd.s 			page 24
+ARM GAS  /tmp/ccJGRXwb.s 			page 24
 
 
  1216 0018 3B00     		movs	r3, r7
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1267              		.cfi_offset 6, -12
  1268              		.cfi_offset 7, -8
  1269              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccnijmLd.s 			page 25
+ARM GAS  /tmp/ccJGRXwb.s 			page 25
 
 
  1270 0002 0400     		movs	r4, r0
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1323              	.LVL109:
  1324              		.loc 1 98 12 view .LVU216
  1325 004e 2061     		str	r0, [r4, #16]
-ARM GAS  /tmp/ccnijmLd.s 			page 26
+ARM GAS  /tmp/ccJGRXwb.s 			page 26
 
 
  1326 0050 6161     		str	r1, [r4, #20]
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1357              		.cfi_def_cfa_offset 8
  1358 0002 30B5     		push	{r4, r5, lr}
  1359              	.LCFI27:
-ARM GAS  /tmp/ccnijmLd.s 			page 27
+ARM GAS  /tmp/ccJGRXwb.s 			page 27
 
 
  1360              		.cfi_def_cfa_offset 20
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1412 004e 20A8     		add	r0, sp, #128
  1413 0050 FFF7FEFF 		bl	Quaternion_Mul
  1414              	.LVL117:
-ARM GAS  /tmp/ccnijmLd.s 			page 28
+ARM GAS  /tmp/ccJGRXwb.s 			page 28
 
 
  126:Drivers/quaternion_lib/Src/quaternion_lib.c ****                result = Quaternion_Mul (result, Quaternion_Inverse(rotate));
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1467 00ac 2261     		str	r2, [r4, #16]
  1468 00ae 6361     		str	r3, [r4, #20]
  128:Drivers/quaternion_lib/Src/quaternion_lib.c ****     return out;
-ARM GAS  /tmp/ccnijmLd.s 			page 29
+ARM GAS  /tmp/ccJGRXwb.s 			page 29
 
 
  1469              		.loc 1 128 5 is_stmt 1 view .LVU239
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  105:Drivers/quaternion_lib/Src/quaternion_lib.c ****     vector first_direction = {1, 0, 0};
  1521              		.loc 1 105 12 is_stmt 0 view .LVU245
  1522 0010 1822     		movs	r2, #24
-ARM GAS  /tmp/ccnijmLd.s 			page 30
+ARM GAS  /tmp/ccJGRXwb.s 			page 30
 
 
  1523 0012 0021     		movs	r1, #0
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1567              		.loc 1 108 31 is_stmt 0 view .LVU255
  1568 0058 6098     		ldr	r0, [sp, #384]
  1569 005a 6199     		ldr	r1, [sp, #388]
-ARM GAS  /tmp/ccnijmLd.s 			page 31
+ARM GAS  /tmp/ccJGRXwb.s 			page 31
 
 
  1570 005c FFF7FEFF 		bl	sin
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1616 00a8 0022     		movs	r2, #0
  1617 00aa 544B     		ldr	r3, .L19+4
  1618 00ac 5E98     		ldr	r0, [sp, #376]
-ARM GAS  /tmp/ccnijmLd.s 			page 32
+ARM GAS  /tmp/ccJGRXwb.s 			page 32
 
 
  1619 00ae 5F99     		ldr	r1, [sp, #380]
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1664 00f6 2900     		movs	r1, r5
  1665 00f8 FFF7FEFF 		bl	sin
  1666              	.LVL139:
-ARM GAS  /tmp/ccnijmLd.s 			page 33
+ARM GAS  /tmp/ccJGRXwb.s 			page 33
 
 
  1667 00fc 0400     		movs	r4, r0
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  112:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
  1712              		.loc 1 112 48 view .LVU282
  1713 0144 2000     		movs	r0, r4
-ARM GAS  /tmp/ccnijmLd.s 			page 34
+ARM GAS  /tmp/ccJGRXwb.s 			page 34
 
 
  1714 0146 2900     		movs	r1, r5
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1760 0192 FFF7FEFF 		bl	memcpy
  1761              	.LVL150:
  1762 0196 289A     		ldr	r2, [sp, #160]
-ARM GAS  /tmp/ccnijmLd.s 			page 35
+ARM GAS  /tmp/ccJGRXwb.s 			page 35
 
 
  1763 0198 299B     		ldr	r3, [sp, #164]
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1811              	.LVL159:
  119:Drivers/quaternion_lib/Src/quaternion_lib.c **** 
  1812              		.loc 1 119 1 view .LVU297
-ARM GAS  /tmp/ccnijmLd.s 			page 36
+ARM GAS  /tmp/ccJGRXwb.s 			page 36
 
 
  1813 01ea 80BC     		pop	{r7}
@@ -2120,44 +2120,44 @@ ARM GAS  /tmp/ccnijmLd.s 			page 1
  1830              		.file 3 "<built-in>"
  1831              		.file 4 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h"
  1832              		.file 5 "/usr/share/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h"
-ARM GAS  /tmp/ccnijmLd.s 			page 37
+ARM GAS  /tmp/ccJGRXwb.s 			page 37
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 quaternion_lib.c
-     /tmp/ccnijmLd.s:19     .text.Quaternion_Add:0000000000000000 $t
-     /tmp/ccnijmLd.s:25     .text.Quaternion_Add:0000000000000000 Quaternion_Add
-     /tmp/ccnijmLd.s:121    .text.Quaternion_Sub:0000000000000000 $t
-     /tmp/ccnijmLd.s:127    .text.Quaternion_Sub:0000000000000000 Quaternion_Sub
-     /tmp/ccnijmLd.s:222    .text.Quaternion_Mul:0000000000000000 $t
-     /tmp/ccnijmLd.s:228    .text.Quaternion_Mul:0000000000000000 Quaternion_Mul
-     /tmp/ccnijmLd.s:555    .rodata.Quaternion_Print.str1.4:0000000000000000 $d
-     /tmp/ccnijmLd.s:559    .text.Quaternion_Print:0000000000000000 $t
-     /tmp/ccnijmLd.s:565    .text.Quaternion_Print:0000000000000000 Quaternion_Print
-     /tmp/ccnijmLd.s:612    .text.Quaternion_Print:0000000000000038 $d
-     /tmp/ccnijmLd.s:617    .text.Quaternion_Conjugate:0000000000000000 $t
-     /tmp/ccnijmLd.s:623    .text.Quaternion_Conjugate:0000000000000000 Quaternion_Conjugate
-     /tmp/ccnijmLd.s:670    .text.Quaternion_Norm:0000000000000000 $t
-     /tmp/ccnijmLd.s:676    .text.Quaternion_Norm:0000000000000000 Quaternion_Norm
-     /tmp/ccnijmLd.s:761    .text.Quaternion_Inverse:0000000000000000 $t
-     /tmp/ccnijmLd.s:767    .text.Quaternion_Inverse:0000000000000000 Quaternion_Inverse
-     /tmp/ccnijmLd.s:861    .rodata.Vector_Print.str1.4:0000000000000000 $d
-     /tmp/ccnijmLd.s:865    .text.Vector_Print:0000000000000000 $t
-     /tmp/ccnijmLd.s:871    .text.Vector_Print:0000000000000000 Vector_Print
-     /tmp/ccnijmLd.s:914    .text.Vector_Print:0000000000000030 $d
-     /tmp/ccnijmLd.s:919    .text.Vector_Scalar_Mul:0000000000000000 $t
-     /tmp/ccnijmLd.s:925    .text.Vector_Scalar_Mul:0000000000000000 Vector_Scalar_Mul
-     /tmp/ccnijmLd.s:1000   .text.Vector_Vector_Mul:0000000000000000 $t
-     /tmp/ccnijmLd.s:1006   .text.Vector_Vector_Mul:0000000000000000 Vector_Vector_Mul
-     /tmp/ccnijmLd.s:1176   .text.Vector_Number_Mul:0000000000000000 $t
-     /tmp/ccnijmLd.s:1182   .text.Vector_Number_Mul:0000000000000000 Vector_Number_Mul
-     /tmp/ccnijmLd.s:1247   .text.Vector_Multi_Sum:0000000000000000 $t
-     /tmp/ccnijmLd.s:1253   .text.Vector_Multi_Sum:0000000000000000 Vector_Multi_Sum
-     /tmp/ccnijmLd.s:1341   .text.RotateQuat:0000000000000000 $t
-     /tmp/ccnijmLd.s:1347   .text.RotateQuat:0000000000000000 RotateQuat
-     /tmp/ccnijmLd.s:1484   .text.Rotate:0000000000000000 $t
-     /tmp/ccnijmLd.s:1490   .text.Rotate:0000000000000000 Rotate
-     /tmp/ccnijmLd.s:1822   .text.Rotate:00000000000001f8 $d
+     /tmp/ccJGRXwb.s:19     .text.Quaternion_Add:0000000000000000 $t
+     /tmp/ccJGRXwb.s:25     .text.Quaternion_Add:0000000000000000 Quaternion_Add
+     /tmp/ccJGRXwb.s:121    .text.Quaternion_Sub:0000000000000000 $t
+     /tmp/ccJGRXwb.s:127    .text.Quaternion_Sub:0000000000000000 Quaternion_Sub
+     /tmp/ccJGRXwb.s:222    .text.Quaternion_Mul:0000000000000000 $t
+     /tmp/ccJGRXwb.s:228    .text.Quaternion_Mul:0000000000000000 Quaternion_Mul
+     /tmp/ccJGRXwb.s:555    .rodata.Quaternion_Print.str1.4:0000000000000000 $d
+     /tmp/ccJGRXwb.s:559    .text.Quaternion_Print:0000000000000000 $t
+     /tmp/ccJGRXwb.s:565    .text.Quaternion_Print:0000000000000000 Quaternion_Print
+     /tmp/ccJGRXwb.s:612    .text.Quaternion_Print:0000000000000038 $d
+     /tmp/ccJGRXwb.s:617    .text.Quaternion_Conjugate:0000000000000000 $t
+     /tmp/ccJGRXwb.s:623    .text.Quaternion_Conjugate:0000000000000000 Quaternion_Conjugate
+     /tmp/ccJGRXwb.s:670    .text.Quaternion_Norm:0000000000000000 $t
+     /tmp/ccJGRXwb.s:676    .text.Quaternion_Norm:0000000000000000 Quaternion_Norm
+     /tmp/ccJGRXwb.s:761    .text.Quaternion_Inverse:0000000000000000 $t
+     /tmp/ccJGRXwb.s:767    .text.Quaternion_Inverse:0000000000000000 Quaternion_Inverse
+     /tmp/ccJGRXwb.s:861    .rodata.Vector_Print.str1.4:0000000000000000 $d
+     /tmp/ccJGRXwb.s:865    .text.Vector_Print:0000000000000000 $t
+     /tmp/ccJGRXwb.s:871    .text.Vector_Print:0000000000000000 Vector_Print
+     /tmp/ccJGRXwb.s:914    .text.Vector_Print:0000000000000030 $d
+     /tmp/ccJGRXwb.s:919    .text.Vector_Scalar_Mul:0000000000000000 $t
+     /tmp/ccJGRXwb.s:925    .text.Vector_Scalar_Mul:0000000000000000 Vector_Scalar_Mul
+     /tmp/ccJGRXwb.s:1000   .text.Vector_Vector_Mul:0000000000000000 $t
+     /tmp/ccJGRXwb.s:1006   .text.Vector_Vector_Mul:0000000000000000 Vector_Vector_Mul
+     /tmp/ccJGRXwb.s:1176   .text.Vector_Number_Mul:0000000000000000 $t
+     /tmp/ccJGRXwb.s:1182   .text.Vector_Number_Mul:0000000000000000 Vector_Number_Mul
+     /tmp/ccJGRXwb.s:1247   .text.Vector_Multi_Sum:0000000000000000 $t
+     /tmp/ccJGRXwb.s:1253   .text.Vector_Multi_Sum:0000000000000000 Vector_Multi_Sum
+     /tmp/ccJGRXwb.s:1341   .text.RotateQuat:0000000000000000 $t
+     /tmp/ccJGRXwb.s:1347   .text.RotateQuat:0000000000000000 RotateQuat
+     /tmp/ccJGRXwb.s:1484   .text.Rotate:0000000000000000 $t
+     /tmp/ccJGRXwb.s:1490   .text.Rotate:0000000000000000 Rotate
+     /tmp/ccJGRXwb.s:1822   .text.Rotate:00000000000001f8 $d
 
 UNDEFINED SYMBOLS
 __aeabi_dadd

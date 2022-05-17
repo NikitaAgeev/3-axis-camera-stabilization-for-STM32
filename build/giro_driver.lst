@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cclxDj3B.s 			page 1
+ARM GAS  /tmp/ccWLXwcN.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		.loc 1 25 1 is_stmt 0 view .LVU1
   33 0000 F0B5     		push	{r4, r5, r6, r7, lr}
-ARM GAS  /tmp/cclxDj3B.s 			page 2
+ARM GAS  /tmp/ccWLXwcN.s 			page 2
 
 
   34              	.LCFI0:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
   43:Drivers/Giro/Src/giro_driver.c ****             HAL_I2C_Mem_Write(hi2, MPU6050_ADDR, GYRO_CONFIG_REG, 1, &Data, 1, 1000);
   44:Drivers/Giro/Src/giro_driver.c ****       }
   45:Drivers/Giro/Src/giro_driver.c **** }
-ARM GAS  /tmp/cclxDj3B.s 			page 3
+ARM GAS  /tmp/ccWLXwcN.s 			page 3
 
 
   71              		.loc 1 45 1 view .LVU7
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  117 0068 4346     		mov	r3, r8
  118 006a 2B70     		strb	r3, [r5]
   40:Drivers/Giro/Src/giro_driver.c ****             ////////
-ARM GAS  /tmp/cclxDj3B.s 			page 4
+ARM GAS  /tmp/ccWLXwcN.s 			page 4
 
 
  119              		.loc 1 40 13 is_stmt 1 view .LVU17
@@ -225,7 +225,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  159              	.LVL8:
  160              	.LFB245:
   46:Drivers/Giro/Src/giro_driver.c **** 
-  47:Drivers/Giro/Src/giro_driver.c **** #define FILTR 0.00001
+  47:Drivers/Giro/Src/giro_driver.c **** #define FILTR 0.01
   48:Drivers/Giro/Src/giro_driver.c **** 
   49:Drivers/Giro/Src/giro_driver.c **** int giro_read_angls(I2C_HandleTypeDef* hi2, double* angle_x, double* angle_y, double* angle_z)
   50:Drivers/Giro/Src/giro_driver.c **** {
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  167              	.LCFI3:
  168              		.cfi_def_cfa_offset 20
  169              		.cfi_offset 4, -20
-ARM GAS  /tmp/cclxDj3B.s 			page 5
+ARM GAS  /tmp/ccWLXwcN.s 			page 5
 
 
  170              		.cfi_offset 5, -16
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  219 0034 6378     		ldrb	r3, [r4, #1]
  220              		.loc 1 55 15 view .LVU34
  221 0036 1843     		orrs	r0, r3
-ARM GAS  /tmp/cclxDj3B.s 			page 6
+ARM GAS  /tmp/ccWLXwcN.s 			page 6
 
 
  222              	.LVL13:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  271 006e 1860     		str	r0, [r3]
  272 0070 5960     		str	r1, [r3, #4]
   61:Drivers/Giro/Src/giro_driver.c ****       *angle_z = Gyro_Z_RAW*(250*3.1415/(32767*180));
-ARM GAS  /tmp/cclxDj3B.s 			page 7
+ARM GAS  /tmp/ccWLXwcN.s 			page 7
 
 
  273              		.loc 1 61 7 is_stmt 1 view .LVU54
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  324 00bc 1C4B     		ldr	r3, .L20+20
  325 00be 3000     		movs	r0, r6
  326 00c0 3900     		movs	r1, r7
-ARM GAS  /tmp/cclxDj3B.s 			page 8
+ARM GAS  /tmp/ccWLXwcN.s 			page 8
 
 
  327 00c2 FFF7FEFF 		bl	__aeabi_dcmplt
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  378 0110 07B0     		add	sp, sp, #28
  379              		@ sp needed
  380              	.LVL29:
-ARM GAS  /tmp/cclxDj3B.s 			page 9
+ARM GAS  /tmp/ccWLXwcN.s 			page 9
 
 
  381              	.LVL30:
@@ -496,9 +496,9 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  393 0120 FA73213F 		.word	1059156986
  394 0124 9736AC26 		.word	648820375
  395 0128 0C74213F 		.word	1059157004
- 396 012c F168E388 		.word	-1998362383
- 397 0130 B5F8E43E 		.word	1055193269
- 398 0134 B5F8E4BE 		.word	-1092290379
+ 396 012c 7B14AE47 		.word	1202590843
+ 397 0130 E17A843F 		.word	1065646817
+ 398 0134 E17A84BF 		.word	-1081836831
  399              		.cfi_endproc
  400              	.LFE245:
  402              		.text
@@ -509,16 +509,16 @@ ARM GAS  /tmp/cclxDj3B.s 			page 1
  407              		.file 5 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_def.h"
  408              		.file 6 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_dma.h"
  409              		.file 7 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_i2c.h"
-ARM GAS  /tmp/cclxDj3B.s 			page 10
+ARM GAS  /tmp/ccWLXwcN.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 giro_driver.c
-     /tmp/cclxDj3B.s:18     .text.giro_config:0000000000000000 $t
-     /tmp/cclxDj3B.s:24     .text.giro_config:0000000000000000 giro_config
-     /tmp/cclxDj3B.s:152    .text.giro_read_angls:0000000000000000 $t
-     /tmp/cclxDj3B.s:158    .text.giro_read_angls:0000000000000000 giro_read_angls
-     /tmp/cclxDj3B.s:392    .text.giro_read_angls:000000000000011c $d
+     /tmp/ccWLXwcN.s:18     .text.giro_config:0000000000000000 $t
+     /tmp/ccWLXwcN.s:24     .text.giro_config:0000000000000000 giro_config
+     /tmp/ccWLXwcN.s:152    .text.giro_read_angls:0000000000000000 $t
+     /tmp/ccWLXwcN.s:158    .text.giro_read_angls:0000000000000000 giro_read_angls
+     /tmp/ccWLXwcN.s:392    .text.giro_read_angls:000000000000011c $d
 
 UNDEFINED SYMBOLS
 HAL_I2C_Mem_Read

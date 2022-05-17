@@ -35,6 +35,7 @@
 #include "stm32f0xx_ll_exti.h"
 #include "stm32f0xx_ll_utils.h"
 #include "stm32f0xx_ll_cortex.h"
+#include "stm32f0xx_ll_usart.h"
 
 extern I2C_HandleTypeDef hi2c1;
 
@@ -49,8 +50,12 @@ extern uint16_t number ;
 
 extern const uint64_t sis_tik_frik;
 
+extern UART_HandleTypeDef huart1;
+
 vector front = {1, 0, 0};
-vector right = {0, 1, 0};
+vector app = {0, 1, 0};
+vector oz = {0, 0, 1};
+
 
 u_int8_t mode = 1;
 
@@ -64,6 +69,14 @@ u_int8_t mode = 1;
 #define BUTTON_PUSHED 1 << 1
 
 #define BUTTON_UNPUSHED 1 << 2
+
+typedef struct {
+    uint8_t cmd;
+    uint8_t params[10];
+    uint8_t active;
+} uart_req_t;
+static uart_req_t uart_req;
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,7 +110,7 @@ u_int8_t mode = 1;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
-
+extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -166,12 +179,12 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-  
-  double phi = 0;
-  double psi = 0;
-  double teta = 0;
-  double dtime = 1/sis_tik_frik;
-  
+
+   u_int8_t* a = "yes\n";
+   /*
+  while (!LL_USART_IsActiveFlag_TXE(USART1));
+    LL_USART_TransmitData8(USART1, '1');
+    */
   /* USER CODE BEGIN SysTick_IRQn 0 */
 	if((button_status & BUTTON_PUSH) && (button_delay_counter < BUTTON_DELAY))
     {
@@ -205,11 +218,21 @@ void SysTick_Handler(void)
 		}
 	}
 
-#define POPRAVKA 0.005
+  #define POPRAVKA 0.005
+
+    
 
   if(mode == LOCK_MODE)
-  {
-    giro_read_angls(&hi2c1, &psi, &teta, &phi);
+  { 
+    double psi = 0;
+    double phi = 0;
+    double teta = 0;
+
+    psi = 0;
+    phi = 0;
+    teta = 0;
+
+    giro_read_angls(&hi2c1, &psi, &phi, &teta);
     squeaker_set_frik(&htim1, 4, 9000);
 
     uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
@@ -221,29 +244,22 @@ void SysTick_Handler(void)
     double servo_kren = 0;
 
     psi = psi*POPRAVKA;
-    teta = teta*POPRAVKA;  
+    teta = -teta*POPRAVKA;  
     phi = phi*POPRAVKA;
 
     front = Rotate(front, psi, teta, phi);
-    right = Rotate(right, psi, teta, phi);
+    app = Rotate(app, psi, teta, phi);
     
     servo_rick = atan(front.y / front.x);
-    servo_tang = asin(front.z);
+    servo_tang = -asin(front.z);
     
-    vector f_proec = {front.x, front.y, 0};
-    vector r_proec = {right.x, right.y, 0};
+    
+    vector r0 = Vector_Vector_Mul(&front, &oz);
+    
+    servo_kren = asin(Vector_Scalar_Mul(&app, &r0)/sqrt(Vector_Scalar_Mul(&r0, &r0)));
+    
 
-    double rf_proec = Vector_Scalar_Mul(&f_proec, &r_proec);
-    double f_len = Vector_Scalar_Mul(&f_proec, &f_proec);
-
-    vector nr_proec = {r_proec.x - f_proec.x*rf_proec/f_len, r_proec.y - f_proec.y*rf_proec/f_len, r_proec.z - f_proec.z*rf_proec/f_len};
-
-    double nr_len = Vector_Scalar_Mul(&nr_proec, &nr_proec);
-
-    servo_kren = (right.z/abs(right.z))*acos(sqrt(nr_len));
-
-
-    set_3_servo(&htim2, servo_rick + 3.14/2 , servo_tang + 3.14/2, servo_kren + 3.14/2);
+    set_3_servo(&htim2, servo_rick + 3.14/2 , servo_tang + 3.14/2 , servo_kren + 3.14/2);
 
     if(servo_tang > 0)
 		{
@@ -290,6 +306,20 @@ void EXTI2_3_IRQHandler(void)
   /* USER CODE BEGIN EXTI2_3_IRQn 1 */
 
   /* USER CODE END EXTI2_3_IRQn 1 */
+}
+
+/**
+  * @brief This function handles USART1 global interrupt / USART1 wake-up interrupt through EXTI line 25.
+  */
+void USART1_IRQHandler(void)
+{
+  /* USER CODE BEGIN USART1_IRQn 0 */
+  while (!LL_USART_IsActiveFlag_TXE(USART1));
+  LL_USART_TransmitData8(USART1, '1');
+  /* USER CODE END USART1_IRQn 0 */
+  HAL_UART_IRQHandler(&huart1);
+  /* USER CODE BEGIN USART1_IRQn 1 */
+  /* USER CODE END USART1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
