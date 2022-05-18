@@ -37,6 +37,11 @@
 #include "stm32f0xx_ll_cortex.h"
 #include "stm32f0xx_ll_usart.h"
 
+
+#include "oled_driver.h"
+#include "xprintf.h"
+
+
 extern I2C_HandleTypeDef hi2c1;
 
 extern TIM_HandleTypeDef htim1;
@@ -53,7 +58,7 @@ extern const uint64_t sis_tik_frik;
 extern UART_HandleTypeDef huart1;
 
 vector front = {1, 0, 0};
-vector app = {0, 1, 0};
+vector app = {0, 0, 1};
 vector oz = {0, 0, 1};
 
 
@@ -70,12 +75,15 @@ u_int8_t mode = 1;
 
 #define BUTTON_UNPUSHED 1 << 2
 
-typedef struct {
-    uint8_t cmd;
-    uint8_t params[10];
-    uint8_t active;
-} uart_req_t;
-static uart_req_t uart_req;
+#define PI 3.1415
+
+#define POPRAVKA 0.005
+
+u_int8_t squick_status = 0;
+
+#define ON_SQUICK 1
+#define OFF_SQUICK 0 
+
 
 /* USER CODE END Includes */
 
@@ -179,12 +187,6 @@ void PendSV_Handler(void)
   */
 void SysTick_Handler(void)
 {
-
-   u_int8_t* a = "yes\n";
-   /*
-  while (!LL_USART_IsActiveFlag_TXE(USART1));
-    LL_USART_TransmitData8(USART1, '1');
-    */
   /* USER CODE BEGIN SysTick_IRQn 0 */
 	if((button_status & BUTTON_PUSH) && (button_delay_counter < BUTTON_DELAY))
     {
@@ -192,7 +194,7 @@ void SysTick_Handler(void)
     }
 	else if(button_status & BUTTON_PUSH)
 	{
-		if(!LL_GPIO_IsInputPinSet(GPIOA, LL_GPIO_PIN_3))
+		if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_4) == GPIO_PIN_RESET )
 		{
 			if(!(button_status & BUTTON_PUSHED))
 			{
@@ -214,13 +216,10 @@ void SysTick_Handler(void)
 				//здесь пока тоже пусто)
 				button_status = button_status & (~(BUTTON_PUSH | BUTTON_PUSHED));
 				button_status = button_status | BUTTON_UNPUSHED;
+        //button_delay_counter = 0;
 			}
 		}
 	}
-
-  #define POPRAVKA 0.005
-
-    
 
   if(mode == LOCK_MODE)
   { 
@@ -228,12 +227,16 @@ void SysTick_Handler(void)
     double phi = 0;
     double teta = 0;
 
+    static double last_counted_tang = 0;
+
+    squick_status = OFF_SQUICK;
+
     psi = 0;
     phi = 0;
     teta = 0;
 
     giro_read_angls(&hi2c1, &psi, &phi, &teta);
-    squeaker_set_frik(&htim1, 4, 9000);
+    
 
     uint16_t pin_mask = LL_GPIO_ReadOutputPort(GPIOC);
 		
@@ -250,26 +253,69 @@ void SysTick_Handler(void)
     front = Rotate(front, psi, teta, phi);
     app = Rotate(app, psi, teta, phi);
     
-    servo_rick = atan(front.y / front.x);
-    servo_tang = -asin(front.z);
-    
-    
-    vector r0 = Vector_Vector_Mul(&front, &oz);
-    
-    servo_kren = asin(Vector_Scalar_Mul(&app, &r0)/sqrt(Vector_Scalar_Mul(&r0, &r0)));
-    
+    /* Рассчёт рысканья*/
+    if(front.x > 0)
+    { 
+      servo_rick = atan(front.y / front.x);
+    }
+    else if (front.y > 0)
+    { 
+      squick_status = ON_SQUICK;
+      servo_rick = PI/2;
+    }
+    else 
+    { 
+      squick_status = ON_SQUICK;
+      servo_rick = -PI/2;
+    }
 
-    set_3_servo(&htim2, servo_rick + 3.14/2 , servo_tang + 3.14/2 , servo_kren + 3.14/2);
+    /* Рассчёт тангажа*/
+    if(front.x > 0)
+    {
+      servo_tang = -asin(front.z);
+      last_counted_tang = servo_tang; 
+    }
+    else
+    { 
+      squick_status = ON_SQUICK;
+      servo_tang = last_counted_tang;
+    }
 
-    if(servo_tang > 0)
-		{
-			pin_mask = pin_mask | LL_GPIO_PIN_8;
-		}
-		else if (servo_tang < 0)
-		{
-			pin_mask = pin_mask | LL_GPIO_PIN_9;
-		}
-    LL_GPIO_WriteOutputPort(GPIOC, pin_mask);
+    /*рассчёт крена*/  
+    if(app.z > 0)
+    {
+      vector r0 = Vector_Vector_Mul(&front, &oz);
+      
+      servo_kren = asin(Vector_Scalar_Mul(&app, &r0)/sqrt(Vector_Scalar_Mul(&r0, &r0)));  
+    }
+    else if(app.y > 0)
+    {
+      squick_status = ON_SQUICK;
+      servo_kren = -PI/2;
+    }
+    else 
+    {
+      squick_status = ON_SQUICK;
+      servo_kren = PI/2;
+    }
+
+    set_3_servo(&htim2, servo_rick + PI/2 , servo_tang + PI/2 , servo_kren + PI/2);
+
+    if (squick_status == ON_SQUICK)
+    {
+      squeaker_set_frik(&htim1, 4, 900);
+    }
+    else
+    {
+      off_squeaker(&htim1, 4);
+    }
+    /*
+    xprintf("\n     Hello, world!\n\n");
+    xprintf("    This is an OLED\n");
+    xprintf("   display based on\n");
+    xprintf("    SSD1306 driver");
+    oled_update();
+    */
   }
   else
   {
@@ -292,20 +338,21 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles EXTI line 2 and 3 interrupts.
+  * @brief This function handles EXTI line 4 to 15 interrupts.
   */
-void EXTI2_3_IRQHandler(void)
+void EXTI4_15_IRQHandler(void)
 {
-  /* USER CODE BEGIN EXTI2_3_IRQn 0 */
+  /* USER CODE BEGIN EXTI4_15_IRQn 0 */
   if(!(button_status & BUTTON_PUSH))
-    {
-        button_status = BUTTON_PUSH;
-    } 
-  /* USER CODE END EXTI2_3_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
-  /* USER CODE BEGIN EXTI2_3_IRQn 1 */
+  {
+    button_status = BUTTON_PUSH;
+    button_delay_counter = 0;
+  }
+  /* USER CODE END EXTI4_15_IRQn 0 */
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+  /* USER CODE BEGIN EXTI4_15_IRQn 1 */
 
-  /* USER CODE END EXTI2_3_IRQn 1 */
+  /* USER CODE END EXTI4_15_IRQn 1 */
 }
 
 /**
@@ -314,7 +361,7 @@ void EXTI2_3_IRQHandler(void)
 void USART1_IRQHandler(void)
 {
   /* USER CODE BEGIN USART1_IRQn 0 */
-  while (!LL_USART_IsActiveFlag_TXE(USART1));
+  /*while (!LL_USART_IsActiveFlag_TXE(USART1));
   LL_USART_TransmitData8(USART1, '1');
   /* USER CODE END USART1_IRQn 0 */
   HAL_UART_IRQHandler(&huart1);

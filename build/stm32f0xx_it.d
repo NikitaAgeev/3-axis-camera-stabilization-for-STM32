@@ -37,7 +37,8 @@ build/stm32f0xx_it.o: Core/Src/stm32f0xx_it.c Core/Inc/main.h \
  Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_exti.h \
  Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_utils.h \
  Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_cortex.h \
- Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usart.h
+ Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usart.h \
+ Drivers/Oled/Inc/oled_driver.h Drivers/Oled/Inc/xprintf.h
 Core/Inc/main.h:
 Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 Core/Inc/stm32f0xx_hal_conf.h:
@@ -81,3 +82,5 @@ Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_exti.h:
 Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_utils.h:
 Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_cortex.h:
 Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_ll_usart.h:
+Drivers/Oled/Inc/oled_driver.h:
+Drivers/Oled/Inc/xprintf.h:
